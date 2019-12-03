@@ -4,7 +4,11 @@
   "description": "Library for interacting with the Wasmer Experimental IO Devices in AssemblyScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "../wasmer run --enable-experimental-framebuffer debug-example/build/optimized.wasm",
+    "build": "npm run asbuild",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
+    "asbuild:untouched": "asc debug-example/index.ts -b debug-example/build/untouched.wasm -t debug-example/build/untouched.wat --sourceMap --validate --debug --use abort=wasi_abort",
+    "asbuild:optimized": "asc debug-example/index.ts -b debug-example/build/optimized.wasm -t debug-example/build/optimized.wat --sourceMap --validate --optimize --use abort=wasi_abort"
   },
   "repository": {
     "type": "git",
