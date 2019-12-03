@@ -1,0 +1,34 @@
+{
+  "name": "io-devices-lib-assemblyscript",
+  "version": "0.0.1",
+  "description": "Library for interacting with the Wasmer Experimental IO Devices in AssemblyScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wasmerio/io-devices-lib.git"
+  },
+  "keywords": [
+    "assemblyscript",
+    "wasmer",
+    "graphics",
+    "audio",
+    "input",
+    "wasi",
+    "wasm",
+    "web",
+    "assembly",
+    "webassembly"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wasmerio/io-devices-lib/issues"
+  },
+  "homepage": "https://github.com/wasmerio/io-devices-lib#readme",
+  "dependencies": {
+    "wasa": "git+https://github.com/torch2424/wasa.git#package-name"
+  }
+}
