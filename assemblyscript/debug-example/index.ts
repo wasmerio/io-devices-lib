@@ -2,7 +2,7 @@
 
 import {CommandLine, FileSystem, Descriptor, Date, Console} from "../node_modules/as-wasi/assembly/index";
 
-import {openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToBuffer} from "../io-devices-lib";
+import {openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToFrameBuffer} from "../io-devices-lib";
 
 function showHelp(): void {
   Console.log("TODO: Help");
@@ -68,6 +68,7 @@ export function _start(): void {
   }
 
   while(true) {
+    drawRgbaArrayToFrameBuffer(frame, frameBuffer, 0);
     sleep(6.0);
   }
 }
