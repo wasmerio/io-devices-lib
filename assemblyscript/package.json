@@ -4,7 +4,7 @@
   "description": "Library for interacting with the Wasmer Experimental IO Devices in AssemblyScript",
   "main": "index.js",
   "scripts": {
-    "start": "../wasmer run --enable-experimental-framebuffer debug-example/build/optimized.wasm",
+    "start": "../../wasmer/target/release/wasmer run --enable-experimental-framebuffer debug-example/build/optimized.wasm",
     "build": "npm run asbuild",
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
     "asbuild:untouched": "asc debug-example/index.ts -b debug-example/build/untouched.wasm -t debug-example/build/untouched.wat --sourceMap --validate --debug --use abort=wasi_abort",
@@ -33,6 +33,6 @@
   },
   "homepage": "https://github.com/wasmerio/io-devices-lib#readme",
   "dependencies": {
-    "wasa": "git+https://github.com/torch2424/wasa.git#package-name"
+    "as-wasi": "git+https://github.com/torch2424/wasa.git"
   }
 }
