@@ -1,7 +1,8 @@
 
 import {CommandLine, FileSystem, Descriptor, Date, Console} from "../node_modules/as-wasi/assembly/index";
 
-import {BYTE_TO_INPUT_KEY, IO_DEVICES_INPUT} from './input-map';
+// TODO: Turn this into a switch for the byte, and then return a string
+// import {BYTE_TO_INPUT_KEY, IO_DEVICES_INPUT} from './input-map';
 
 // TODO: In current (December 3rd, 2019) verisons of as-wasi, the Current working directory (dirfd) defaults to: "/"
 
