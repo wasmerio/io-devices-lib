@@ -1,7 +1,9 @@
 
-import {CommandLine, FileSystem, Descriptor, Date, Console} from "./node_modules/as-wasi/assembly/index";
+import {CommandLine, FileSystem, Descriptor, Date, Console} from "../node_modules/as-wasi/assembly/index";
 
-// TODO: In current (December 3rd, 2019) verisons of as-wasi, the Current working directory defaults to: "/"
+import {BYTE_TO_INPUT_KEY, IO_DEVICES_INPUT} from './input-map';
+
+// TODO: In current (December 3rd, 2019) verisons of as-wasi, the Current working directory (dirfd) defaults to: "/"
 
 // Function to open a framebuffer
 export function openFrameBufferWindow(width: i32, height: i32, frameBufferIndex: i32): Descriptor {
@@ -31,9 +33,21 @@ export function drawRgbaArrayToFrameBuffer(rgbaArray: Array<u8>, frameBuffer: De
   bufferIndexDisplay.writeString(frameBufferIndex.toString());
 }
 
-// Function to get the current Keyboard State 
+// Function to update the current Keyboard State 
 // Should Reference: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
 // Should be inspired by: https://torch2424.github.io/responsive-gamepad/
+export function updateInput(): void {
+  let devInput: Descriptor = FileSystem.open('dev/input') as Descriptor;
+
+  // Read the file as bytes
+  let data: u8[] | null = devInput.readAll();
+  
+  if (data != null) {
+    for (let i = 0; i < data.length; i++) {
+      Console.log(data[i].toString());
+    }
+  }
+}
 
 // Function to get the current Mouse State 
 // Should give something like: https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent

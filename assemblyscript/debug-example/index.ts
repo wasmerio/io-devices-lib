@@ -2,11 +2,7 @@
 
 import {CommandLine, FileSystem, Descriptor, Date, Console} from "../node_modules/as-wasi/assembly/index";
 
-import {openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToFrameBuffer} from "../io-devices-lib";
-
-function showHelp(): void {
-  Console.log("TODO: Help");
-}
+import {openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToFrameBuffer, updateInput} from "../lib/lib";
 
 function sleep(sleepTicks: f64): void {
   let lastTime: f64 = Date.now();
@@ -25,22 +21,8 @@ function sleep(sleepTicks: f64): void {
 
 // Entry point into WASI Module
 export function _start(): void {
+
   Console.log("Wasmer Io Devices!");
-
-  // Parse command line arguments
-  let commandLine = new CommandLine();
-  let args: Array<string> = commandLine.all();
-
-  /*
-  if (args.length <= 1) {
-    showHelp();
-    return;
-  }
-
-  let arg: string = args[1];
-
-  Console.log('First arg: ' + arg);
-   */
 
   // Open a framebuffer
   let width: i32 = 160;
@@ -67,8 +49,10 @@ export function _start(): void {
     }
   }
 
+  // Use AssemblyScripts Clock Subscription, and poll_oneoff to loop.
   while(true) {
     drawRgbaArrayToFrameBuffer(frame, frameBuffer, 0);
+    updateInput();
     sleep(6.0);
   }
 }
