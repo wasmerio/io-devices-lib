@@ -9,10 +9,13 @@
  (type $FUNCSIG$viii (func (param i32 i32 i32)))
  (type $FUNCSIG$iiiii (func (param i32 i32 i32 i32) (result i32)))
  (type $FUNCSIG$iiiiiijjii (func (param i32 i32 i32 i32 i32 i64 i64 i32 i32) (result i32)))
+ (type $FUNCSIG$iijii (func (param i32 i64 i32 i32) (result i32)))
  (type $FUNCSIG$i (func (result i32)))
  (import "wasi_unstable" "fd_write" (func $~lib/bindings/wasi_unstable/fd_write (param i32 i32 i32 i32) (result i32)))
  (import "wasi_unstable" "proc_exit" (func $~lib/bindings/wasi_unstable/proc_exit (param i32)))
  (import "wasi_unstable" "path_open" (func $~lib/bindings/wasi_unstable/path_open (param i32 i32 i32 i32 i32 i64 i64 i32 i32) (result i32)))
+ (import "wasi_unstable" "fd_seek" (func $~lib/bindings/wasi_unstable/fd_seek (param i32 i64 i32 i32) (result i32)))
+ (import "wasi_unstable" "fd_read" (func $~lib/bindings/wasi_unstable/fd_read (param i32 i32 i32 i32) (result i32)))
  (import "wasi_unstable" "poll_oneoff" (func $~lib/bindings/wasi_unstable/poll_oneoff (param i32 i32 i32 i32) (result i32)))
  (memory $0 1)
  (data (i32.const 8) "\1e\00\00\00\01\00\00\00\01\00\00\00\1e\00\00\00~\00l\00i\00b\00/\00r\00t\00/\00p\00u\00r\00e\00.\00t\00s")
@@ -134,20 +137,24 @@
  (data (i32.const 3928) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00K\00e\00y\00R\00i\00g\00h\00t\00A\00l\00t")
  (data (i32.const 3968) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00L\00e\00f\00t\00S\00u\00p\00e\00r")
  (data (i32.const 4008) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00K\00e\00y\00R\00i\00g\00h\00t\00S\00u\00p\00e\00r")
- (data (i32.const 4056) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00W\00a\00s\00m\00e\00r\00 \00I\00o\00 \00D\00e\00v\00i\00c\00e\00s\00!")
- (data (i32.const 4112) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00d\00e\00v\00/\00w\00a\00s\00m\00e\00r\00f\00b")
- (data (i32.const 4152) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00r")
- (data (i32.const 4176) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00r\00+")
- (data (i32.const 4200) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00w")
- (data (i32.const 4224) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00x")
- (data (i32.const 4248) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00+")
- (data (i32.const 4272) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00x\00w\00+")
- (data (i32.const 4296) "6\00\00\00\01\00\00\00\01\00\00\006\00\00\00s\00y\00s\00/\00c\00l\00a\00s\00s\00/\00g\00r\00a\00p\00h\00i\00c\00s\00/\00w\00a\00s\00m\00e\00r\00f\00b")
- (data (i32.const 4368) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00/\00v\00i\00r\00t\00u\00a\00l\00_\00s\00i\00z\00e")
- (data (i32.const 4416) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00x")
- (data (i32.const 4440) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00~\00l\00i\00b\00/\00a\00r\00r\00a\00y\00.\00t\00s")
- (data (i32.const 4488) "\n\00\00\00\01\00\00\00\01\00\00\00\n\00\00\00Y\00o\00o\00o\00o")
- (data (i32.const 4520) "\07\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\98 \t\00\00\00\00\008\00A\00\00\00\00\003\00\00\00\02")
+ (data (i32.const 4056) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00d\00e\00v\00/\00w\00a\00s\00m\00e\00r\00f\00b")
+ (data (i32.const 4096) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00r")
+ (data (i32.const 4120) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00r\00+")
+ (data (i32.const 4144) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00w")
+ (data (i32.const 4168) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00x")
+ (data (i32.const 4192) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00+")
+ (data (i32.const 4216) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00x\00w\00+")
+ (data (i32.const 4240) "6\00\00\00\01\00\00\00\01\00\00\006\00\00\00s\00y\00s\00/\00c\00l\00a\00s\00s\00/\00g\00r\00a\00p\00h\00i\00c\00s\00/\00w\00a\00s\00m\00e\00r\00f\00b")
+ (data (i32.const 4312) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00/\00v\00i\00r\00t\00u\00a\00l\00_\00s\00i\00z\00e")
+ (data (i32.const 4360) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00x")
+ (data (i32.const 4384) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00~\00l\00i\00b\00/\00a\00r\00r\00a\00y\00.\00t\00s")
+ (data (i32.const 4432) "*\00\00\00\01\00\00\00\01\00\00\00*\00\00\00/\00b\00u\00f\00f\00e\00r\00_\00i\00n\00d\00e\00x\00_\00d\00i\00s\00p\00l\00a\00y")
+ (data (i32.const 4496) "\12\00\00\00\01\00\00\00\01\00\00\00\12\00\00\00d\00e\00v\00/\00i\00n\00p\00u\00t")
+ (data (i32.const 4540) "\01")
+ (data (i32.const 4552) ",\00\00\00\01\00\00\00\01\00\00\00,\00\00\00Y\00o\00o\00o\00o\00 \00g\00e\00t\00K\00e\00y\00F\00r\00o\00m\00B\00y\00t\00e\00:\00 ")
+ (data (i32.const 4616) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00K\00e\00y\00 \00d\00o\00e\00s\00 \00n\00o\00t\00 \00e\00x\00i\00s\00t")
+ (data (i32.const 4672) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00~\00l\00i\00b\00/\00m\00a\00p\00.\00t\00s")
+ (data (i32.const 4712) "\08\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\98 \t\00\00\00\00\008\00A\00\00\00\00\003\00\00\00\02\00\00\00\93\04\00\00\02")
  (global $~lib/rt/tlsf/ROOT (mut i32) (i32.const 0))
  (global $~lib/rt/pure/CUR (mut i32) (i32.const 0))
  (global $~lib/rt/pure/END (mut i32) (i32.const 0))
@@ -155,7 +162,7 @@
  (global $~lib/rt/tlsf/collectLock (mut i32) (i32.const 0))
  (global $lib/input-map/byteToInputKeyMap (mut i32) (i32.const 0))
  (global $lib/input-map/keyboardStateMap (mut i32) (i32.const 0))
- (global $~lib/rt/__rtti_base i32 (i32.const 4520))
+ (global $~lib/rt/__rtti_base i32 (i32.const 4712))
  (export "memory" (memory $0))
  (export "__alloc" (func $~lib/rt/tlsf/__alloc))
  (export "__retain" (func $~lib/rt/pure/__retain))
@@ -164,7 +171,7 @@
  (export "__rtti_base" (global $~lib/rt/__rtti_base))
  (export "_start" (func $debug-example/index/_start))
  (start $start)
- (func $~lib/rt/pure/increment (; 4 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/rt/pure/increment (; 6 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   local.get $0
   i32.load offset=4
@@ -203,9 +210,9 @@
    unreachable
   end
  )
- (func $~lib/rt/pure/__retain (; 5 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/rt/pure/__retain (; 7 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   local.get $0
-  i32.const 4580
+  i32.const 4780
   i32.gt_u
   if
    local.get $0
@@ -215,7 +222,7 @@
   end
   local.get $0
  )
- (func $~lib/rt/tlsf/removeBlock (; 6 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/rt/tlsf/removeBlock (; 8 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -381,7 +388,7 @@
    end
   end
  )
- (func $~lib/rt/tlsf/insertBlock (; 7 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/rt/tlsf/insertBlock (; 9 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -666,7 +673,7 @@
   i32.or
   i32.store offset=4
  )
- (func $~lib/rt/tlsf/freeBlock (; 8 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/rt/tlsf/freeBlock (; 10 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   local.get $1
   i32.load
@@ -690,9 +697,9 @@
   local.get $1
   call $~lib/rt/tlsf/insertBlock
  )
- (func $~lib/rt/__typeinfo (; 9 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/rt/__typeinfo (; 11 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   local.get $0
-  i32.const 4520
+  i32.const 4712
   i32.load
   i32.gt_u
   if
@@ -706,11 +713,11 @@
   local.get $0
   i32.const 3
   i32.shl
-  i32.const 4524
+  i32.const 4716
   i32.add
   i32.load
  )
- (func $~lib/memory/memory.copy (; 10 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $~lib/memory/memory.copy (; 12 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   (local $4 i32)
   block $~lib/util/memory/memmove|inlined.0
@@ -885,7 +892,7 @@
    end
   end
  )
- (func $~lib/rt/tlsf/__free (; 11 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/rt/tlsf/__free (; 13 ;) (type $FUNCSIG$vi) (param $0 i32)
   global.get $~lib/rt/tlsf/ROOT
   i32.eqz
   if
@@ -918,7 +925,7 @@
   i32.sub
   call $~lib/rt/tlsf/freeBlock
  )
- (func $~lib/rt/pure/growRoots (; 12 ;) (type $FUNCSIG$v)
+ (func $~lib/rt/pure/growRoots (; 14 ;) (type $FUNCSIG$v)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -959,7 +966,7 @@
   i32.add
   global.set $~lib/rt/pure/END
  )
- (func $~lib/rt/pure/appendRoot (; 13 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/rt/pure/appendRoot (; 15 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   global.get $~lib/rt/pure/CUR
   local.tee $1
@@ -978,7 +985,7 @@
   i32.add
   global.set $~lib/rt/pure/CUR
  )
- (func $~lib/rt/pure/decrement (; 14 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/rt/pure/decrement (; 16 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   local.get $0
@@ -1066,9 +1073,9 @@
    end
   end
  )
- (func $~lib/rt/pure/__release (; 15 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/rt/pure/__release (; 17 ;) (type $FUNCSIG$vi) (param $0 i32)
   local.get $0
-  i32.const 4580
+  i32.const 4780
   i32.gt_u
   if
    local.get $0
@@ -1077,7 +1084,7 @@
    call $~lib/rt/pure/decrement
   end
  )
- (func $~lib/string/String#get:length (; 16 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/string/String#get:length (; 18 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   local.get $0
   i32.const 16
   i32.sub
@@ -1085,7 +1092,7 @@
   i32.const 1
   i32.shr_u
  )
- (func $~lib/string/String#concat (; 17 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/string/String#concat (; 19 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -1146,7 +1153,7 @@
   call $~lib/rt/pure/__release
   local.get $2
  )
- (func $~lib/string/String.__concat (; 18 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/string/String.__concat (; 20 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   local.get $0
   call $~lib/rt/pure/__retain
@@ -1165,7 +1172,7 @@
   local.get $1
   call $~lib/rt/pure/__release
  )
- (func $~lib/util/number/decimalCount32 (; 19 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/util/number/decimalCount32 (; 21 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   i32.const 1
   i32.const 2
   local.get $0
@@ -1213,7 +1220,7 @@
   i32.lt_u
   select
  )
- (func $~lib/util/number/utoa_simple<u32> (; 20 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $~lib/util/number/utoa_simple<u32> (; 22 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   loop $continue|0
    local.get $1
@@ -1240,7 +1247,7 @@
    br_if $continue|0
   end
  )
- (func $~lib/util/number/utoa32 (; 21 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/util/number/utoa32 (; 23 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   local.get $0
@@ -1264,7 +1271,7 @@
   local.get $2
   call $~lib/rt/pure/__retain
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Descriptor#constructor (; 22 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $node_modules/as-wasi/assembly/as-wasi/Descriptor#constructor (; 24 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   i32.const 4
   i32.const 3
@@ -1275,7 +1282,7 @@
   i32.store
   local.get $1
  )
- (func $~lib/string/String.UTF8.byteLength (; 23 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/string/String.UTF8.byteLength (; 25 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -1362,7 +1369,7 @@
   call $~lib/rt/pure/__release
   local.get $2
  )
- (func $~lib/rt/tlsf/prepareSize (; 24 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/rt/tlsf/prepareSize (; 26 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   local.get $0
   i32.const 1073741808
   i32.ge_u
@@ -1386,7 +1393,7 @@
   i32.gt_u
   select
  )
- (func $~lib/rt/tlsf/prepareBlock (; 25 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $~lib/rt/tlsf/prepareBlock (; 27 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   (local $4 i32)
   local.get $1
@@ -1462,7 +1469,7 @@
    i32.store
   end
  )
- (func $~lib/rt/tlsf/searchBlock (; 26 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/rt/tlsf/searchBlock (; 28 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   local.get $1
   i32.const 256
@@ -1593,7 +1600,7 @@
    end
   end
  )
- (func $~lib/rt/pure/markGray (; 27 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/rt/pure/markGray (; 29 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   local.get $0
   i32.load offset=4
@@ -1617,7 +1624,7 @@
    call $~lib/rt/__visit_members
   end
  )
- (func $~lib/rt/pure/scanBlack (; 28 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/rt/pure/scanBlack (; 30 ;) (type $FUNCSIG$vi) (param $0 i32)
   local.get $0
   local.get $0
   i32.load offset=4
@@ -1630,7 +1637,7 @@
   i32.const 4
   call $~lib/rt/__visit_members
  )
- (func $~lib/rt/pure/scan (; 29 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/rt/pure/scan (; 31 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   local.get $0
   i32.load offset=4
@@ -1664,7 +1671,7 @@
    end
   end
  )
- (func $~lib/rt/pure/collectWhite (; 30 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/rt/pure/collectWhite (; 32 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   local.get $0
   i32.load offset=4
@@ -1697,7 +1704,7 @@
    call $~lib/rt/tlsf/freeBlock
   end
  )
- (func $~lib/rt/pure/__collect (; 31 ;) (type $FUNCSIG$v)
+ (func $~lib/rt/pure/__collect (; 33 ;) (type $FUNCSIG$v)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -1821,7 +1828,7 @@
   local.get $5
   global.set $~lib/rt/pure/CUR
  )
- (func $~lib/rt/tlsf/growMemory (; 32 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/rt/tlsf/growMemory (; 34 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   memory.size
   local.tee $2
@@ -1883,7 +1890,7 @@
   i32.shl
   call $~lib/rt/tlsf/addMemory
  )
- (func $~lib/rt/tlsf/allocateBlock (; 33 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/rt/tlsf/allocateBlock (; 35 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   global.get $~lib/rt/tlsf/collectLock
@@ -1961,7 +1968,7 @@
   call $~lib/rt/tlsf/prepareBlock
   local.get $2
  )
- (func $~lib/rt/tlsf/reallocateBlock (; 34 ;) (type $FUNCSIG$iiii) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $~lib/rt/tlsf/reallocateBlock (; 36 ;) (type $FUNCSIG$iiii) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -2081,7 +2088,7 @@
   call $~lib/rt/tlsf/insertBlock
   local.get $3
  )
- (func $~lib/rt/tlsf/__realloc (; 35 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/rt/tlsf/__realloc (; 37 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   global.get $~lib/rt/tlsf/ROOT
   i32.eqz
   if
@@ -2117,7 +2124,7 @@
   i32.const 16
   i32.add
  )
- (func $~lib/string/String.UTF8.encode (; 36 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/string/String.UTF8.encode (; 38 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -2308,7 +2315,7 @@
   local.get $0
   call $~lib/rt/pure/__release
  )
- (func $~lib/memory/memory.fill (; 37 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/memory/memory.fill (; 39 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   block $~lib/util/memory/memset|inlined.0
    local.get $1
@@ -2517,7 +2524,7 @@
    end
   end
  )
- (func $~lib/arraybuffer/ArrayBuffer#constructor (; 38 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/arraybuffer/ArrayBuffer#constructor (; 40 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   local.get $0
   i32.const 1073741808
@@ -2539,7 +2546,7 @@
   local.get $1
   call $~lib/rt/pure/__retain
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Descriptor#writeStringLn (; 39 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $node_modules/as-wasi/assembly/as-wasi/Descriptor#writeStringLn (; 41 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -2599,7 +2606,7 @@
   local.get $1
   call $~lib/rt/pure/__release
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Descriptor#writeString (; 40 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $node_modules/as-wasi/assembly/as-wasi/Descriptor#writeString (; 42 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   (local $4 i32)
   local.get $1
@@ -2649,7 +2656,7 @@
   local.get $1
   call $~lib/rt/pure/__release
  )
- (func $node_modules/as-wasi/assembly/as-wasi/wasi_abort (; 41 ;) (type $FUNCSIG$viiii) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
+ (func $node_modules/as-wasi/assembly/as-wasi/wasi_abort (; 43 ;) (type $FUNCSIG$viiii) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
   (local $4 i32)
   (local $5 i32)
   (local $6 i32)
@@ -2721,7 +2728,7 @@
   local.get $1
   call $~lib/rt/pure/__release
  )
- (func $~lib/rt/tlsf/addMemory (; 42 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $~lib/rt/tlsf/addMemory (; 44 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   (local $4 i32)
   local.get $2
@@ -2835,7 +2842,7 @@
   local.get $1
   call $~lib/rt/tlsf/insertBlock
  )
- (func $~lib/rt/tlsf/initializeRoot (; 43 ;) (type $FUNCSIG$v)
+ (func $~lib/rt/tlsf/initializeRoot (; 45 ;) (type $FUNCSIG$v)
   (local $0 i32)
   (local $1 i32)
   i32.const 1
@@ -2855,10 +2862,10 @@
   if
    unreachable
   end
-  i32.const 4592
+  i32.const 4784
   i32.const 0
   i32.store
-  i32.const 6160
+  i32.const 6352
   i32.const 0
   i32.store
   i32.const 0
@@ -2872,7 +2879,7 @@
     local.get $0
     i32.const 2
     i32.shl
-    i32.const 4592
+    i32.const 4784
     i32.add
     i32.const 0
     i32.store offset=4
@@ -2891,7 +2898,7 @@
       i32.add
       i32.const 2
       i32.shl
-      i32.const 4592
+      i32.const 4784
       i32.add
       i32.const 0
       i32.store offset=96
@@ -2909,16 +2916,16 @@
     br $loop|0
    end
   end
-  i32.const 4592
-  i32.const 6176
+  i32.const 4784
+  i32.const 6368
   memory.size
   i32.const 16
   i32.shl
   call $~lib/rt/tlsf/addMemory
-  i32.const 4592
+  i32.const 4784
   global.set $~lib/rt/tlsf/ROOT
  )
- (func $~lib/rt/tlsf/__alloc (; 44 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/rt/tlsf/__alloc (; 46 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   global.get $~lib/rt/tlsf/ROOT
   local.tee $2
@@ -2937,7 +2944,7 @@
   i32.const 16
   i32.add
  )
- (func $~lib/map/Map<i32,~lib/string/String>#clear (; 45 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/map/Map<i32,~lib/string/String>#clear (; 47 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   i32.const 16
   call $~lib/arraybuffer/ArrayBuffer#constructor
@@ -2970,7 +2977,7 @@
   i32.const 0
   i32.store offset=20
  )
- (func $~lib/map/Map<i32,~lib/string/String>#constructor (; 46 ;) (type $FUNCSIG$i) (result i32)
+ (func $~lib/map/Map<i32,~lib/string/String>#constructor (; 48 ;) (type $FUNCSIG$i) (result i32)
   (local $0 i32)
   i32.const 24
   i32.const 4
@@ -2998,7 +3005,7 @@
   call $~lib/map/Map<i32,~lib/string/String>#clear
   local.get $0
  )
- (func $~lib/util/hash/hash32 (; 47 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/util/hash/hash32 (; 49 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   local.get $0
   i32.const 255
   i32.and
@@ -3029,7 +3036,7 @@
   i32.const 16777619
   i32.mul
  )
- (func $~lib/map/Map<i32,~lib/string/String>#find (; 48 ;) (type $FUNCSIG$iiii) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $~lib/map/Map<i32,~lib/string/String>#find (; 50 ;) (type $FUNCSIG$iiii) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   local.get $0
   i32.load
   local.get $0
@@ -3072,7 +3079,7 @@
   end
   i32.const 0
  )
- (func $~lib/map/Map<i32,~lib/string/String>#rehash (; 49 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/map/Map<i32,~lib/string/String>#rehash (; 51 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -3202,7 +3209,7 @@
   local.get $3
   call $~lib/rt/pure/__release
  )
- (func $~lib/map/Map<i32,~lib/string/String>#set (; 50 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $~lib/map/Map<i32,~lib/string/String>#set (; 52 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -3311,7 +3318,7 @@
   local.get $2
   call $~lib/rt/pure/__release
  )
- (func $~lib/map/Map<~lib/string/String,bool>#constructor (; 51 ;) (type $FUNCSIG$i) (result i32)
+ (func $~lib/map/Map<~lib/string/String,bool>#constructor (; 53 ;) (type $FUNCSIG$i) (result i32)
   (local $0 i32)
   i32.const 24
   i32.const 5
@@ -3339,7 +3346,7 @@
   call $~lib/map/Map<i32,~lib/string/String>#clear
   local.get $0
  )
- (func $~lib/util/hash/hashStr (; 52 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/util/hash/hashStr (; 54 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -3383,7 +3390,7 @@
   call $~lib/rt/pure/__release
   local.get $2
  )
- (func $~lib/util/string/compareImpl (; 53 ;) (type $FUNCSIG$iiii) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $~lib/util/string/compareImpl (; 55 ;) (type $FUNCSIG$iiii) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -3481,7 +3488,7 @@
   call $~lib/rt/pure/__release
   i32.const 0
  )
- (func $~lib/string/String.__eq (; 54 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/string/String.__eq (; 56 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   local.get $0
   call $~lib/rt/pure/__retain
@@ -3535,7 +3542,7 @@
   call $~lib/rt/pure/__release
   i32.const 0
  )
- (func $~lib/map/Map<~lib/string/String,bool>#find (; 55 ;) (type $FUNCSIG$iiii) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $~lib/map/Map<~lib/string/String,bool>#find (; 57 ;) (type $FUNCSIG$iiii) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   local.get $1
   call $~lib/rt/pure/__retain
   drop
@@ -3585,7 +3592,7 @@
   call $~lib/rt/pure/__release
   i32.const 0
  )
- (func $~lib/map/Map<~lib/string/String,bool>#rehash (; 56 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/map/Map<~lib/string/String,bool>#rehash (; 58 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -3722,28 +3729,28 @@
   local.get $3
   call $~lib/rt/pure/__release
  )
- (func $~lib/map/Map<~lib/string/String,bool>#set (; 57 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
-  (local $2 i32)
+ (func $~lib/map/Map<~lib/string/String,bool>#set (; 59 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   (local $4 i32)
+  (local $5 i32)
   local.get $1
   call $~lib/rt/pure/__retain
   drop
   local.get $1
   call $~lib/rt/pure/__retain
-  local.tee $2
+  local.tee $3
   call $~lib/util/hash/hashStr
-  local.set $3
-  local.get $2
+  local.set $4
+  local.get $3
   call $~lib/rt/pure/__release
   local.get $0
   local.get $1
-  local.get $3
+  local.get $4
   call $~lib/map/Map<~lib/string/String,bool>#find
-  local.tee $2
+  local.tee $3
   if
+   local.get $3
    local.get $2
-   i32.const 0
    i32.store8 offset=4
   else
    local.get $0
@@ -3778,25 +3785,25 @@
    local.get $0
    i32.load offset=8
    call $~lib/rt/pure/__retain
-   local.set $4
+   local.set $5
    local.get $0
    local.get $0
    i32.load offset=16
-   local.tee $2
+   local.tee $3
    i32.const 1
    i32.add
    i32.store offset=16
-   local.get $2
+   local.get $3
    i32.const 12
    i32.mul
-   local.get $4
+   local.get $5
    i32.add
-   local.tee $2
+   local.tee $3
    local.get $1
    call $~lib/rt/pure/__retain
    i32.store
+   local.get $3
    local.get $2
-   i32.const 0
    i32.store8 offset=4
    local.get $0
    local.get $0
@@ -3804,12 +3811,12 @@
    i32.const 1
    i32.add
    i32.store offset=20
-   local.get $2
+   local.get $3
    local.get $0
    i32.load
    local.get $0
    i32.load offset=4
-   local.get $3
+   local.get $4
    i32.and
    i32.const 2
    i32.shl
@@ -3818,15 +3825,441 @@
    i32.load
    i32.store offset=8
    local.get $0
-   local.get $2
+   local.get $3
    i32.store
-   local.get $4
+   local.get $5
    call $~lib/rt/pure/__release
   end
   local.get $1
   call $~lib/rt/pure/__release
  )
- (func $start:lib/input-map (; 58 ;) (type $FUNCSIG$v)
+ (func $lib/input-map/resetKeyboardState (; 60 ;) (type $FUNCSIG$v)
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 552
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 576
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 600
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 624
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 648
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 672
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 696
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 720
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 744
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 768
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 792
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 816
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 840
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 864
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 888
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 912
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 936
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 960
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 984
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1008
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1032
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1056
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1080
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1104
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1128
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1152
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1176
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1200
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1224
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1248
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1272
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1296
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1320
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1344
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1368
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1392
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1416
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1448
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1480
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1512
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1544
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1576
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1608
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1640
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1672
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1704
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1736
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1768
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1800
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1832
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1864
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1896
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1928
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1960
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 1992
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2024
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2072
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2112
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2152
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2184
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2216
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2264
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2296
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2336
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2384
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2424
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2456
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2496
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2536
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2568
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2600
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2640
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2672
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2712
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2744
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2784
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2824
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2856
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2888
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2920
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 2960
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3000
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3048
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3088
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3136
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3176
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3216
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3256
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3296
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3336
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3376
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3416
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3456
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3496
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3536
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3576
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3616
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3656
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3704
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3760
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3808
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3856
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3904
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3944
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 3984
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyboardStateMap
+  i32.const 4024
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+ )
+ (func $start:lib/input-map (; 61 ;) (type $FUNCSIG$v)
   call $~lib/map/Map<i32,~lib/string/String>#constructor
   global.set $lib/input-map/byteToInputKeyMap
   global.get $lib/input-map/byteToInputKeyMap
@@ -4255,347 +4688,9 @@
   call $~lib/map/Map<i32,~lib/string/String>#set
   call $~lib/map/Map<~lib/string/String,bool>#constructor
   global.set $lib/input-map/keyboardStateMap
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 552
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 576
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 600
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 624
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 648
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 672
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 696
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 720
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 744
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 768
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 792
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 816
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 840
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 864
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 888
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 912
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 936
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 960
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 984
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1008
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1032
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1056
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1080
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1104
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1128
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1152
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1176
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1200
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1224
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1248
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1272
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1296
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1320
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1344
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1368
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1392
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1416
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1448
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1480
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1512
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1544
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1576
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1608
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1640
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1672
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1704
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1736
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1768
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1800
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1832
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1864
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1896
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1928
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1960
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 1992
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2024
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2072
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2112
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2152
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2184
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2216
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2264
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2296
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2336
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2384
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2424
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2456
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2496
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2536
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2568
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2600
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2640
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2672
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2712
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2744
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2784
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2824
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2856
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2888
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2920
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 2960
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3000
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3048
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3088
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3136
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3176
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3216
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3256
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3296
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3336
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3376
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3416
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3456
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3496
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3536
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3576
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3616
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3656
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3704
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3760
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3808
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3856
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3904
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3944
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 3984
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyboardStateMap
-  i32.const 4024
-  call $~lib/map/Map<~lib/string/String,bool>#set
+  call $lib/input-map/resetKeyboardState
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Console.log (; 59 ;) (type $FUNCSIG$vi) (param $0 i32)
-  (local $1 i32)
-  local.get $0
-  call $~lib/rt/pure/__retain
-  drop
-  local.get $0
-  call $~lib/rt/pure/__retain
-  drop
-  i32.const 1
-  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#constructor
-  local.tee $1
-  local.get $0
-  i32.const 1
-  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#writeString
-  local.get $1
-  call $~lib/rt/pure/__release
-  local.get $0
-  call $~lib/rt/pure/__release
-  local.get $0
-  call $~lib/rt/pure/__release
- )
- (func $~lib/util/number/itoa32 (; 60 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/util/number/itoa32 (; 62 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -4638,7 +4733,7 @@
   local.get $2
   call $~lib/rt/pure/__retain
  )
- (func $node_modules/as-wasi/assembly/as-wasi/FileSystem.open (; 61 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $node_modules/as-wasi/assembly/as-wasi/FileSystem.open (; 63 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -4648,7 +4743,7 @@
   local.get $0
   call $~lib/rt/pure/__retain
   drop
-  i32.const 4168
+  i32.const 4112
   call $~lib/rt/pure/__retain
   drop
   local.get $0
@@ -4656,42 +4751,42 @@
   drop
   local.get $0
   call $~lib/rt/pure/__release
-  i32.const 4168
-  i32.const 4168
+  i32.const 4112
+  i32.const 4112
   call $~lib/string/String.__eq
   if (result i64)
    i64.const 2113574
   else
-   i32.const 4168
-   i32.const 4192
+   i32.const 4112
+   i32.const 4136
    call $~lib/string/String.__eq
    if (result i64)
     i64.const 2098278
    else
-    i32.const 4168
-    i32.const 4216
+    i32.const 4112
+    i32.const 4160
     call $~lib/string/String.__eq
     if (result i64)
      i32.const 9
      local.set $1
      i64.const 2098276
     else
-     i32.const 4168
-     i32.const 4240
+     i32.const 4112
+     i32.const 4184
      call $~lib/string/String.__eq
      if (result i64)
       i32.const 13
       local.set $1
       i64.const 2098276
      else
-      i32.const 4168
-      i32.const 4264
+      i32.const 4112
+      i32.const 4208
       call $~lib/string/String.__eq
       if (result i32)
        i32.const 9
       else
-       i32.const 4168
-       i32.const 4288
+       i32.const 4112
+       i32.const 4232
        call $~lib/string/String.__eq
        i32.eqz
        if
@@ -4699,7 +4794,7 @@
         call $~lib/rt/pure/__retain
         local.get $0
         call $~lib/rt/pure/__release
-        i32.const 4168
+        i32.const 4112
         call $~lib/rt/pure/__release
         return
        end
@@ -4738,7 +4833,7 @@
    call $~lib/rt/pure/__retain
    local.get $0
    call $~lib/rt/pure/__release
-   i32.const 4168
+   i32.const 4112
    call $~lib/rt/pure/__release
    local.get $2
    call $~lib/rt/pure/__release
@@ -4754,10 +4849,10 @@
   call $~lib/rt/pure/__release
   local.get $0
   call $~lib/rt/pure/__release
-  i32.const 4168
+  i32.const 4112
   call $~lib/rt/pure/__release
  )
- (func $lib/lib/openFrameBufferWindow (; 62 ;) (type $FUNCSIG$i) (result i32)
+ (func $lib/lib/openFrameBufferWindow (; 64 ;) (type $FUNCSIG$i) (result i32)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -4769,20 +4864,20 @@
   (local $8 i32)
   (local $9 i32)
   (local $10 i32)
-  i32.const 4128
+  i32.const 4072
   i32.const 0
   call $~lib/util/number/itoa32
   local.tee $0
   call $~lib/string/String.__concat
   local.tee $1
   call $node_modules/as-wasi/assembly/as-wasi/FileSystem.open
-  i32.const 4312
+  i32.const 4256
   i32.const 0
   call $~lib/util/number/itoa32
   local.tee $3
   call $~lib/string/String.__concat
   local.tee $4
-  i32.const 4384
+  i32.const 4328
   call $~lib/string/String.__concat
   local.tee $5
   call $node_modules/as-wasi/assembly/as-wasi/FileSystem.open
@@ -4790,7 +4885,7 @@
   i32.const 160
   call $~lib/util/number/itoa32
   local.tee $7
-  i32.const 4432
+  i32.const 4376
   call $~lib/string/String.__concat
   local.tee $8
   i32.const 144
@@ -4821,7 +4916,7 @@
   local.get $10
   call $~lib/rt/pure/__release
  )
- (func $~lib/arraybuffer/ArrayBufferView#constructor (; 63 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/arraybuffer/ArrayBufferView#constructor (; 65 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   i32.const 0
@@ -4871,7 +4966,7 @@
   i32.store offset=8
   local.get $0
  )
- (func $~lib/array/ensureSize (; 64 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/array/ensureSize (; 66 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -4886,7 +4981,7 @@
    i32.gt_u
    if
     i32.const 448
-    i32.const 4456
+    i32.const 4400
     i32.const 14
     i32.const 47
     call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
@@ -4921,7 +5016,7 @@
    i32.store offset=8
   end
  )
- (func $~lib/array/Array<u8>#__set (; 65 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $~lib/array/Array<u8>#__set (; 67 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   local.get $1
   local.get $0
@@ -4933,7 +5028,7 @@
    i32.lt_s
    if
     i32.const 168
-    i32.const 4456
+    i32.const 4400
     i32.const 109
     i32.const 21
     call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
@@ -4956,7 +5051,450 @@
   local.get $2
   i32.store8
  )
- (func $~lib/bindings/wasi_unstable/subscription#constructor (; 66 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $node_modules/as-wasi/assembly/as-wasi/Descriptor#seek (; 68 ;) (type $FUNCSIG$vi) (param $0 i32)
+  (local $1 i32)
+  i32.const 8
+  call $~lib/arraybuffer/ArrayBuffer#constructor
+  local.set $1
+  local.get $0
+  i32.load
+  i64.const 0
+  i32.const 2
+  local.get $1
+  call $~lib/bindings/wasi_unstable/fd_seek
+  drop
+  local.get $1
+  call $~lib/rt/pure/__release
+ )
+ (func $~lib/array/Array<u8>#__unchecked_get (; 69 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+  local.get $1
+  local.get $0
+  i32.load offset=4
+  i32.add
+  i32.load8_u
+ )
+ (func $node_modules/as-wasi/assembly/as-wasi/Descriptor#write (; 70 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+  (local $2 i32)
+  (local $3 i32)
+  (local $4 i32)
+  (local $5 i32)
+  local.get $1
+  call $~lib/rt/pure/__retain
+  drop
+  local.get $1
+  i32.load offset=12
+  local.tee $3
+  call $~lib/arraybuffer/ArrayBuffer#constructor
+  local.tee $5
+  local.set $4
+  loop $loop|0
+   local.get $2
+   local.get $3
+   i32.lt_s
+   if
+    local.get $2
+    local.get $4
+    i32.add
+    local.get $1
+    local.get $2
+    call $~lib/array/Array<u8>#__unchecked_get
+    i32.store8
+    local.get $2
+    i32.const 1
+    i32.add
+    local.set $2
+    br $loop|0
+   end
+  end
+  i32.const 8
+  call $~lib/arraybuffer/ArrayBuffer#constructor
+  local.tee $2
+  local.get $4
+  i32.store
+  local.get $2
+  i32.const 4
+  i32.add
+  local.get $3
+  i32.store
+  i32.const 4
+  call $~lib/arraybuffer/ArrayBuffer#constructor
+  local.set $3
+  local.get $0
+  i32.load
+  local.get $2
+  i32.const 1
+  local.get $3
+  call $~lib/bindings/wasi_unstable/fd_write
+  drop
+  local.get $5
+  call $~lib/rt/pure/__release
+  local.get $2
+  call $~lib/rt/pure/__release
+  local.get $3
+  call $~lib/rt/pure/__release
+  local.get $1
+  call $~lib/rt/pure/__release
+ )
+ (func $lib/lib/drawRgbaArrayToFrameBuffer (; 71 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+  (local $2 i32)
+  (local $3 i32)
+  (local $4 i32)
+  (local $5 i32)
+  (local $6 i32)
+  local.get $0
+  call $~lib/rt/pure/__retain
+  drop
+  local.get $1
+  call $~lib/rt/pure/__retain
+  drop
+  local.get $1
+  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#seek
+  local.get $1
+  local.get $0
+  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#write
+  i32.const 4256
+  i32.const 0
+  call $~lib/util/number/itoa32
+  local.tee $3
+  call $~lib/string/String.__concat
+  local.tee $4
+  i32.const 4448
+  call $~lib/string/String.__concat
+  local.tee $5
+  call $node_modules/as-wasi/assembly/as-wasi/FileSystem.open
+  local.tee $2
+  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#seek
+  local.get $2
+  i32.const 0
+  call $~lib/util/number/itoa32
+  local.tee $6
+  i32.const 0
+  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#writeString
+  local.get $3
+  call $~lib/rt/pure/__release
+  local.get $4
+  call $~lib/rt/pure/__release
+  local.get $5
+  call $~lib/rt/pure/__release
+  local.get $2
+  call $~lib/rt/pure/__release
+  local.get $6
+  call $~lib/rt/pure/__release
+  local.get $0
+  call $~lib/rt/pure/__release
+  local.get $1
+  call $~lib/rt/pure/__release
+ )
+ (func $~lib/array/Array<u8>#push (; 72 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+  (local $2 i32)
+  (local $3 i32)
+  local.get $0
+  local.get $0
+  i32.load offset=12
+  local.tee $2
+  i32.const 1
+  i32.add
+  local.tee $3
+  call $~lib/array/ensureSize
+  local.get $0
+  i32.load offset=4
+  local.get $2
+  i32.add
+  local.get $1
+  i32.store8
+  local.get $0
+  local.get $3
+  i32.store offset=12
+ )
+ (func $node_modules/as-wasi/assembly/as-wasi/Descriptor#readAll (; 73 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+  (local $2 i32)
+  (local $3 i32)
+  (local $4 i32)
+  (local $5 i32)
+  (local $6 i32)
+  (local $7 i32)
+  (local $8 i32)
+  (local $9 i32)
+  local.get $1
+  call $~lib/rt/pure/__retain
+  drop
+  i32.const 4096
+  call $~lib/arraybuffer/ArrayBuffer#constructor
+  local.tee $4
+  local.set $8
+  i32.const 8
+  call $~lib/arraybuffer/ArrayBuffer#constructor
+  local.tee $2
+  local.set $9
+  local.get $2
+  local.get $4
+  i32.store
+  local.get $2
+  i32.const 4
+  i32.add
+  i32.const 4096
+  i32.store
+  i32.const 4
+  call $~lib/arraybuffer/ArrayBuffer#constructor
+  local.tee $5
+  local.set $6
+  loop $continue|0
+   block $break|0
+    local.get $0
+    i32.load
+    local.get $9
+    i32.const 1
+    local.get $6
+    call $~lib/bindings/wasi_unstable/fd_read
+    i32.const 65535
+    i32.and
+    br_if $break|0
+    local.get $6
+    i32.load
+    local.tee $7
+    i32.const 0
+    i32.le_u
+    br_if $break|0
+    i32.const 0
+    local.set $3
+    loop $loop|1
+     local.get $3
+     local.get $7
+     i32.lt_u
+     if
+      local.get $1
+      local.get $3
+      local.get $8
+      i32.add
+      i32.load8_u
+      call $~lib/array/Array<u8>#push
+      local.get $3
+      i32.const 1
+      i32.add
+      local.set $3
+      br $loop|1
+     end
+    end
+    br $continue|0
+   end
+  end
+  local.get $7
+  i32.const 0
+  i32.lt_u
+  if
+   i32.const 0
+   call $~lib/rt/pure/__retain
+   local.get $1
+   call $~lib/rt/pure/__release
+   local.get $4
+   call $~lib/rt/pure/__release
+   local.get $2
+   call $~lib/rt/pure/__release
+   local.get $5
+   call $~lib/rt/pure/__release
+   return
+  end
+  local.get $4
+  call $~lib/rt/pure/__release
+  local.get $2
+  call $~lib/rt/pure/__release
+  local.get $5
+  call $~lib/rt/pure/__release
+  local.get $1
+ )
+ (func $~lib/rt/__allocArray (; 74 ;) (type $FUNCSIG$i) (result i32)
+  (local $0 i32)
+  (local $1 i32)
+  i32.const 16
+  i32.const 6
+  call $~lib/rt/tlsf/__alloc
+  local.tee $0
+  i32.const 0
+  i32.const 0
+  call $~lib/rt/tlsf/__alloc
+  local.tee $1
+  call $~lib/rt/pure/__retain
+  i32.store
+  local.get $0
+  local.get $1
+  i32.store offset=4
+  local.get $0
+  i32.const 0
+  i32.store offset=8
+  local.get $0
+  i32.const 0
+  i32.store offset=12
+  local.get $1
+  i32.const 4552
+  i32.const 0
+  call $~lib/memory/memory.copy
+  local.get $0
+ )
+ (func $~lib/array/Array<u8>#__get (; 75 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+  local.get $1
+  local.get $0
+  i32.load offset=12
+  i32.ge_u
+  if
+   i32.const 168
+   i32.const 4400
+   i32.const 93
+   i32.const 41
+   call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+   unreachable
+  end
+  local.get $0
+  local.get $1
+  call $~lib/array/Array<u8>#__unchecked_get
+ )
+ (func $~lib/map/Map<i32,~lib/string/String>#get (; 76 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+  local.get $0
+  local.get $1
+  local.get $1
+  call $~lib/util/hash/hash32
+  call $~lib/map/Map<i32,~lib/string/String>#find
+  local.tee $0
+  i32.eqz
+  if
+   i32.const 4632
+   i32.const 4688
+   i32.const 111
+   i32.const 16
+   call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+   unreachable
+  end
+  local.get $0
+  i32.load offset=4
+  call $~lib/rt/pure/__retain
+ )
+ (func $lib/input-map/getKeyFromByte (; 77 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+  (local $1 i32)
+  (local $2 i32)
+  (local $3 i32)
+  i32.const 4568
+  local.get $0
+  call $~lib/util/number/itoa32
+  local.tee $2
+  call $~lib/string/String.__concat
+  local.tee $1
+  call $~lib/rt/pure/__retain
+  drop
+  local.get $1
+  call $~lib/rt/pure/__retain
+  drop
+  i32.const 1
+  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#constructor
+  local.tee $3
+  local.get $1
+  i32.const 1
+  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#writeString
+  local.get $3
+  call $~lib/rt/pure/__release
+  local.get $1
+  call $~lib/rt/pure/__release
+  local.get $1
+  call $~lib/rt/pure/__release
+  global.get $lib/input-map/byteToInputKeyMap
+  local.get $0
+  local.get $0
+  call $~lib/util/hash/hash32
+  call $~lib/map/Map<i32,~lib/string/String>#find
+  if
+   global.get $lib/input-map/byteToInputKeyMap
+   local.get $0
+   call $~lib/map/Map<i32,~lib/string/String>#get
+   local.get $2
+   call $~lib/rt/pure/__release
+   local.get $1
+   call $~lib/rt/pure/__release
+   return
+  end
+  i32.const 0
+  call $~lib/rt/pure/__retain
+  local.get $2
+  call $~lib/rt/pure/__release
+  local.get $1
+  call $~lib/rt/pure/__release
+ )
+ (func $~lib/string/String.__ne (; 78 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+  (local $1 i32)
+  local.get $0
+  call $~lib/rt/pure/__retain
+  drop
+  i32.const 0
+  call $~lib/rt/pure/__retain
+  drop
+  local.get $0
+  i32.const 0
+  call $~lib/string/String.__eq
+  i32.eqz
+  local.get $0
+  call $~lib/rt/pure/__release
+  i32.const 0
+  call $~lib/rt/pure/__release
+ )
+ (func $lib/lib/updateInput (; 79 ;) (type $FUNCSIG$v)
+  (local $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  (local $3 i32)
+  (local $4 i32)
+  (local $5 i32)
+  i32.const 4512
+  call $node_modules/as-wasi/assembly/as-wasi/FileSystem.open
+  local.tee $4
+  call $~lib/rt/__allocArray
+  call $~lib/rt/pure/__retain
+  local.tee $5
+  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#readAll
+  local.tee $0
+  if
+   call $lib/input-map/resetKeyboardState
+   loop $loop|0
+    local.get $1
+    local.get $0
+    i32.load offset=12
+    i32.lt_s
+    if
+     local.get $0
+     local.get $1
+     call $~lib/array/Array<u8>#__get
+     call $lib/input-map/getKeyFromByte
+     local.tee $3
+     call $~lib/string/String.__ne
+     if
+      local.get $3
+      call $~lib/rt/pure/__retain
+      local.tee $2
+      call $~lib/rt/pure/__retain
+      drop
+      global.get $lib/input-map/keyboardStateMap
+      local.get $2
+      i32.const 1
+      call $~lib/map/Map<~lib/string/String,bool>#set
+      local.get $2
+      call $~lib/rt/pure/__release
+      local.get $2
+      call $~lib/rt/pure/__release
+     end
+     local.get $3
+     call $~lib/rt/pure/__release
+     local.get $1
+     i32.const 1
+     i32.add
+     local.set $1
+     br $loop|0
+    end
+   end
+  end
+  local.get $4
+  call $~lib/rt/pure/__release
+  local.get $5
+  call $~lib/rt/pure/__release
+  local.get $0
+  call $~lib/rt/pure/__release
+ )
+ (func $~lib/bindings/wasi_unstable/subscription#constructor (; 80 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   local.get $0
   i32.eqz
   if
@@ -4976,7 +5514,7 @@
   i32.store offset=12
   local.get $0
  )
- (func $~lib/bindings/wasi_unstable/clocksubscription#constructor (; 67 ;) (type $FUNCSIG$i) (result i32)
+ (func $~lib/bindings/wasi_unstable/clocksubscription#constructor (; 81 ;) (type $FUNCSIG$i) (result i32)
   (local $0 i32)
   i32.const 56
   i32.const 0
@@ -5002,7 +5540,7 @@
   i32.store offset=52
   local.get $0
  )
- (func $~lib/bindings/wasi_unstable/event#constructor (; 68 ;) (type $FUNCSIG$i) (result i32)
+ (func $~lib/bindings/wasi_unstable/event#constructor (; 82 ;) (type $FUNCSIG$i) (result i32)
   (local $0 i32)
   i32.const 14
   i32.const 0
@@ -5021,25 +5559,54 @@
   i32.store16 offset=12
   local.get $0
  )
- (func $debug-example/index/_start (; 69 ;) (type $FUNCSIG$v)
+ (func $debug-example/index/sleep (; 83 ;) (type $FUNCSIG$v)
+  (local $0 i32)
+  call $~lib/bindings/wasi_unstable/clocksubscription#constructor
+  local.tee $0
+  i64.const 24
+  i64.store
+  local.get $0
+  i64.const 25
+  i64.store offset=16
+  local.get $0
+  i32.const 0
+  i32.store offset=24
+  local.get $0
+  i64.const 1000000000
+  i64.store offset=32
+  local.get $0
+  i64.const 10000
+  i64.store offset=40
+  local.get $0
+  i32.const 0
+  i32.store8 offset=8
+  local.get $0
+  call $~lib/bindings/wasi_unstable/event#constructor
+  i32.const 1
+  i32.const 4
+  i32.const 0
+  call $~lib/rt/tlsf/__alloc
+  call $~lib/bindings/wasi_unstable/poll_oneoff
+  drop
+ )
+ (func $debug-example/index/_start (; 84 ;) (type $FUNCSIG$v)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
-  i32.const 4072
-  call $node_modules/as-wasi/assembly/as-wasi/Console.log
   call $lib/lib/openFrameBufferWindow
+  local.set $4
   i32.const 16
   i32.const 6
   call $~lib/rt/tlsf/__alloc
   call $~lib/rt/pure/__retain
   call $~lib/arraybuffer/ArrayBufferView#constructor
-  local.tee $1
+  local.tee $0
   i32.const 0
   i32.store offset=12
-  local.get $1
+  local.get $0
   i32.const 0
   i32.store offset=12
   loop $loop|0
@@ -5052,14 +5619,14 @@
     i32.mul
     local.set $5
     i32.const 0
-    local.set $0
+    local.set $1
     loop $loop|1
-     local.get $0
+     local.get $1
      i32.const 160
      i32.lt_s
      if
-      local.get $1
       local.get $0
+      local.get $1
       i32.const 2
       i32.shl
       local.get $5
@@ -5067,28 +5634,28 @@
       local.tee $3
       i32.const 2
       i32.add
-      local.get $0
-      call $~lib/array/Array<u8>#__set
       local.get $1
+      call $~lib/array/Array<u8>#__set
+      local.get $0
       local.get $3
       i32.const 1
       i32.add
       local.get $2
       call $~lib/array/Array<u8>#__set
-      local.get $1
-      local.get $3
       local.get $0
-      call $~lib/array/Array<u8>#__set
+      local.get $3
       local.get $1
+      call $~lib/array/Array<u8>#__set
+      local.get $0
       local.get $3
       i32.const 3
       i32.add
       i32.const 255
       call $~lib/array/Array<u8>#__set
-      local.get $0
+      local.get $1
       i32.const 1
       i32.add
-      local.set $0
+      local.set $1
       br $loop|1
      end
     end
@@ -5099,47 +5666,22 @@
     br $loop|0
    end
   end
-  call $~lib/bindings/wasi_unstable/clocksubscription#constructor
-  local.tee $0
-  i64.const 24
-  i64.store
-  local.get $0
-  i64.const 25
-  i64.store offset=16
-  local.get $0
-  i32.const 0
-  i32.store offset=24
-  local.get $0
-  i64.const 1600000000
-  i64.store offset=32
-  local.get $0
-  i64.const 160000
-  i64.store offset=40
-  local.get $0
-  i32.const 0
-  i32.store8 offset=8
-  local.get $0
-  call $~lib/bindings/wasi_unstable/event#constructor
-  i32.const 1
-  i32.const 4
-  call $~lib/arraybuffer/ArrayBuffer#constructor
-  local.tee $0
-  call $~lib/bindings/wasi_unstable/poll_oneoff
-  drop
-  i32.const 4504
-  call $node_modules/as-wasi/assembly/as-wasi/Console.log
-  call $~lib/rt/pure/__release
-  local.get $1
-  call $~lib/rt/pure/__release
-  local.get $0
-  call $~lib/rt/pure/__release
+  loop $continue|2
+   local.get $0
+   local.get $4
+   call $lib/lib/drawRgbaArrayToFrameBuffer
+   call $lib/lib/updateInput
+   call $debug-example/index/sleep
+   br $continue|2
+  end
+  unreachable
  )
- (func $start (; 70 ;) (type $FUNCSIG$v)
+ (func $start (; 85 ;) (type $FUNCSIG$v)
   call $start:lib/input-map
  )
- (func $~lib/rt/pure/__visit (; 71 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/rt/pure/__visit (; 86 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   local.get $0
-  i32.const 4580
+  i32.const 4780
   i32.lt_u
   if
    return
@@ -5247,7 +5789,7 @@
    unreachable
   end
  )
- (func $~lib/map/Map<i32,~lib/string/String>#__visit_impl (; 72 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/map/Map<i32,~lib/string/String>#__visit_impl (; 87 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   local.get $0
@@ -5291,7 +5833,7 @@
   local.get $1
   call $~lib/rt/pure/__visit
  )
- (func $~lib/map/Map<~lib/string/String,bool>#__visit_impl (; 73 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/map/Map<~lib/string/String,bool>#__visit_impl (; 88 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   local.get $0
@@ -5335,7 +5877,7 @@
   local.get $1
   call $~lib/rt/pure/__visit
  )
- (func $~lib/rt/__visit_members (; 74 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/rt/__visit_members (; 89 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   block $block$4$break
    block $switch$1$default
     block $switch$1$case$7
@@ -5345,7 +5887,7 @@
        i32.const 8
        i32.sub
        i32.load
-       br_table $switch$1$case$2 $switch$1$case$2 $block$4$break $switch$1$case$2 $switch$1$case$6 $switch$1$case$7 $block$4$break $switch$1$default
+       br_table $switch$1$case$2 $switch$1$case$2 $block$4$break $switch$1$case$2 $switch$1$case$6 $switch$1$case$7 $block$4$break $block$4$break $switch$1$default
       end
       return
      end
@@ -5370,7 +5912,7 @@
    call $~lib/rt/pure/__visit
   end
  )
- (func $null (; 75 ;) (type $FUNCSIG$v)
+ (func $null (; 90 ;) (type $FUNCSIG$v)
   nop
  )
 )

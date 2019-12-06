@@ -46,10 +46,11 @@ export function updateInput(): void {
   if (data != null) {
     resetKeyboardState();
     for (let i = 0; i < data.length; i++) {
-      Console.log(data[i].toString());
-      let key: string = getKeyFromByte(data[i]);
-      console.log(key);
-      setKeyOnKeyboardState(key, true);
+      let response: string | null = getKeyFromByte(data[i]);
+      if (response != null) {
+        let key: string = response as string;
+        setKeyOnKeyboardState(key);
+      }
     }
   }
 }

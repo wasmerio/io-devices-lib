@@ -6,19 +6,35 @@ import {clocksubscription, eventtype, clockid, poll_oneoff, event} from "binding
 
 import {openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToFrameBuffer, updateInput} from "../lib/lib";
 
-function sleep(sleepTicks: f64): void {
-  let lastTime: f64 = Date.now();
+function sleep(milliseconds: i32): void {
+  // Create our subscription loop
+  let clockSub = new clocksubscription();
+  clockSub.userdata = 24;
+  clockSub.identifier = 25;
+  clockSub.clock_id = clockid.REALTIME;
+  // Time is in nanoseconds (* 1000000 for milliseconds)
+  clockSub.timeout = milliseconds * 1000000;
+  clockSub.precision = 10000;
+  clockSub.type = eventtype.CLOCK;
+  // We want this to be relative, no flags / subclockflag
 
-  let shouldLoop: boolean = true;
+  // create our output event?
+  let clockEvent = new event();
 
-  while (shouldLoop) {
-    let currentTime: f64 = Date.now();
+    // Number of events
+  // To inspect how many events happened, one would then do load<i32>(neventsBuffer)
+  let neventsBuffer = __alloc(4, 0);
 
-    // See if it is time to update
-    if (abs(lastTime - currentTime) > sleepTicks) {
-      shouldLoop = false;
-    }
-  }
+  // Poll the subscription
+  poll_oneoff(
+    changetype<usize>(clockSub),
+    changetype<usize>(clockEvent),
+    1,
+    changetype<usize>(neventsBuffer)
+  );
+
+  // TODO: This does not work?
+  // __free(neventsBuffer);
 }
 
 function update(): void {
@@ -51,8 +67,6 @@ function update(): void {
 // Entry point into WASI Module
 export function _start(): void {
 
-  Console.log("Wasmer Io Devices!");
-
   // Open a framebuffer
   let width: i32 = 160;
   let height: i32 = 144;
@@ -78,42 +92,11 @@ export function _start(): void {
     }
   }
 
-  // Create our subscription loop
-  let clockSub = new clocksubscription();
-  clockSub.userdata = 24;
-  clockSub.identifier = 25;
-  clockSub.clock_id = clockid.REALTIME;
-  // Time is in nanoseconds (16 seconds)
-  clockSub.timeout = 1600000000;
-  clockSub.precision = 160000;
-  clockSub.type = eventtype.CLOCK;
-  // We want this to be relative, no flags / subclockflag
-
-  // create our output event?
-  let clockEvent = new event();
-
-  // Number of events
-  // To inspect how many events happened, one would then do load<i32>(neventsBuffer)
-  let neventsBuffer = new ArrayBuffer(4);
-
-  // Poll the subscription
-  poll_oneoff(
-    changetype<usize>(clockSub),
-    changetype<usize>(clockEvent),
-    1,
-    changetype<usize>(neventsBuffer)
-  );
-
-  // Log here
-  Console.log('Yoooo');
-
-  // Use AssemblyScripts Clock Subscription, and poll_oneoff to loop.
-  /*
+  // Create a loop to subscribe to call events
   while(true) {
     drawRgbaArrayToFrameBuffer(frame, frameBuffer, 0);
     updateInput();
-    sleep(6.0);
+    sleep(1000);
   }
-   */
 }
 
