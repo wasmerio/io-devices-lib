@@ -1,8 +1,8 @@
 
 import {CommandLine, FileSystem, Descriptor, Date, Console} from "../node_modules/as-wasi/assembly/index";
 
-// TODO: Turn this into a switch for the byte, and then return a string
-// import {BYTE_TO_INPUT_KEY, IO_DEVICES_INPUT} from './input-map';
+import {getKeyFromByte, resetKeyboardState, setKeyOnKeyboardState} from './input-map';
+export {getKeyboardState} from './input-map';
 
 // TODO: In current (December 3rd, 2019) verisons of as-wasi, the Current working directory (dirfd) defaults to: "/"
 
@@ -44,8 +44,12 @@ export function updateInput(): void {
   let data: u8[] | null = devInput.readAll();
   
   if (data != null) {
+    resetKeyboardState();
     for (let i = 0; i < data.length; i++) {
       Console.log(data[i].toString());
+      let key: string = getKeyFromByte(data[i]);
+      console.log(key);
+      setKeyOnKeyboardState(key, true);
     }
   }
 }
