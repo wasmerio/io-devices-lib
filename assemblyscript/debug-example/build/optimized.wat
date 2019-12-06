@@ -5121,13 +5121,17 @@
   local.get $0
   call $~lib/bindings/wasi_unstable/event#constructor
   i32.const 1
-  i32.const 1
+  i32.const 4
+  call $~lib/arraybuffer/ArrayBuffer#constructor
+  local.tee $0
   call $~lib/bindings/wasi_unstable/poll_oneoff
   drop
   i32.const 4504
   call $node_modules/as-wasi/assembly/as-wasi/Console.log
   call $~lib/rt/pure/__release
   local.get $1
+  call $~lib/rt/pure/__release
+  local.get $0
   call $~lib/rt/pure/__release
  )
  (func $start (; 70 ;) (type $FUNCSIG$v)

@@ -7594,7 +7594,9 @@
   i32.const 0
   call $~lib/bindings/wasi_unstable/event#constructor
   local.set $6
-  i32.const 1
+  i32.const 0
+  i32.const 4
+  call $~lib/arraybuffer/ArrayBuffer#constructor
   local.set $5
   local.get $4
   local.get $6
@@ -7607,6 +7609,8 @@
   local.get $2
   call $~lib/rt/pure/__release
   local.get $3
+  call $~lib/rt/pure/__release
+  local.get $5
   call $~lib/rt/pure/__release
  )
  (func $start (; 85 ;) (type $FUNCSIG$v)

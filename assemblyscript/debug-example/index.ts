@@ -93,14 +93,15 @@ export function _start(): void {
   let clockEvent = new event();
 
   // Number of events
-  let nevents: usize = 1;
+  // To inspect how many events happened, one would then do load<i32>(neventsBuffer)
+  let neventsBuffer = new ArrayBuffer(4);
 
   // Poll the subscription
   poll_oneoff(
-    <usize>(clockSub),
-    <usize>(clockEvent),
+    changetype<usize>(clockSub),
+    changetype<usize>(clockEvent),
     1,
-    <usize>(nevents)
+    changetype<usize>(neventsBuffer)
   );
 
   // Log here
