@@ -2,6 +2,45 @@
 // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
 // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code/code_values
 
+/**
+ * Input Event Bytes to meaning:
+ *    data[0] is the type of event
+ * If the event is a "press" Event:
+ *   data[1] is the byte for the key
+ * If the event is a "move" Event:
+ *   data[1,2,3,4] is mouse x (32bits);
+ *   data[5,6,7,8] is mouse y (32bits);
+ */
+export namespace InputEventType {
+  // @ts-ignore: decorator
+  @inline
+  export const KEY_PRESS: u8 = 0;
+  // @ts-ignore: decorator
+  @inline
+  export const MOUSE_MOVE: u8 = 1;
+  // @ts-ignore: decorator
+  @inline
+  export const MOUSE_PRESS_LEFT: u8 = 4;
+  // @ts-ignore: decorator
+  @inline
+  export const MOUSE_PRESS_RIGHT: u8 = 5;
+  // @ts-ignore: decorator
+  @inline
+  export const MOUSE_PRESS_MIDDLE: u8 = 7;
+}
+
+// Create our Mouse States
+let mousePosition: Array<i32> = new Array<i32>();
+mousePosition[0] = 0;
+mousePosition[1] = 0;
+let mouseClickMap: Map<string, bool> = new Map<string, bool>();
+export function resetMouseClickState(): void {
+  mouseClickMap.set('Left', false);
+  mouseClickMap.set('Right', false);
+  mouseClickMap.set('Middle', false);
+}
+resetMouseClickState();
+
 // Create our Byte to Input Key map
 let byteToInputKeyMap: Map<i32, string> = new Map<i32, string>();
 byteToInputKeyMap.set(0, 'Key0');
@@ -122,116 +161,135 @@ byteToInputKeyMap.set(188, 'KeyLeftSuper');
 byteToInputKeyMap.set(189, 'KeyRightSuper');
 
 // create our keyboard state map
-let keyboardStateMap: Map<string, bool> = new Map<string, bool>();
-export function resetKeyboardState(): void {
-  keyboardStateMap.set('Key0', false);
-  keyboardStateMap.set('Key1', false);
-  keyboardStateMap.set('Key2', false);
-  keyboardStateMap.set('Key3', false);
-  keyboardStateMap.set('Key4', false);
-  keyboardStateMap.set('Key5', false);
-  keyboardStateMap.set('Key6', false);
-  keyboardStateMap.set('Key7', false);
-  keyboardStateMap.set('Key8', false);
-  keyboardStateMap.set('Key9', false);
-  keyboardStateMap.set('KeyA', false);
-  keyboardStateMap.set('KeyB', false);
-  keyboardStateMap.set('KeyC', false);
-  keyboardStateMap.set('KeyD', false);
-  keyboardStateMap.set('KeyE', false);
-  keyboardStateMap.set('KeyF', false);
-  keyboardStateMap.set('KeyG', false);
-  keyboardStateMap.set('KeyH', false);
-  keyboardStateMap.set('KeyI', false);
-  keyboardStateMap.set('KeyJ', false);
-  keyboardStateMap.set('KeyK', false);
-  keyboardStateMap.set('KeyL', false);
-  keyboardStateMap.set('KeyM', false);
-  keyboardStateMap.set('KeyN', false);
-  keyboardStateMap.set('KeyO', false);
-  keyboardStateMap.set('KeyP', false);
-  keyboardStateMap.set('KeyQ', false);
-  keyboardStateMap.set('KeyR', false);
-  keyboardStateMap.set('KeyS', false);
-  keyboardStateMap.set('KeyT', false);
-  keyboardStateMap.set('KeyU', false);
-  keyboardStateMap.set('KeyV', false);
-  keyboardStateMap.set('KeyW', false);
-  keyboardStateMap.set('KeyX', false);
-  keyboardStateMap.set('KeyY', false);
-  keyboardStateMap.set('KeyZ', false);
-  keyboardStateMap.set('KeyF1', false);
-  keyboardStateMap.set('KeyF2', false);
-  keyboardStateMap.set('KeyF3', false);
-  keyboardStateMap.set('KeyF4', false);
-  keyboardStateMap.set('KeyF5', false);
-  keyboardStateMap.set('KeyF6', false);
-  keyboardStateMap.set('KeyF7', false);
-  keyboardStateMap.set('KeyF8', false);
-  keyboardStateMap.set('KeyF9', false);
-  keyboardStateMap.set('KeyF10', false);
-  keyboardStateMap.set('KeyF11', false);
-  keyboardStateMap.set('KeyF12', false);
-  keyboardStateMap.set('KeyF13', false);
-  keyboardStateMap.set('KeyF14', false);
-  keyboardStateMap.set('KeyF15', false);
-  keyboardStateMap.set('KeyDown', false);
-  keyboardStateMap.set('KeyLeft', false);
-  keyboardStateMap.set('KeyRight', false);
-  keyboardStateMap.set('KeyUp', false);
-  keyboardStateMap.set('KeyApostrophe', false);
-  keyboardStateMap.set('KeyBackquote', false);
-  keyboardStateMap.set('KeyBackslash', false);
-  keyboardStateMap.set('KeyComma', false);
-  keyboardStateMap.set('KeyEqual', false);
-  keyboardStateMap.set('KeyLeftBracket', false);
-  keyboardStateMap.set('KeyMinus', false);
-  keyboardStateMap.set('KeyPeriod', false);
-  keyboardStateMap.set('KeyRightBracket', false);
-  keyboardStateMap.set('KeySemicolon', false);
-  keyboardStateMap.set('KeySlash', false);
-  keyboardStateMap.set('KeyBackspace', false);
-  keyboardStateMap.set('KeyDelete', false);
-  keyboardStateMap.set('KeyEnd', false);
-  keyboardStateMap.set('KeyEnter', false);
-  keyboardStateMap.set('KeyEscape', false);
-  keyboardStateMap.set('KeyHome', false);
-  keyboardStateMap.set('KeyInsert', false);
-  keyboardStateMap.set('KeyMenu', false);
-  keyboardStateMap.set('KeyPageDown', false);
-  keyboardStateMap.set('KeyPageUp', false);
-  keyboardStateMap.set('KeyPause', false);
-  keyboardStateMap.set('KeySpace', false);
-  keyboardStateMap.set('KeyTab', false);
-  keyboardStateMap.set('KeyNumLock', false);
-  keyboardStateMap.set('KeyCapsLock', false);
-  keyboardStateMap.set('KeyScrollLock', false);
-  keyboardStateMap.set('KeyLeftShift', false);
-  keyboardStateMap.set('KeyRightShift', false);
-  keyboardStateMap.set('KeyLeftCtrl', false);
-  keyboardStateMap.set('KeyRightCtrl', false);
-  keyboardStateMap.set('KeyNumPad0', false);
-  keyboardStateMap.set('KeyNumPad1', false);
-  keyboardStateMap.set('KeyNumPad2', false);
-  keyboardStateMap.set('KeyNumPad3', false);
-  keyboardStateMap.set('KeyNumPad4', false);
-  keyboardStateMap.set('KeyNumPad5', false);
-  keyboardStateMap.set('KeyNumPad6', false);
-  keyboardStateMap.set('KeyNumPad7', false);
-  keyboardStateMap.set('KeyNumPad8', false);
-  keyboardStateMap.set('KeyNumPad9', false);
-  keyboardStateMap.set('KeyNumPadDot', false);
-  keyboardStateMap.set('KeyNumPadSlash', false);
-  keyboardStateMap.set('KeyNumPadAsterisk', false);
-  keyboardStateMap.set('KeyNumPadMinus', false);
-  keyboardStateMap.set('KeyNumPadPlus', false);
-  keyboardStateMap.set('KeyNumPadEnter', false);
-  keyboardStateMap.set('KeyLeftAlt', false);
-  keyboardStateMap.set('KeyRightAlt', false);
-  keyboardStateMap.set('KeyLeftSuper', false);
-  keyboardStateMap.set('KeyRightSuper', false);
+let keyPressStateMap: Map<string, bool> = new Map<string, bool>();
+export function resetKeyPressState(): void {
+  keyPressStateMap.set('Key0', false);
+  keyPressStateMap.set('Key1', false);
+  keyPressStateMap.set('Key2', false);
+  keyPressStateMap.set('Key3', false);
+  keyPressStateMap.set('Key4', false);
+  keyPressStateMap.set('Key5', false);
+  keyPressStateMap.set('Key6', false);
+  keyPressStateMap.set('Key7', false);
+  keyPressStateMap.set('Key8', false);
+  keyPressStateMap.set('Key9', false);
+  keyPressStateMap.set('KeyA', false);
+  keyPressStateMap.set('KeyB', false);
+  keyPressStateMap.set('KeyC', false);
+  keyPressStateMap.set('KeyD', false);
+  keyPressStateMap.set('KeyE', false);
+  keyPressStateMap.set('KeyF', false);
+  keyPressStateMap.set('KeyG', false);
+  keyPressStateMap.set('KeyH', false);
+  keyPressStateMap.set('KeyI', false);
+  keyPressStateMap.set('KeyJ', false);
+  keyPressStateMap.set('KeyK', false);
+  keyPressStateMap.set('KeyL', false);
+  keyPressStateMap.set('KeyM', false);
+  keyPressStateMap.set('KeyN', false);
+  keyPressStateMap.set('KeyO', false);
+  keyPressStateMap.set('KeyP', false);
+  keyPressStateMap.set('KeyQ', false);
+  keyPressStateMap.set('KeyR', false);
+  keyPressStateMap.set('KeyS', false);
+  keyPressStateMap.set('KeyT', false);
+  keyPressStateMap.set('KeyU', false);
+  keyPressStateMap.set('KeyV', false);
+  keyPressStateMap.set('KeyW', false);
+  keyPressStateMap.set('KeyX', false);
+  keyPressStateMap.set('KeyY', false);
+  keyPressStateMap.set('KeyZ', false);
+  keyPressStateMap.set('KeyF1', false);
+  keyPressStateMap.set('KeyF2', false);
+  keyPressStateMap.set('KeyF3', false);
+  keyPressStateMap.set('KeyF4', false);
+  keyPressStateMap.set('KeyF5', false);
+  keyPressStateMap.set('KeyF6', false);
+  keyPressStateMap.set('KeyF7', false);
+  keyPressStateMap.set('KeyF8', false);
+  keyPressStateMap.set('KeyF9', false);
+  keyPressStateMap.set('KeyF10', false);
+  keyPressStateMap.set('KeyF11', false);
+  keyPressStateMap.set('KeyF12', false);
+  keyPressStateMap.set('KeyF13', false);
+  keyPressStateMap.set('KeyF14', false);
+  keyPressStateMap.set('KeyF15', false);
+  keyPressStateMap.set('KeyDown', false);
+  keyPressStateMap.set('KeyLeft', false);
+  keyPressStateMap.set('KeyRight', false);
+  keyPressStateMap.set('KeyUp', false);
+  keyPressStateMap.set('KeyApostrophe', false);
+  keyPressStateMap.set('KeyBackquote', false);
+  keyPressStateMap.set('KeyBackslash', false);
+  keyPressStateMap.set('KeyComma', false);
+  keyPressStateMap.set('KeyEqual', false);
+  keyPressStateMap.set('KeyLeftBracket', false);
+  keyPressStateMap.set('KeyMinus', false);
+  keyPressStateMap.set('KeyPeriod', false);
+  keyPressStateMap.set('KeyRightBracket', false);
+  keyPressStateMap.set('KeySemicolon', false);
+  keyPressStateMap.set('KeySlash', false);
+  keyPressStateMap.set('KeyBackspace', false);
+  keyPressStateMap.set('KeyDelete', false);
+  keyPressStateMap.set('KeyEnd', false);
+  keyPressStateMap.set('KeyEnter', false);
+  keyPressStateMap.set('KeyEscape', false);
+  keyPressStateMap.set('KeyHome', false);
+  keyPressStateMap.set('KeyInsert', false);
+  keyPressStateMap.set('KeyMenu', false);
+  keyPressStateMap.set('KeyPageDown', false);
+  keyPressStateMap.set('KeyPageUp', false);
+  keyPressStateMap.set('KeyPause', false);
+  keyPressStateMap.set('KeySpace', false);
+  keyPressStateMap.set('KeyTab', false);
+  keyPressStateMap.set('KeyNumLock', false);
+  keyPressStateMap.set('KeyCapsLock', false);
+  keyPressStateMap.set('KeyScrollLock', false);
+  keyPressStateMap.set('KeyLeftShift', false);
+  keyPressStateMap.set('KeyRightShift', false);
+  keyPressStateMap.set('KeyLeftCtrl', false);
+  keyPressStateMap.set('KeyRightCtrl', false);
+  keyPressStateMap.set('KeyNumPad0', false);
+  keyPressStateMap.set('KeyNumPad1', false);
+  keyPressStateMap.set('KeyNumPad2', false);
+  keyPressStateMap.set('KeyNumPad3', false);
+  keyPressStateMap.set('KeyNumPad4', false);
+  keyPressStateMap.set('KeyNumPad5', false);
+  keyPressStateMap.set('KeyNumPad6', false);
+  keyPressStateMap.set('KeyNumPad7', false);
+  keyPressStateMap.set('KeyNumPad8', false);
+  keyPressStateMap.set('KeyNumPad9', false);
+  keyPressStateMap.set('KeyNumPadDot', false);
+  keyPressStateMap.set('KeyNumPadSlash', false);
+  keyPressStateMap.set('KeyNumPadAsterisk', false);
+  keyPressStateMap.set('KeyNumPadMinus', false);
+  keyPressStateMap.set('KeyNumPadPlus', false);
+  keyPressStateMap.set('KeyNumPadEnter', false);
+  keyPressStateMap.set('KeyLeftAlt', false);
+  keyPressStateMap.set('KeyRightAlt', false);
+  keyPressStateMap.set('KeyLeftSuper', false);
+  keyPressStateMap.set('KeyRightSuper', false);
 }
-resetKeyboardState();
+resetKeyPressState();
+
+export function getMousePosition(): Array<i32> {
+  return mousePosition;
+}
+
+export function setMousePosition(x: i32, y: i32): void {
+  Console.log("setMousePosition: " + x.toString() + "," + y.toString());
+  mousePosition[0] = x;
+  mousePosition[1] = y;
+}
+
+export function getMouseClickState(): Map<string, bool> {
+  return mouseClickMap;
+}
+
+export function setClickOnMouseClickState(click: string): void {
+  Console.log("setClickOnMouseClickState: " + click);
+  mouseClickMap.set(click, true);
+}
 
 export function getKeyFromByte(byte: i32): string | null {
   Console.log("getKeyFromByte: " + byte.toString());
@@ -241,11 +299,11 @@ export function getKeyFromByte(byte: i32): string | null {
   return null;
 }
 
-export function getKeyboardState(): Map<string, bool> {
-  return keyboardStateMap;
+export function getKeyPressState(): Map<string, bool> {
+  return keyPressStateMap;
 }
 
-export function setKeyOnKeyboardState(key: string): void {
-  Console.log("setKeyOnKeyboardState: " + key);
-  keyboardStateMap.set(key, true);
+export function setKeyOnKeyPressState(key: string): void {
+  Console.log("setKeyOnKeyPressState: " + key);
+  keyPressStateMap.set(key, true);
 }

@@ -1,8 +1,8 @@
 
 import {CommandLine, FileSystem, Descriptor, Date, Console} from "../node_modules/as-wasi/assembly/index";
 
-import {getKeyFromByte, resetKeyboardState, setKeyOnKeyboardState} from './input-map';
-export {getKeyboardState} from './input-map';
+import {InputEventType, getKeyFromByte, resetKeyPressState, setKeyOnKeyPressState,  getMousePosition, setMousePosition, resetMouseClickState, setClickOnMouseClickState} from './input-map';
+export {getKeyPressState, getMousePosition, getMouseClickState} from './input-map';
 
 // TODO: In current (December 3rd, 2019) verisons of as-wasi, the Current working directory (dirfd) defaults to: "/"
 
@@ -43,15 +43,35 @@ export function updateInput(): void {
   // Read the file as bytes
   let data: u8[] | null = devInput.readAll();
   
-  if (data != null) {
-    resetKeyboardState();
-    for (let i = 0; i < data.length; i++) {
-      let response: string | null = getKeyFromByte(data[i]);
-      if (response != null) {
-        let key: string = response as string;
-        setKeyOnKeyboardState(key);
+  if (data != null && data.length > 0) {
+
+    Console.log('Hello, data ' + data[0].toString());
+
+    // Get the type of event
+    if (data[0] == InputEventType.KEY_PRESS) {
+      resetKeyPressState();
+      let key: string | null = getKeyFromByte(data[1]);
+      if (key != null) {
+        setKeyOnKeyPressState(key as string);
       }
-    }
+    } else if (data[0] == InputEventType.MOUSE_MOVE) {
+      let x: i32 = 0;
+      for (let i: u8 = 0; i < 4; i++) {
+        x = x | (data[i + 1] << (i * 8));
+      }
+      let y: i32 = 0;
+      for (let i: u8 = 0; i < 4; i++) {
+        y = y | (data[i + 5] << (i * 8));
+      }
+      setMousePosition(x, y);
+    } else if (data[0] == InputEventType.MOUSE_PRESS_LEFT) {
+      resetMouseClickState();
+      setClickOnMouseClickState('Left');
+    } else if (data[0] == InputEventType.MOUSE_PRESS_RIGHT) {
+      setClickOnMouseClickState('Right');
+    } else if (data[0] == InputEventType.MOUSE_PRESS_MIDDLE) {
+      setClickOnMouseClickState('Middle');
+    }  
   }
 }
 
