@@ -1,6 +1,7 @@
 // Using the KeyboardEvent.code
 // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code
 // https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/code/code_values
+// Mouse should give something like: https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent
 
 /**
  * Input Event Bytes to meaning:

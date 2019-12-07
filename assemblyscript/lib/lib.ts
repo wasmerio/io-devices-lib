@@ -45,8 +45,6 @@ export function updateInput(): void {
   
   if (data != null && data.length > 0) {
 
-    Console.log('Hello, data ' + data[0].toString());
-
     // Get the type of event
     if (data[0] == InputEventType.KEY_PRESS) {
       resetKeyPressState();
@@ -74,8 +72,5 @@ export function updateInput(): void {
     }  
   }
 }
-
-// Function to get the current Mouse State 
-// Should give something like: https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent
 
 
