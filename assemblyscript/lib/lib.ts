@@ -41,7 +41,7 @@ export function updateInput(): void {
   let devInput: Descriptor = FileSystem.open('dev/input') as Descriptor;
 
   // Read the file as bytes
-  let data: u8[] | null = devInput.readAll();
+  let data: u8[] | null = devInput.read();
   
   if (data != null && data.length > 0) {
 

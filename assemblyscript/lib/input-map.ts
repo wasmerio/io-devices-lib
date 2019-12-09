@@ -15,10 +15,10 @@
 export namespace InputEventType {
   // @ts-ignore: decorator
   @inline
-  export const KEY_PRESS: u8 = 0;
+  export const KEY_PRESS: u8 = 1;
   // @ts-ignore: decorator
   @inline
-  export const MOUSE_MOVE: u8 = 1;
+  export const MOUSE_MOVE: u8 = 2;
   // @ts-ignore: decorator
   @inline
   export const MOUSE_PRESS_LEFT: u8 = 4;

@@ -51,8 +51,8 @@ function update(frameBuffer: Descriptor): void {
   Console.log("keyPressState: Is 0 pressed? " + keyPressState.get('Key0').toString());
   let mousePosition = getMousePosition();
   Console.log("mousePosition: " + mousePosition[0].toString() + ", " + mousePosition[1].toString());
-  let mouseClickState = getMouseClickState();
-  Console.log("mouseClickState: Is Left Clicked?" + mouseClickState.get('Left').toString());
+  // let mouseClickState = getMouseClickState();
+  // Console.log("mouseClickState: Is Left Clicked?" + mouseClickState.get('Left').toString());
 
   // Update our Framebuffer
   let randomByteArray = Random.randomBytes(1);
