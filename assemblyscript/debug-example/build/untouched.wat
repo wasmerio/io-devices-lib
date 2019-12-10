@@ -87,91 +87,86 @@
  (data (i32.const 2272) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00K\00e\00y\00F\001\000\00")
  (data (i32.const 2304) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00K\00e\00y\00F\001\001\00")
  (data (i32.const 2336) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00K\00e\00y\00F\001\002\00")
- (data (i32.const 2368) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00K\00e\00y\00F\001\003\00")
- (data (i32.const 2400) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00K\00e\00y\00F\001\004\00")
- (data (i32.const 2432) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00K\00e\00y\00F\001\005\00")
- (data (i32.const 2464) "\0e\00\00\00\01\00\00\00\01\00\00\00\0e\00\00\00K\00e\00y\00D\00o\00w\00n\00")
- (data (i32.const 2496) "\0e\00\00\00\01\00\00\00\01\00\00\00\0e\00\00\00K\00e\00y\00L\00e\00f\00t\00")
- (data (i32.const 2528) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00R\00i\00g\00h\00t\00")
- (data (i32.const 2560) "\n\00\00\00\01\00\00\00\01\00\00\00\n\00\00\00K\00e\00y\00U\00p\00")
- (data (i32.const 2592) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00K\00e\00y\00A\00p\00o\00s\00t\00r\00o\00p\00h\00e\00")
- (data (i32.const 2640) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00B\00a\00c\00k\00q\00u\00o\00t\00e\00")
- (data (i32.const 2680) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00B\00a\00c\00k\00s\00l\00a\00s\00h\00")
- (data (i32.const 2720) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00C\00o\00m\00m\00a\00")
- (data (i32.const 2752) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00E\00q\00u\00a\00l\00")
- (data (i32.const 2784) "\1c\00\00\00\01\00\00\00\01\00\00\00\1c\00\00\00K\00e\00y\00L\00e\00f\00t\00B\00r\00a\00c\00k\00e\00t\00")
- (data (i32.const 2832) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00M\00i\00n\00u\00s\00")
- (data (i32.const 2864) "\12\00\00\00\01\00\00\00\01\00\00\00\12\00\00\00K\00e\00y\00P\00e\00r\00i\00o\00d\00")
- (data (i32.const 2904) "\1e\00\00\00\01\00\00\00\01\00\00\00\1e\00\00\00K\00e\00y\00R\00i\00g\00h\00t\00B\00r\00a\00c\00k\00e\00t\00")
- (data (i32.const 2952) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00S\00e\00m\00i\00c\00o\00l\00o\00n\00")
- (data (i32.const 2992) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00S\00l\00a\00s\00h\00")
- (data (i32.const 3024) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00B\00a\00c\00k\00s\00p\00a\00c\00e\00")
- (data (i32.const 3064) "\12\00\00\00\01\00\00\00\01\00\00\00\12\00\00\00K\00e\00y\00D\00e\00l\00e\00t\00e\00")
- (data (i32.const 3104) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00K\00e\00y\00E\00n\00d\00")
- (data (i32.const 3136) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00E\00n\00t\00e\00r\00")
- (data (i32.const 3168) "\12\00\00\00\01\00\00\00\01\00\00\00\12\00\00\00K\00e\00y\00E\00s\00c\00a\00p\00e\00")
- (data (i32.const 3208) "\0e\00\00\00\01\00\00\00\01\00\00\00\0e\00\00\00K\00e\00y\00H\00o\00m\00e\00")
- (data (i32.const 3240) "\12\00\00\00\01\00\00\00\01\00\00\00\12\00\00\00K\00e\00y\00I\00n\00s\00e\00r\00t\00")
- (data (i32.const 3280) "\0e\00\00\00\01\00\00\00\01\00\00\00\0e\00\00\00K\00e\00y\00M\00e\00n\00u\00")
- (data (i32.const 3312) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00K\00e\00y\00P\00a\00g\00e\00D\00o\00w\00n\00")
- (data (i32.const 3352) "\12\00\00\00\01\00\00\00\01\00\00\00\12\00\00\00K\00e\00y\00P\00a\00g\00e\00U\00p\00")
- (data (i32.const 3392) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00P\00a\00u\00s\00e\00")
- (data (i32.const 3424) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00S\00p\00a\00c\00e\00")
- (data (i32.const 3456) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00K\00e\00y\00T\00a\00b\00")
- (data (i32.const 3488) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00L\00o\00c\00k\00")
- (data (i32.const 3528) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00K\00e\00y\00C\00a\00p\00s\00L\00o\00c\00k\00")
- (data (i32.const 3568) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00K\00e\00y\00S\00c\00r\00o\00l\00l\00L\00o\00c\00k\00")
- (data (i32.const 3616) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00L\00e\00f\00t\00S\00h\00i\00f\00t\00")
- (data (i32.const 3656) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00K\00e\00y\00R\00i\00g\00h\00t\00S\00h\00i\00f\00t\00")
- (data (i32.const 3704) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00K\00e\00y\00L\00e\00f\00t\00C\00t\00r\00l\00")
- (data (i32.const 3744) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00R\00i\00g\00h\00t\00C\00t\00r\00l\00")
- (data (i32.const 3784) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\000\00")
- (data (i32.const 3824) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\001\00")
- (data (i32.const 3864) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\002\00")
- (data (i32.const 3904) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\003\00")
- (data (i32.const 3944) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\004\00")
- (data (i32.const 3984) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\005\00")
- (data (i32.const 4024) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\006\00")
- (data (i32.const 4064) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\007\00")
- (data (i32.const 4104) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\008\00")
- (data (i32.const 4144) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\009\00")
- (data (i32.const 4184) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\00D\00o\00t\00")
- (data (i32.const 4224) "\1c\00\00\00\01\00\00\00\01\00\00\00\1c\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\00S\00l\00a\00s\00h\00")
- (data (i32.const 4272) "\"\00\00\00\01\00\00\00\01\00\00\00\"\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\00A\00s\00t\00e\00r\00i\00s\00k\00")
- (data (i32.const 4328) "\1c\00\00\00\01\00\00\00\01\00\00\00\1c\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\00M\00i\00n\00u\00s\00")
- (data (i32.const 4376) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\00P\00l\00u\00s\00")
- (data (i32.const 4424) "\1c\00\00\00\01\00\00\00\01\00\00\00\1c\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\00E\00n\00t\00e\00r\00")
- (data (i32.const 4472) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00L\00e\00f\00t\00A\00l\00t\00")
- (data (i32.const 4512) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00K\00e\00y\00R\00i\00g\00h\00t\00A\00l\00t\00")
- (data (i32.const 4552) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00L\00e\00f\00t\00S\00u\00p\00e\00r\00")
- (data (i32.const 4592) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00K\00e\00y\00R\00i\00g\00h\00t\00S\00u\00p\00e\00r\00")
- (data (i32.const 4640) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00d\00e\00v\00/\00w\00a\00s\00m\00e\00r\00f\00b\00")
- (data (i32.const 4680) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00r\00")
- (data (i32.const 4704) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00r\00+\00")
- (data (i32.const 4728) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00w\00")
- (data (i32.const 4752) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00x\00")
- (data (i32.const 4776) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00+\00")
- (data (i32.const 4800) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00x\00w\00+\00")
- (data (i32.const 4824) "6\00\00\00\01\00\00\00\01\00\00\006\00\00\00s\00y\00s\00/\00c\00l\00a\00s\00s\00/\00g\00r\00a\00p\00h\00i\00c\00s\00/\00w\00a\00s\00m\00e\00r\00f\00b\00")
- (data (i32.const 4896) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00/\00v\00i\00r\00t\00u\00a\00l\00_\00s\00i\00z\00e\00")
- (data (i32.const 4944) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00x\00")
- (data (i32.const 4968) "\12\00\00\00\01\00\00\00\01\00\00\00\12\00\00\00d\00e\00v\00/\00i\00n\00p\00u\00t\00")
- (data (i32.const 5008) "\00\00\00\00\01\00\00\00\00\00\00\00\00\00\00\00")
- (data (i32.const 5024) " \00\00\00\01\00\00\00\01\00\00\00 \00\00\00g\00e\00t\00K\00e\00y\00F\00r\00o\00m\00B\00y\00t\00e\00:\00 \00")
- (data (i32.const 5072) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00K\00e\00y\00 \00d\00o\00e\00s\00 \00n\00o\00t\00 \00e\00x\00i\00s\00t\00")
- (data (i32.const 5128) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00~\00l\00i\00b\00/\00m\00a\00p\00.\00t\00s\00")
- (data (i32.const 5168) ".\00\00\00\01\00\00\00\01\00\00\00.\00\00\00s\00e\00t\00K\00e\00y\00O\00n\00K\00e\00y\00P\00r\00e\00s\00s\00S\00t\00a\00t\00e\00:\00 \00")
- (data (i32.const 5232) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00s\00e\00t\00M\00o\00u\00s\00e\00P\00o\00s\00i\00t\00i\00o\00n\00:\00 \00")
- (data (i32.const 5288) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00,\00")
- (data (i32.const 5312) "6\00\00\00\01\00\00\00\01\00\00\006\00\00\00s\00e\00t\00C\00l\00i\00c\00k\00O\00n\00M\00o\00u\00s\00e\00C\00l\00i\00c\00k\00S\00t\00a\00t\00e\00:\00 \00")
- (data (i32.const 5384) ":\00\00\00\01\00\00\00\01\00\00\00:\00\00\00k\00e\00y\00P\00r\00e\00s\00s\00S\00t\00a\00t\00e\00:\00 \00I\00s\00 \000\00 \00p\00r\00e\00s\00s\00e\00d\00?\00 \00")
- (data (i32.const 5464) "\08\00\00\00\01\00\00\00\01\00\00\00\08\00\00\00t\00r\00u\00e\00")
- (data (i32.const 5488) "\n\00\00\00\01\00\00\00\01\00\00\00\n\00\00\00f\00a\00l\00s\00e\00")
- (data (i32.const 5520) "\1e\00\00\00\01\00\00\00\01\00\00\00\1e\00\00\00m\00o\00u\00s\00e\00P\00o\00s\00i\00t\00i\00o\00n\00:\00 \00")
- (data (i32.const 5568) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00,\00 \00")
- (data (i32.const 5592) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00~\00l\00i\00b\00/\00t\00y\00p\00e\00d\00a\00r\00r\00a\00y\00.\00t\00s\00")
- (data (i32.const 5648) "*\00\00\00\01\00\00\00\01\00\00\00*\00\00\00/\00b\00u\00f\00f\00e\00r\00_\00i\00n\00d\00e\00x\00_\00d\00i\00s\00p\00l\00a\00y\00")
- (data (i32.const 5712) "\n\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\00\00\00\02\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\003\00\00\00\02\00\00\001\00\00\00\02\00\00\00")
+ (data (i32.const 2368) "\0e\00\00\00\01\00\00\00\01\00\00\00\0e\00\00\00K\00e\00y\00D\00o\00w\00n\00")
+ (data (i32.const 2400) "\0e\00\00\00\01\00\00\00\01\00\00\00\0e\00\00\00K\00e\00y\00L\00e\00f\00t\00")
+ (data (i32.const 2432) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00R\00i\00g\00h\00t\00")
+ (data (i32.const 2464) "\n\00\00\00\01\00\00\00\01\00\00\00\n\00\00\00K\00e\00y\00U\00p\00")
+ (data (i32.const 2496) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00K\00e\00y\00A\00p\00o\00s\00t\00r\00o\00p\00h\00e\00")
+ (data (i32.const 2544) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00B\00a\00c\00k\00q\00u\00o\00t\00e\00")
+ (data (i32.const 2584) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00B\00a\00c\00k\00s\00l\00a\00s\00h\00")
+ (data (i32.const 2624) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00C\00o\00m\00m\00a\00")
+ (data (i32.const 2656) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00E\00q\00u\00a\00l\00")
+ (data (i32.const 2688) "\1c\00\00\00\01\00\00\00\01\00\00\00\1c\00\00\00K\00e\00y\00L\00e\00f\00t\00B\00r\00a\00c\00k\00e\00t\00")
+ (data (i32.const 2736) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00M\00i\00n\00u\00s\00")
+ (data (i32.const 2768) "\12\00\00\00\01\00\00\00\01\00\00\00\12\00\00\00K\00e\00y\00P\00e\00r\00i\00o\00d\00")
+ (data (i32.const 2808) "\1e\00\00\00\01\00\00\00\01\00\00\00\1e\00\00\00K\00e\00y\00R\00i\00g\00h\00t\00B\00r\00a\00c\00k\00e\00t\00")
+ (data (i32.const 2856) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00S\00e\00m\00i\00c\00o\00l\00o\00n\00")
+ (data (i32.const 2896) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00S\00l\00a\00s\00h\00")
+ (data (i32.const 2928) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00B\00a\00c\00k\00s\00p\00a\00c\00e\00")
+ (data (i32.const 2968) "\12\00\00\00\01\00\00\00\01\00\00\00\12\00\00\00K\00e\00y\00D\00e\00l\00e\00t\00e\00")
+ (data (i32.const 3008) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00K\00e\00y\00E\00n\00d\00")
+ (data (i32.const 3040) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00E\00n\00t\00e\00r\00")
+ (data (i32.const 3072) "\12\00\00\00\01\00\00\00\01\00\00\00\12\00\00\00K\00e\00y\00E\00s\00c\00a\00p\00e\00")
+ (data (i32.const 3112) "\0e\00\00\00\01\00\00\00\01\00\00\00\0e\00\00\00K\00e\00y\00H\00o\00m\00e\00")
+ (data (i32.const 3144) "\12\00\00\00\01\00\00\00\01\00\00\00\12\00\00\00K\00e\00y\00I\00n\00s\00e\00r\00t\00")
+ (data (i32.const 3184) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00K\00e\00y\00P\00a\00g\00e\00D\00o\00w\00n\00")
+ (data (i32.const 3224) "\12\00\00\00\01\00\00\00\01\00\00\00\12\00\00\00K\00e\00y\00P\00a\00g\00e\00U\00p\00")
+ (data (i32.const 3264) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00P\00a\00u\00s\00e\00")
+ (data (i32.const 3296) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00S\00p\00a\00c\00e\00")
+ (data (i32.const 3328) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00K\00e\00y\00T\00a\00b\00")
+ (data (i32.const 3360) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00L\00o\00c\00k\00")
+ (data (i32.const 3400) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00K\00e\00y\00C\00a\00p\00s\00L\00o\00c\00k\00")
+ (data (i32.const 3440) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00K\00e\00y\00S\00c\00r\00o\00l\00l\00L\00o\00c\00k\00")
+ (data (i32.const 3488) "\10\00\00\00\01\00\00\00\01\00\00\00\10\00\00\00K\00e\00y\00S\00h\00i\00f\00t\00")
+ (data (i32.const 3520) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00K\00e\00y\00L\00e\00f\00t\00C\00t\00r\00l\00")
+ (data (i32.const 3560) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00R\00i\00g\00h\00t\00C\00t\00r\00l\00")
+ (data (i32.const 3600) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\000\00")
+ (data (i32.const 3640) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\001\00")
+ (data (i32.const 3680) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\002\00")
+ (data (i32.const 3720) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\003\00")
+ (data (i32.const 3760) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\004\00")
+ (data (i32.const 3800) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\005\00")
+ (data (i32.const 3840) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\006\00")
+ (data (i32.const 3880) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\007\00")
+ (data (i32.const 3920) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\008\00")
+ (data (i32.const 3960) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\009\00")
+ (data (i32.const 4000) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\00D\00o\00t\00")
+ (data (i32.const 4040) "\1c\00\00\00\01\00\00\00\01\00\00\00\1c\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\00S\00l\00a\00s\00h\00")
+ (data (i32.const 4088) "\"\00\00\00\01\00\00\00\01\00\00\00\"\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\00A\00s\00t\00e\00r\00i\00s\00k\00")
+ (data (i32.const 4144) "\1c\00\00\00\01\00\00\00\01\00\00\00\1c\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\00M\00i\00n\00u\00s\00")
+ (data (i32.const 4192) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\00P\00l\00u\00s\00")
+ (data (i32.const 4240) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00K\00e\00y\00A\00l\00t\00")
+ (data (i32.const 4272) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00K\00e\00y\00L\00e\00f\00t\00S\00u\00p\00e\00r\00")
+ (data (i32.const 4312) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00K\00e\00y\00R\00i\00g\00h\00t\00S\00u\00p\00e\00r\00")
+ (data (i32.const 4360) "\0e\00\00\00\01\00\00\00\01\00\00\00\0e\00\00\00K\00e\00y\00M\00e\00n\00u\00")
+ (data (i32.const 4392) "\1c\00\00\00\01\00\00\00\01\00\00\00\1c\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\00E\00n\00t\00e\00r\00")
+ (data (i32.const 4440) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00d\00e\00v\00/\00w\00a\00s\00m\00e\00r\00f\00b\00")
+ (data (i32.const 4480) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00r\00")
+ (data (i32.const 4504) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00r\00+\00")
+ (data (i32.const 4528) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00w\00")
+ (data (i32.const 4552) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00x\00")
+ (data (i32.const 4576) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00+\00")
+ (data (i32.const 4600) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00x\00w\00+\00")
+ (data (i32.const 4624) "6\00\00\00\01\00\00\00\01\00\00\006\00\00\00s\00y\00s\00/\00c\00l\00a\00s\00s\00/\00g\00r\00a\00p\00h\00i\00c\00s\00/\00w\00a\00s\00m\00e\00r\00f\00b\00")
+ (data (i32.const 4696) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00/\00v\00i\00r\00t\00u\00a\00l\00_\00s\00i\00z\00e\00")
+ (data (i32.const 4744) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00x\00")
+ (data (i32.const 4768) "\12\00\00\00\01\00\00\00\01\00\00\00\12\00\00\00d\00e\00v\00/\00i\00n\00p\00u\00t\00")
+ (data (i32.const 4808) "\00\00\00\00\01\00\00\00\00\00\00\00\00\00\00\00")
+ (data (i32.const 4824) " \00\00\00\01\00\00\00\01\00\00\00 \00\00\00g\00e\00t\00K\00e\00y\00F\00r\00o\00m\00B\00y\00t\00e\00:\00 \00")
+ (data (i32.const 4872) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00K\00e\00y\00 \00d\00o\00e\00s\00 \00n\00o\00t\00 \00e\00x\00i\00s\00t\00")
+ (data (i32.const 4928) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00~\00l\00i\00b\00/\00m\00a\00p\00.\00t\00s\00")
+ (data (i32.const 4968) ".\00\00\00\01\00\00\00\01\00\00\00.\00\00\00s\00e\00t\00K\00e\00y\00O\00n\00K\00e\00y\00P\00r\00e\00s\00s\00S\00t\00a\00t\00e\00:\00 \00")
+ (data (i32.const 5032) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00s\00e\00t\00M\00o\00u\00s\00e\00P\00o\00s\00i\00t\00i\00o\00n\00:\00 \00")
+ (data (i32.const 5088) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00,\00")
+ (data (i32.const 5112) "6\00\00\00\01\00\00\00\01\00\00\006\00\00\00s\00e\00t\00C\00l\00i\00c\00k\00O\00n\00M\00o\00u\00s\00e\00C\00l\00i\00c\00k\00S\00t\00a\00t\00e\00:\00 \00")
+ (data (i32.const 5184) ":\00\00\00\01\00\00\00\01\00\00\00:\00\00\00k\00e\00y\00P\00r\00e\00s\00s\00S\00t\00a\00t\00e\00:\00 \00I\00s\00 \000\00 \00p\00r\00e\00s\00s\00e\00d\00?\00 \00")
+ (data (i32.const 5264) "\08\00\00\00\01\00\00\00\01\00\00\00\08\00\00\00t\00r\00u\00e\00")
+ (data (i32.const 5288) "\n\00\00\00\01\00\00\00\01\00\00\00\n\00\00\00f\00a\00l\00s\00e\00")
+ (data (i32.const 5320) "\1e\00\00\00\01\00\00\00\01\00\00\00\1e\00\00\00m\00o\00u\00s\00e\00P\00o\00s\00i\00t\00i\00o\00n\00:\00 \00")
+ (data (i32.const 5368) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00,\00 \00")
+ (data (i32.const 5392) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00~\00l\00i\00b\00/\00t\00y\00p\00e\00d\00a\00r\00r\00a\00y\00.\00t\00s\00")
+ (data (i32.const 5448) "*\00\00\00\01\00\00\00\01\00\00\00*\00\00\00/\00b\00u\00f\00f\00e\00r\00_\00i\00n\00d\00e\00x\00_\00d\00i\00s\00p\00l\00a\00y\00")
+ (data (i32.const 5512) "\n\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\00\00\00\02\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\003\00\00\00\02\00\00\001\00\00\00\02\00\00\00")
  (table $0 1 funcref)
  (elem (i32.const 0) $null)
  (global $~lib/rt/tlsf/ROOT (mut i32) (i32.const 0))
@@ -187,8 +182,9 @@
  (global $lib/input-map/keyPressStateMap (mut i32) (i32.const 0))
  (global $debug-example/index/width (mut i32) (i32.const 160))
  (global $debug-example/index/height (mut i32) (i32.const 144))
- (global $~lib/rt/__rtti_base i32 (i32.const 5712))
- (global $~lib/heap/__heap_base i32 (i32.const 5796))
+ (global $debug-example/index/neventsBuffer (mut i32) (i32.const 0))
+ (global $~lib/rt/__rtti_base i32 (i32.const 5512))
+ (global $~lib/heap/__heap_base i32 (i32.const 5596))
  (export "memory" (memory $0))
  (export "__alloc" (func $~lib/rt/tlsf/__alloc))
  (export "__retain" (func $~lib/rt/pure/__retain))
@@ -6374,107 +6370,107 @@
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 2544
+  i32.const 2560
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 2576
+  i32.const 2600
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 2608
+  i32.const 2640
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 2656
+  i32.const 2672
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 2696
+  i32.const 2704
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 2736
+  i32.const 2752
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 2768
+  i32.const 2784
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 2800
+  i32.const 2824
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 2848
+  i32.const 2872
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 2880
+  i32.const 2912
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 2920
+  i32.const 2944
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 2968
+  i32.const 2984
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3008
+  i32.const 3024
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3040
+  i32.const 3056
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3080
+  i32.const 3088
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3120
+  i32.const 3128
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3152
+  i32.const 3160
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3184
+  i32.const 4376
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3224
+  i32.const 3200
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3256
+  i32.const 3240
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3296
+  i32.const 3280
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3328
+  i32.const 3312
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3368
+  i32.const 3344
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3408
+  i32.const 3376
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3440
+  i32.const 3416
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3472
+  i32.const 3456
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
@@ -6482,63 +6478,63 @@
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3544
+  i32.const 3536
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3584
+  i32.const 3576
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3632
+  i32.const 3616
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3672
+  i32.const 3656
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3720
+  i32.const 3696
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3760
+  i32.const 3736
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3800
+  i32.const 3776
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3840
+  i32.const 3816
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3880
+  i32.const 3856
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3920
+  i32.const 3896
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 3960
+  i32.const 3936
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 4000
+  i32.const 3976
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 4040
+  i32.const 4016
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 4080
+  i32.const 4056
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 4120
+  i32.const 4104
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
@@ -6546,11 +6542,15 @@
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 4200
+  i32.const 4208
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 4240
+  i32.const 4408
+  i32.const 0
+  call $~lib/map/Map<~lib/string/String,bool>#set
+  global.get $lib/input-map/keyPressStateMap
+  i32.const 4256
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
@@ -6558,31 +6558,7 @@
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
   global.get $lib/input-map/keyPressStateMap
-  i32.const 4344
-  i32.const 0
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyPressStateMap
-  i32.const 4392
-  i32.const 0
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyPressStateMap
-  i32.const 4440
-  i32.const 0
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyPressStateMap
-  i32.const 4488
-  i32.const 0
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyPressStateMap
-  i32.const 4528
-  i32.const 0
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyPressStateMap
-  i32.const 4568
-  i32.const 0
-  call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $lib/input-map/keyPressStateMap
-  i32.const 4608
+  i32.const 4328
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
  )
@@ -6607,428 +6583,400 @@
   call $~lib/map/Map<i32,~lib/string/String>#constructor
   global.set $lib/input-map/byteToInputKeyMap
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 0
+  i32.const 48
   i32.const 1136
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 1
+  i32.const 49
   i32.const 1160
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 2
+  i32.const 50
   i32.const 1184
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 3
+  i32.const 51
   i32.const 1208
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 4
+  i32.const 52
   i32.const 1232
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 5
+  i32.const 53
   i32.const 1256
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 6
+  i32.const 54
   i32.const 1280
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 7
+  i32.const 55
   i32.const 1304
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 8
+  i32.const 56
   i32.const 1328
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 9
+  i32.const 57
   i32.const 1352
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 10
+  i32.const 65
   i32.const 1376
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 11
+  i32.const 66
   i32.const 1400
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 12
+  i32.const 67
   i32.const 1424
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 13
+  i32.const 68
   i32.const 1448
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 14
+  i32.const 69
   i32.const 1472
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 15
+  i32.const 70
   i32.const 1496
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 16
+  i32.const 71
   i32.const 1520
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 17
+  i32.const 72
   i32.const 1544
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 18
+  i32.const 73
   i32.const 1568
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 19
+  i32.const 74
   i32.const 1592
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 20
+  i32.const 75
   i32.const 1616
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 21
+  i32.const 76
   i32.const 1640
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 22
+  i32.const 77
   i32.const 1664
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 23
+  i32.const 78
   i32.const 1688
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 24
+  i32.const 79
   i32.const 1712
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 25
+  i32.const 80
   i32.const 1736
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 26
+  i32.const 81
   i32.const 1760
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 27
+  i32.const 82
   i32.const 1784
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 28
+  i32.const 83
   i32.const 1808
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 29
+  i32.const 84
   i32.const 1832
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 30
+  i32.const 85
   i32.const 1856
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 31
+  i32.const 86
   i32.const 1880
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 32
+  i32.const 87
   i32.const 1904
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 33
+  i32.const 88
   i32.const 1928
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 34
+  i32.const 89
   i32.const 1952
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 35
+  i32.const 90
   i32.const 1976
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 131
+  i32.const 112
   i32.const 2000
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 132
+  i32.const 113
   i32.const 2032
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 133
+  i32.const 114
   i32.const 2064
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 134
+  i32.const 115
   i32.const 2096
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 135
+  i32.const 116
   i32.const 2128
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 136
+  i32.const 117
   i32.const 2160
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 137
+  i32.const 118
   i32.const 2192
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 138
+  i32.const 119
   i32.const 2224
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 139
+  i32.const 120
   i32.const 2256
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 140
+  i32.const 121
   i32.const 2288
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 141
+  i32.const 122
   i32.const 2320
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 142
+  i32.const 123
   i32.const 2352
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 143
+  i32.const 40
   i32.const 2384
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 144
+  i32.const 37
   i32.const 2416
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 145
+  i32.const 39
   i32.const 2448
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 146
+  i32.const 38
   i32.const 2480
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 147
+  i32.const 222
   i32.const 2512
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 148
-  i32.const 2544
+  i32.const 192
+  i32.const 2560
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
-  i32.const 149
-  i32.const 2576
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 150
-  i32.const 2608
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 151
-  i32.const 2656
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 152
-  i32.const 2696
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 153
-  i32.const 2736
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 154
-  i32.const 2768
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 155
-  i32.const 2800
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 156
-  i32.const 2848
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 157
-  i32.const 2880
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 158
-  i32.const 2920
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 159
-  i32.const 2968
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 160
-  i32.const 3008
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 128
-  i32.const 3040
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 127
-  i32.const 3080
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 150
-  i32.const 3120
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 151
-  i32.const 3152
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 28
-  i32.const 3184
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 151
-  i32.const 3224
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 152
-  i32.const 3256
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 153
-  i32.const 3296
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 154
-  i32.const 3328
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 155
-  i32.const 3368
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 156
-  i32.const 3408
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 157
-  i32.const 3440
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 158
-  i32.const 3472
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 157
-  i32.const 3504
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 158
-  i32.const 3544
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 159
-  i32.const 3584
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 160
-  i32.const 3632
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 161
-  i32.const 3672
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 162
-  i32.const 3720
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 163
-  i32.const 3760
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 170
-  i32.const 3800
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 171
-  i32.const 3840
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 172
-  i32.const 3880
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 173
-  i32.const 3920
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 174
-  i32.const 3960
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 175
-  i32.const 4000
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 176
-  i32.const 4040
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 177
-  i32.const 4080
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 178
-  i32.const 4120
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 179
-  i32.const 4160
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 180
-  i32.const 4200
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 181
-  i32.const 4240
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 182
-  i32.const 4288
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 183
-  i32.const 4344
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 184
-  i32.const 4392
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 185
-  i32.const 4440
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 186
-  i32.const 4488
-  call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $lib/input-map/byteToInputKeyMap
-  i32.const 187
-  i32.const 4528
+  i32.const 220
+  i32.const 2600
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
   i32.const 188
-  i32.const 4568
+  i32.const 2640
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 187
+  i32.const 2672
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 219
+  i32.const 2704
   call $~lib/map/Map<i32,~lib/string/String>#set
   global.get $lib/input-map/byteToInputKeyMap
   i32.const 189
-  i32.const 4608
+  i32.const 2752
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 190
+  i32.const 2784
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 221
+  i32.const 2824
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 186
+  i32.const 2872
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 191
+  i32.const 2912
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 8
+  i32.const 2944
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 46
+  i32.const 2984
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 35
+  i32.const 3024
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 13
+  i32.const 3056
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 27
+  i32.const 3088
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 36
+  i32.const 3128
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 45
+  i32.const 3160
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 34
+  i32.const 3200
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 33
+  i32.const 3240
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 19
+  i32.const 3280
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 32
+  i32.const 3312
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 9
+  i32.const 3344
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 144
+  i32.const 3376
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 20
+  i32.const 3416
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 145
+  i32.const 3456
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 16
+  i32.const 3504
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 162
+  i32.const 3536
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 163
+  i32.const 3576
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 96
+  i32.const 3616
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 97
+  i32.const 3656
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 98
+  i32.const 3696
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 99
+  i32.const 3736
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 100
+  i32.const 3776
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 101
+  i32.const 3816
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 102
+  i32.const 3856
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 103
+  i32.const 3896
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 104
+  i32.const 3936
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 105
+  i32.const 3976
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 110
+  i32.const 4016
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 111
+  i32.const 4056
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 106
+  i32.const 4104
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 109
+  i32.const 4160
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 107
+  i32.const 4208
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 18
+  i32.const 4256
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 91
+  i32.const 4288
+  call $~lib/map/Map<i32,~lib/string/String>#set
+  global.get $lib/input-map/byteToInputKeyMap
+  i32.const 93
+  i32.const 4328
   call $~lib/map/Map<i32,~lib/string/String>#set
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#constructor
@@ -7040,6 +6988,10 @@
  )
  (func $start:debug-example/index (; 75 ;) (type $FUNCSIG$v)
   call $start:lib/lib
+  i32.const 4
+  i32.const 0
+  call $~lib/rt/tlsf/__alloc
+  global.set $debug-example/index/neventsBuffer
  )
  (func $~lib/util/number/itoa32 (; 76 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
@@ -7147,7 +7099,7 @@
   i64.const 0
   local.set $5
   local.get $1
-  i32.const 4696
+  i32.const 4496
   call $~lib/string/String.__eq
   if
    i64.const 2
@@ -7162,7 +7114,7 @@
    local.set $5
   else
    local.get $1
-   i32.const 4720
+   i32.const 4520
    call $~lib/string/String.__eq
    if
     i64.const 64
@@ -7179,7 +7131,7 @@
     local.set $5
    else
     local.get $1
-    i32.const 4744
+    i32.const 4544
     call $~lib/string/String.__eq
     if
      i32.const 1
@@ -7198,7 +7150,7 @@
      local.set $5
     else
      local.get $1
-     i32.const 4768
+     i32.const 4568
      call $~lib/string/String.__eq
      if
       i32.const 1
@@ -7219,7 +7171,7 @@
       local.set $5
      else
       local.get $1
-      i32.const 4792
+      i32.const 4592
       call $~lib/string/String.__eq
       if
        i32.const 1
@@ -7240,7 +7192,7 @@
        local.set $5
       else
        local.get $1
-       i32.const 4816
+       i32.const 4616
        call $~lib/string/String.__eq
        if
         i32.const 1
@@ -7356,32 +7308,32 @@
   (local $12 i32)
   (local $13 i32)
   (local $14 i32)
-  i32.const 4656
+  i32.const 4456
   local.get $2
   call $~lib/number/I32#toString
   local.tee $3
   call $~lib/string/String.__concat
   local.tee $4
-  i32.const 4696
+  i32.const 4496
   call $node_modules/as-wasi/assembly/as-wasi/FileSystem.open
   local.set $5
-  i32.const 4840
+  i32.const 4640
   local.get $2
   call $~lib/number/I32#toString
   local.tee $6
   call $~lib/string/String.__concat
   local.tee $7
-  i32.const 4912
+  i32.const 4712
   call $~lib/string/String.__concat
   local.tee $8
-  i32.const 4696
+  i32.const 4496
   call $node_modules/as-wasi/assembly/as-wasi/FileSystem.open
   local.set $9
   local.get $9
   local.get $0
   call $~lib/number/I32#toString
   local.tee $10
-  i32.const 4960
+  i32.const 4760
   call $~lib/string/String.__concat
   local.tee $11
   local.get $1
@@ -7680,8 +7632,8 @@
   local.get $3
   i32.eqz
   if
-   i32.const 5088
-   i32.const 5144
+   i32.const 4888
+   i32.const 4944
    i32.const 111
    i32.const 16
    call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
@@ -7695,7 +7647,7 @@
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
-  i32.const 5040
+  i32.const 4840
   local.get $0
   call $~lib/number/I32#toString
   local.tee $1
@@ -7750,7 +7702,7 @@
   local.get $0
   call $~lib/rt/pure/__retain
   drop
-  i32.const 5184
+  i32.const 4984
   local.get $0
   call $~lib/string/String.__concat
   local.tee $1
@@ -7770,13 +7722,13 @@
   (local $4 i32)
   (local $5 i32)
   (local $6 i32)
-  i32.const 5248
+  i32.const 5048
   local.get $0
   call $~lib/number/I32#toString
   local.tee $2
   call $~lib/string/String.__concat
   local.tee $3
-  i32.const 5304
+  i32.const 5104
   call $~lib/string/String.__concat
   local.tee $4
   local.get $1
@@ -7809,7 +7761,7 @@
   local.get $0
   call $~lib/rt/pure/__retain
   drop
-  i32.const 5328
+  i32.const 5128
   local.get $0
   call $~lib/string/String.__concat
   local.tee $1
@@ -7830,15 +7782,15 @@
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
-  i32.const 4984
-  i32.const 4696
+  i32.const 4784
+  i32.const 4496
   call $node_modules/as-wasi/assembly/as-wasi/FileSystem.open
   local.set $0
   local.get $0
   i32.const 0
   i32.const 0
   i32.const 8
-  i32.const 5024
+  i32.const 4824
   call $~lib/rt/__allocArray
   call $~lib/rt/pure/__retain
   local.tee $2
@@ -8031,8 +7983,8 @@
   if
    local.get $1
    call $~lib/rt/pure/__release
-   i32.const 5088
-   i32.const 5144
+   i32.const 4888
+   i32.const 4944
    i32.const 111
    i32.const 16
    call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
@@ -8050,11 +8002,11 @@
   (local $2 i32)
   local.get $0
   if (result i32)
-   i32.const 5480
+   i32.const 5280
    call $~lib/rt/pure/__retain
    local.tee $1
   else
-   i32.const 5504
+   i32.const 5304
    call $~lib/rt/pure/__retain
    local.tee $2
   end
@@ -8213,7 +8165,7 @@
   i32.ge_u
   if
    i32.const 168
-   i32.const 5608
+   i32.const 5408
    i32.const 148
    i32.const 44
    call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
@@ -8395,16 +8347,16 @@
   local.get $1
   local.get $0
   call $node_modules/as-wasi/assembly/as-wasi/Descriptor#write
-  i32.const 4840
+  i32.const 4640
   local.get $2
   call $~lib/number/I32#toString
   local.tee $3
   call $~lib/string/String.__concat
   local.tee $4
-  i32.const 5664
+  i32.const 5464
   call $~lib/string/String.__concat
   local.tee $5
-  i32.const 4696
+  i32.const 4496
   call $node_modules/as-wasi/assembly/as-wasi/FileSystem.open
   local.set $6
   local.get $6
@@ -8457,7 +8409,7 @@
   call $lib/lib/updateInput
   call $lib/input-map/getKeyPressState
   local.set $1
-  i32.const 5400
+  i32.const 5200
   local.get $1
   i32.const 1136
   call $~lib/map/Map<~lib/string/String,bool>#get
@@ -8468,7 +8420,7 @@
   call $node_modules/as-wasi/assembly/as-wasi/Console.log
   call $lib/input-map/getMousePosition
   local.set $4
-  i32.const 5536
+  i32.const 5336
   local.get $4
   i32.const 0
   call $~lib/array/Array<i32>#__get
@@ -8476,7 +8428,7 @@
   local.tee $5
   call $~lib/string/String.__concat
   local.tee $6
-  i32.const 5584
+  i32.const 5384
   call $~lib/string/String.__concat
   local.tee $7
   local.get $4

@@ -10,6 +10,15 @@ import {openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToFrameBuffe
 let width: i32 = 160;
 let height: i32 = 144;
 
+// Create a buffer for our sleep events
+// Number of events
+// To inspect how many events happened, one would then do load<i32>(neventsBuffer)
+let neventsBuffer = __alloc(4, 0);
+// TODO: This throws an error, for a reason dcodeIO and I can't figure out,
+// in the current AS runtime
+// __free(neventsBuffer);
+
+
 function sleep(milliseconds: i32): void {
   // Create our subscription loop
   let clockSub = new clocksubscription();
@@ -25,10 +34,6 @@ function sleep(milliseconds: i32): void {
   // create our output event?
   let clockEvent = new event();
 
-    // Number of events
-  // To inspect how many events happened, one would then do load<i32>(neventsBuffer)
-  let neventsBuffer = __alloc(4, 0);
-
   // Poll the subscription
   poll_oneoff(
     changetype<usize>(clockSub),
@@ -36,9 +41,6 @@ function sleep(milliseconds: i32): void {
     1,
     changetype<usize>(neventsBuffer)
   );
-
-  // TODO: This does not work int the current AS runtime
-  // __free(neventsBuffer);
 }
 
 function update(frameBuffer: Descriptor): void {
