@@ -24,6 +24,7 @@ export function closeFrameBufferWindow(frameBufferIndex: i32): void {
 
 // Function to draw an RGB Array to the Framebufffer 
 export function drawRgbaArrayToFrameBuffer(rgbaArray: Array<u8>, frameBuffer: Descriptor, frameBufferIndex: i32): void {
+
   // Fill the framebuffer
   frameBuffer.seek(0, 2);
   frameBuffer.write(rgbaArray);

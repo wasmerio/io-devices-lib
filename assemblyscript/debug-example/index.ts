@@ -1,47 +1,12 @@
 // The entry file of your WebAssembly module.
 
-import {CommandLine, FileSystem, Descriptor, Date, Console, Random} from "../node_modules/as-wasi/assembly/index";
-
-import {clocksubscription, eventtype, clockid, poll_oneoff, event} from "bindings/wasi";
+import {CommandLine, FileSystem, Descriptor, Date, Console, Random, Time} from "../node_modules/as-wasi/assembly/index";
 
 import {openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToFrameBuffer, updateInput, getKeyPressState, getMousePosition, getMouseClickState} from "../lib/lib";
 
 // Width and height for our framebuffer
 let width: i32 = 160;
 let height: i32 = 144;
-
-// Create a buffer for our sleep events
-// Number of events
-// To inspect how many events happened, one would then do load<i32>(neventsBuffer)
-let neventsBuffer = __alloc(4, 0);
-// TODO: This throws an error, for a reason dcodeIO and I can't figure out,
-// in the current AS runtime
-// __free(neventsBuffer);
-
-
-function sleep(milliseconds: i32): void {
-  // Create our subscription loop
-  let clockSub = new clocksubscription();
-  clockSub.userdata = 24;
-  clockSub.identifier = 25;
-  clockSub.clock_id = clockid.REALTIME;
-  // Time is in nanoseconds (* 1000000 for milliseconds)
-  clockSub.timeout = milliseconds * 1000000;
-  clockSub.precision = 10000;
-  clockSub.type = eventtype.CLOCK;
-  // We want this to be relative, no flags / subclockflag
-
-  // create our output event?
-  let clockEvent = new event();
-
-  // Poll the subscription
-  poll_oneoff(
-    changetype<usize>(clockSub),
-    changetype<usize>(clockEvent),
-    1,
-    changetype<usize>(neventsBuffer)
-  );
-}
 
 function update(frameBuffer: Descriptor): void {
 
@@ -58,6 +23,8 @@ function update(frameBuffer: Descriptor): void {
 
   // Update our Framebuffer
   let randomByteArray = Random.randomBytes(1);
+  Console.log("Suppp");
+
   // Fill the buffer
   let frame: Array<u8> = new Array<u8>();
   for (let y = 0; y < height; ++y) {
@@ -78,7 +45,11 @@ function update(frameBuffer: Descriptor): void {
     }
   }
 
+  Console.log("Yoooo");
+
   drawRgbaArrayToFrameBuffer(frame, frameBuffer, 0);
+
+  Console.log("Drawded");
 }
 
 // Entry point into WASI Module
@@ -90,7 +61,7 @@ export function _start(): void {
   // Create a loop to subscribe to call events
   while(true) {
     update(frameBuffer);
-    // sleep(1000);
+    Time.sleepms(50000);
   }
 }
 
