@@ -163,9 +163,9 @@
  (elem (i32.const 0) $null)
  (global $~lib/rt/stub/startOffset (mut i32) (i32.const 0))
  (global $~lib/rt/stub/offset (mut i32) (i32.const 0))
- (global $node_modules/as-wasi/assembly/as-wasi/Time.NANOSECOND (mut i32) (i32.const 1))
- (global $node_modules/as-wasi/assembly/as-wasi/Time.MILLISECOND (mut i32) (i32.const 0))
- (global $node_modules/as-wasi/assembly/as-wasi/Time.SECOND (mut i32) (i32.const 0))
+ (global $~lib/as-wasi/as-wasi/Time.NANOSECOND (mut i32) (i32.const 1))
+ (global $~lib/as-wasi/as-wasi/Time.MILLISECOND (mut i32) (i32.const 0))
+ (global $~lib/as-wasi/as-wasi/Time.SECOND (mut i32) (i32.const 0))
  (global $~lib/ASC_SHRINK_LEVEL i32 (i32.const 0))
  (global $assemblyscript/lib/input-map/mousePosition (mut i32) (i32.const 0))
  (global $assemblyscript/lib/input-map/mouseClickMap (mut i32) (i32.const 0))
@@ -299,18 +299,18 @@
  (func $~lib/rt/stub/__collect (; 11 ;) (type $FUNCSIG$v)
   nop
  )
- (func $start:node_modules/as-wasi/assembly/as-wasi (; 12 ;) (type $FUNCSIG$v)
-  global.get $node_modules/as-wasi/assembly/as-wasi/Time.NANOSECOND
+ (func $start:~lib/as-wasi/as-wasi (; 12 ;) (type $FUNCSIG$v)
+  global.get $~lib/as-wasi/as-wasi/Time.NANOSECOND
   i32.const 1000000
   i32.mul
-  global.set $node_modules/as-wasi/assembly/as-wasi/Time.MILLISECOND
-  global.get $node_modules/as-wasi/assembly/as-wasi/Time.MILLISECOND
+  global.set $~lib/as-wasi/as-wasi/Time.MILLISECOND
+  global.get $~lib/as-wasi/as-wasi/Time.MILLISECOND
   i32.const 1000
   i32.mul
-  global.set $node_modules/as-wasi/assembly/as-wasi/Time.SECOND
+  global.set $~lib/as-wasi/as-wasi/Time.SECOND
  )
- (func $start:node_modules/as-wasi/assembly/index (; 13 ;) (type $FUNCSIG$v)
-  call $start:node_modules/as-wasi/assembly/as-wasi
+ (func $start:~lib/as-wasi/index (; 13 ;) (type $FUNCSIG$v)
+  call $start:~lib/as-wasi/as-wasi
  )
  (func $~lib/string/String#get:length (; 14 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   local.get $0
@@ -1924,7 +1924,7 @@
   local.get $0
   call $~lib/util/number/itoa<u32>
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Descriptor#constructor (; 24 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor#constructor (; 24 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $0
   i32.eqz
   if
@@ -1939,10 +1939,10 @@
   i32.store
   local.get $0
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Descriptor.Stderr (; 25 ;) (type $FUNCSIG$i) (result i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor.Stderr (; 25 ;) (type $FUNCSIG$i) (result i32)
   i32.const 0
   i32.const 2
-  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#constructor
+  call $~lib/as-wasi/as-wasi/Descriptor#constructor
  )
  (func $~lib/string/String.UTF8.byteLength (; 26 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
@@ -2091,7 +2091,7 @@
    i32.const 648
    i32.const 43
    i32.const 2
-   call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+   call $~lib/as-wasi/as-wasi/wasi_abort
    unreachable
   end
   local.get $0
@@ -2111,7 +2111,7 @@
    i32.const 648
    i32.const 46
    i32.const 13
-   call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+   call $~lib/as-wasi/as-wasi/wasi_abort
    unreachable
   end
   local.get $0
@@ -2407,7 +2407,7 @@
     i32.const 600
     i32.const 567
     i32.const 8
-    call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+    call $~lib/as-wasi/as-wasi/wasi_abort
     unreachable
    end
    local.get $4
@@ -2431,7 +2431,7 @@
     i32.const 600
     i32.const 571
     i32.const 8
-    call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+    call $~lib/as-wasi/as-wasi/wasi_abort
     unreachable
    end
   end
@@ -2716,7 +2716,7 @@
    i32.const 744
    i32.const 54
    i32.const 42
-   call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+   call $~lib/as-wasi/as-wasi/wasi_abort
    unreachable
   end
   local.get $1
@@ -2730,7 +2730,7 @@
   local.get $2
   call $~lib/rt/stub/__retain
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Descriptor#writeStringLn (; 31 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor#writeStringLn (; 31 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -2812,7 +2812,7 @@
   local.get $1
   call $~lib/rt/stub/__release
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Descriptor#writeString (; 32 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor#writeString (; 32 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -2827,7 +2827,7 @@
   if
    local.get $0
    local.get $1
-   call $node_modules/as-wasi/assembly/as-wasi/Descriptor#writeStringLn
+   call $~lib/as-wasi/as-wasi/Descriptor#writeStringLn
    local.get $1
    call $~lib/rt/stub/__release
    return
@@ -2877,22 +2877,22 @@
   local.get $1
   call $~lib/rt/stub/__release
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Console.error (; 33 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/as-wasi/as-wasi/Console.error (; 33 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   local.get $0
   call $~lib/rt/stub/__retain
   drop
-  call $node_modules/as-wasi/assembly/as-wasi/Descriptor.Stderr
+  call $~lib/as-wasi/as-wasi/Descriptor.Stderr
   local.tee $2
   local.get $0
   local.get $1
-  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#writeString
+  call $~lib/as-wasi/as-wasi/Descriptor#writeString
   local.get $2
   call $~lib/rt/stub/__release
   local.get $0
   call $~lib/rt/stub/__release
  )
- (func $node_modules/as-wasi/assembly/as-wasi/wasi_abort (; 34 ;) (type $FUNCSIG$viiii) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
+ (func $~lib/as-wasi/as-wasi/wasi_abort (; 34 ;) (type $FUNCSIG$viiii) (param $0 i32) (param $1 i32) (param $2 i32) (param $3 i32)
   (local $4 i32)
   (local $5 i32)
   (local $6 i32)
@@ -2931,7 +2931,7 @@
   call $~lib/string/String.__concat
   local.tee $11
   i32.const 1
-  call $node_modules/as-wasi/assembly/as-wasi/Console.error
+  call $~lib/as-wasi/as-wasi/Console.error
   i32.const 255
   call $~lib/bindings/wasi_unstable/proc_exit
   local.get $4
@@ -2969,7 +2969,7 @@
    i32.const 744
    i32.const 23
    i32.const 56
-   call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+   call $~lib/as-wasi/as-wasi/wasi_abort
    unreachable
   end
   local.get $1
@@ -3072,7 +3072,7 @@
     i32.const 856
     i32.const 14
     i32.const 47
-    call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+    call $~lib/as-wasi/as-wasi/wasi_abort
     unreachable
    end
    local.get $0
@@ -3135,7 +3135,7 @@
     i32.const 856
     i32.const 109
     i32.const 21
-    call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+    call $~lib/as-wasi/as-wasi/wasi_abort
     unreachable
    end
    local.get $0
@@ -5091,7 +5091,7 @@
   call $start:assemblyscript/lib/input-map
  )
  (func $start:assemblyscript/debug-example/index (; 58 ;) (type $FUNCSIG$v)
-  call $start:node_modules/as-wasi/assembly/index
+  call $start:~lib/as-wasi/index
   call $start:assemblyscript/lib/lib
  )
  (func $~lib/util/number/itoa32 (; 59 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
@@ -5158,7 +5158,7 @@
   local.get $0
   call $~lib/util/number/itoa<i32>
  )
- (func $node_modules/as-wasi/assembly/as-wasi/FileSystem.dirfdForPath (; 62 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/as-wasi/as-wasi/FileSystem.dirfdForPath (; 62 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   local.get $0
   call $~lib/rt/stub/__retain
@@ -5169,7 +5169,7 @@
   call $~lib/rt/stub/__release
   local.get $1
  )
- (func $node_modules/as-wasi/assembly/as-wasi/FileSystem.open (; 63 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/as-wasi/as-wasi/FileSystem.open (; 63 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -5191,7 +5191,7 @@
   call $~lib/rt/stub/__retain
   drop
   local.get $0
-  call $node_modules/as-wasi/assembly/as-wasi/FileSystem.dirfdForPath
+  call $~lib/as-wasi/as-wasi/FileSystem.dirfdForPath
   local.set $2
   i32.const 1
   local.set $3
@@ -5384,7 +5384,7 @@
   local.set $14
   i32.const 0
   local.get $14
-  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#constructor
+  call $~lib/as-wasi/as-wasi/Descriptor#constructor
   local.set $15
   local.get $9
   call $~lib/rt/stub/__release
@@ -5416,7 +5416,7 @@
   call $~lib/string/String.__concat
   local.tee $4
   i32.const 4352
-  call $node_modules/as-wasi/assembly/as-wasi/FileSystem.open
+  call $~lib/as-wasi/as-wasi/FileSystem.open
   local.set $5
   i32.const 4496
   local.get $2
@@ -5428,7 +5428,7 @@
   call $~lib/string/String.__concat
   local.tee $8
   i32.const 4352
-  call $node_modules/as-wasi/assembly/as-wasi/FileSystem.open
+  call $~lib/as-wasi/as-wasi/FileSystem.open
   local.set $9
   local.get $9
   local.get $0
@@ -5443,7 +5443,7 @@
   call $~lib/string/String.__concat
   local.tee $13
   i32.const 0
-  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#writeString
+  call $~lib/as-wasi/as-wasi/Descriptor#writeString
   local.get $5
   local.set $14
   local.get $3
@@ -5492,7 +5492,7 @@
    i32.const 856
    i32.const 93
    i32.const 41
-   call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+   call $~lib/as-wasi/as-wasi/wasi_abort
    unreachable
   end
   local.get $0
@@ -5578,7 +5578,7 @@
   i32.store offset=12
   local.get $3
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Descriptor#read (; 71 ;) (type $FUNCSIG$iiii) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor#read (; 71 ;) (type $FUNCSIG$iiii) (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -5745,7 +5745,7 @@
    i32.const 856
    i32.const 93
    i32.const 41
-   call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+   call $~lib/as-wasi/as-wasi/wasi_abort
    unreachable
   end
   local.get $0
@@ -5790,7 +5790,7 @@
    i32.const 4752
    i32.const 111
    i32.const 16
-   call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+   call $~lib/as-wasi/as-wasi/wasi_abort
    unreachable
   end
   local.get $3
@@ -5870,7 +5870,7 @@
   (local $5 i32)
   i32.const 4640
   i32.const 4352
-  call $node_modules/as-wasi/assembly/as-wasi/FileSystem.open
+  call $~lib/as-wasi/as-wasi/FileSystem.open
   local.set $0
   local.get $0
   i32.const 0
@@ -5881,7 +5881,7 @@
   call $~lib/rt/stub/__retain
   local.tee $2
   i32.const 4096
-  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#read
+  call $~lib/as-wasi/as-wasi/Descriptor#read
   local.set $1
   local.get $1
   i32.const 0
@@ -6037,33 +6037,33 @@
   local.get $1
   call $~lib/rt/stub/__release
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Descriptor.Stdout (; 84 ;) (type $FUNCSIG$i) (result i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor.Stdout (; 84 ;) (type $FUNCSIG$i) (result i32)
   i32.const 0
   i32.const 1
-  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#constructor
+  call $~lib/as-wasi/as-wasi/Descriptor#constructor
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Console.write (; 85 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/as-wasi/as-wasi/Console.write (; 85 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   local.get $0
   call $~lib/rt/stub/__retain
   drop
-  call $node_modules/as-wasi/assembly/as-wasi/Descriptor.Stdout
+  call $~lib/as-wasi/as-wasi/Descriptor.Stdout
   local.tee $2
   local.get $0
   local.get $1
-  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#writeString
+  call $~lib/as-wasi/as-wasi/Descriptor#writeString
   local.get $2
   call $~lib/rt/stub/__release
   local.get $0
   call $~lib/rt/stub/__release
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Console.log (; 86 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/as-wasi/as-wasi/Console.log (; 86 ;) (type $FUNCSIG$vi) (param $0 i32)
   local.get $0
   call $~lib/rt/stub/__retain
   drop
   local.get $0
   i32.const 1
-  call $node_modules/as-wasi/assembly/as-wasi/Console.write
+  call $~lib/as-wasi/as-wasi/Console.write
   local.get $0
   call $~lib/rt/stub/__release
  )
@@ -6132,7 +6132,7 @@
    i32.const 856
    i32.const 93
    i32.const 41
-   call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+   call $~lib/as-wasi/as-wasi/wasi_abort
    unreachable
   end
   local.get $0
@@ -6148,7 +6148,7 @@
    i32.const 856
    i32.const 97
    i32.const 39
-   call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+   call $~lib/as-wasi/as-wasi/wasi_abort
    unreachable
   end
   local.get $2
@@ -6213,7 +6213,7 @@
    i32.const 4752
    i32.const 111
    i32.const 16
-   call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+   call $~lib/as-wasi/as-wasi/wasi_abort
    unreachable
   end
   local.get $4
@@ -6245,7 +6245,7 @@
   i32.sub
   i32.load offset=12
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Random.randomFill (; 96 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/as-wasi/as-wasi/Random.randomFill (; 96 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -6286,7 +6286,7 @@
      i32.const 72
      i32.const 0
      i32.const 0
-     call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+     call $~lib/as-wasi/as-wasi/wasi_abort
     end
     local.get $1
     local.get $3
@@ -6303,7 +6303,7 @@
   local.get $0
   call $~lib/rt/stub/__release
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Random.randomBytes (; 97 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/as-wasi/as-wasi/Random.randomBytes (; 97 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   i32.const 0
   local.get $0
@@ -6311,7 +6311,7 @@
   local.set $1
   local.get $1
   i32.load
-  call $node_modules/as-wasi/assembly/as-wasi/Random.randomFill
+  call $~lib/as-wasi/as-wasi/Random.randomFill
   local.get $1
  )
  (func $~lib/array/Array<u8>#constructor (; 98 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
@@ -6346,7 +6346,7 @@
    i32.const 5056
    i32.const 148
    i32.const 44
-   call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+   call $~lib/as-wasi/as-wasi/wasi_abort
    unreachable
   end
   local.get $0
@@ -6379,7 +6379,7 @@
     i32.const 856
     i32.const 109
     i32.const 21
-    call $node_modules/as-wasi/assembly/as-wasi/wasi_abort
+    call $~lib/as-wasi/as-wasi/wasi_abort
     unreachable
    end
    local.get $0
@@ -6409,7 +6409,7 @@
   (local $6 i32)
   (local $7 i32)
   i32.const 1
-  call $node_modules/as-wasi/assembly/as-wasi/Random.randomBytes
+  call $~lib/as-wasi/as-wasi/Random.randomBytes
   local.set $0
   i32.const 0
   i32.const 0
@@ -6515,7 +6515,7 @@
   call $~lib/rt/stub/__release
   local.get $2
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Descriptor#seek (; 103 ;) (type $FUNCSIG$iiji) (param $0 i32) (param $1 i64) (param $2 i32) (result i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor#seek (; 103 ;) (type $FUNCSIG$iiji) (param $0 i32) (param $1 i64) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -6542,7 +6542,7 @@
   call $~lib/rt/stub/__release
   local.get $6
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Descriptor#write (; 104 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor#write (; 104 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -6636,11 +6636,11 @@
   local.get $1
   i64.const 0
   i32.const 2
-  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#seek
+  call $~lib/as-wasi/as-wasi/Descriptor#seek
   drop
   local.get $1
   local.get $0
-  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#write
+  call $~lib/as-wasi/as-wasi/Descriptor#write
   i32.const 4496
   local.get $2
   call $~lib/number/I32#toString
@@ -6651,19 +6651,19 @@
   call $~lib/string/String.__concat
   local.tee $5
   i32.const 4352
-  call $node_modules/as-wasi/assembly/as-wasi/FileSystem.open
+  call $~lib/as-wasi/as-wasi/FileSystem.open
   local.set $6
   local.get $6
   i64.const 0
   i32.const 2
-  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#seek
+  call $~lib/as-wasi/as-wasi/Descriptor#seek
   drop
   local.get $6
   local.get $2
   call $~lib/number/I32#toString
   local.tee $7
   i32.const 0
-  call $node_modules/as-wasi/assembly/as-wasi/Descriptor#writeString
+  call $~lib/as-wasi/as-wasi/Descriptor#writeString
   local.get $3
   call $~lib/rt/stub/__release
   local.get $4
@@ -6754,7 +6754,7 @@
   i32.store16 offset=12
   local.get $0
  )
- (func $node_modules/as-wasi/assembly/as-wasi/Time.sleep (; 109 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/as-wasi/as-wasi/Time.sleep (; 109 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -6866,7 +6866,7 @@
     local.tee $8
     call $~lib/string/String.__concat
     local.tee $9
-    call $node_modules/as-wasi/assembly/as-wasi/Console.log
+    call $~lib/as-wasi/as-wasi/Console.log
     local.get $5
     call $~lib/rt/stub/__release
     local.get $6
@@ -6937,7 +6937,7 @@
       local.get $6
       call $~lib/string/String.__concat
       local.tee $5
-      call $node_modules/as-wasi/assembly/as-wasi/Console.log
+      call $~lib/as-wasi/as-wasi/Console.log
       local.get $5
       call $~lib/rt/stub/__release
      end
@@ -6958,9 +6958,9 @@
    i32.const 0
    call $assemblyscript/lib/lib/drawRgbaArrayToFrameBuffer
    i32.const 16
-   global.get $node_modules/as-wasi/assembly/as-wasi/Time.MILLISECOND
+   global.get $~lib/as-wasi/as-wasi/Time.MILLISECOND
    i32.mul
-   call $node_modules/as-wasi/assembly/as-wasi/Time.sleep
+   call $~lib/as-wasi/as-wasi/Time.sleep
    local.get $4
    call $~lib/rt/stub/__release
    local.get $9

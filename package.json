@@ -2,7 +2,7 @@
   "name": "@wasmer/io-devices-lib-assemblyscript",
   "version": "0.0.1",
   "description": "Library for interacting with the Wasmer Experimental IO Devices in AssemblyScript",
-  "main": "index.js",
+  "main": "assemblyscript/lib/lib.ts",
   "scripts": {
     "start": "../wasmer/target/release/wasmer run --enable-experimental-framebuffer assemblyscript/debug-example/build/optimized.wasm",
     "build": "npm run asbuild",

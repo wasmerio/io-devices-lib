@@ -1,6 +1,6 @@
 // The entry file of your WebAssembly module.
 
-import {CommandLine, Console, Random, Time} from "../../node_modules/as-wasi/assembly/index";
+import {CommandLine, Console, Random, Time} from "as-wasi";
 
 import {openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToFrameBuffer, updateInput, getKeyPressState, getMousePosition, getMouseClickState} from "../lib/lib";
 
