@@ -8,22 +8,8 @@ import {openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToFrameBuffe
 let width: i32 = 160;
 let height: i32 = 144;
 
-function update(frameBuffer: Descriptor): void {
-
-  // Update the Input
-  updateInput();
-
-  // Debug input
-  let keyPressState = getKeyPressState();
-  Console.log("keyPressState: Is 0 pressed? " + keyPressState.get('Key0').toString());
-  let mousePosition = getMousePosition();
-  Console.log("mousePosition: " + mousePosition[0].toString() + ", " + mousePosition[1].toString());
-  // let mouseClickState = getMouseClickState();
-  // Console.log("mouseClickState: Is Left Clicked?" + mouseClickState.get('Left').toString());
-
-  // Update our Framebuffer
+function getRandomFrame(): Array<u8> {
   let randomByteArray = Random.randomBytes(1);
-  Console.log("Suppp");
 
   // Fill the buffer
   let frame: Array<u8> = new Array<u8>();
@@ -45,11 +31,7 @@ function update(frameBuffer: Descriptor): void {
     }
   }
 
-  Console.log("Yoooo");
-
-  drawRgbaArrayToFrameBuffer(frame, frameBuffer, 0);
-
-  Console.log("Drawded");
+  return frame;
 }
 
 // Entry point into WASI Module
@@ -60,8 +42,18 @@ export function _start(): void {
 
   // Create a loop to subscribe to call events
   while(true) {
-    update(frameBuffer);
-    Time.sleepms(50000);
+
+    // Update the Input
+    Console.log("updateInput");
+    updateInput();
+
+    // Get / draw a frame
+    Console.log("Draw a frame");
+    let frame: Array<u8> = getRandomFrame();
+    drawRgbaArrayToFrameBuffer(frame, frameBuffer, 0);
+
+    Console.log("Sleep");
+    Time.sleep(16 * Time.MILLISECOND);
   }
 }
 
