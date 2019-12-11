@@ -33,6 +33,6 @@
   },
   "homepage": "https://github.com/wasmerio/io-devices-lib#readme",
   "dependencies": {
-    "as-wasi": "git+https://github.com/torch2424/as-wasi.git#time-sleep"
+    "as-wasi": "git+https://github.com/jedisct1/as-wasi.git"
   }
 }
