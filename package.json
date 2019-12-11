@@ -1,14 +1,14 @@
 {
-  "name": "io-devices-lib-assemblyscript",
+  "name": "@wasmer/io-devices-lib-assemblyscript",
   "version": "0.0.1",
   "description": "Library for interacting with the Wasmer Experimental IO Devices in AssemblyScript",
   "main": "index.js",
   "scripts": {
-    "start": "../../wasmer/target/release/wasmer run --enable-experimental-framebuffer debug-example/build/optimized.wasm",
+    "start": "../wasmer/target/release/wasmer run --enable-experimental-framebuffer assemblyscript/debug-example/build/optimized.wasm",
     "build": "npm run asbuild",
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
-    "asbuild:untouched": "asc debug-example/index.ts -b debug-example/build/untouched.wasm -t debug-example/build/untouched.wat --sourceMap --validate --debug --use abort=wasi_abort --runtime stub",
-    "asbuild:optimized": "asc debug-example/index.ts -b debug-example/build/optimized.wasm -t debug-example/build/optimized.wat --sourceMap --validate --optimize --use abort=wasi_abort --runtime stub"
+    "asbuild:untouched": "asc assemblyscript/debug-example/index.ts -b assemblyscript/debug-example/build/untouched.wasm -t assemblyscript/debug-example/build/untouched.wat --sourceMap --validate --debug --use abort=wasi_abort --runtime stub",
+    "asbuild:optimized": "asc assemblyscript/debug-example/index.ts -b assemblyscript/debug-example/build/optimized.wasm -t assemblyscript/debug-example/build/optimized.wat --sourceMap --validate --optimize --use abort=wasi_abort --runtime stub"
   },
   "repository": {
     "type": "git",
