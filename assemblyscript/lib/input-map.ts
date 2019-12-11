@@ -156,7 +156,7 @@ byteToInputKeyMap.set(18, 'KeyAlt');
 byteToInputKeyMap.set(91, 'KeyLeftSuper');
 byteToInputKeyMap.set(93, 'KeyRightSuper');
 
-// create our keyboard state map
+// Create our keyboard state map
 let keyPressStateMap: Map<string, bool> = new Map<string, bool>();
 export function resetKeyPressState(): void {
   keyPressStateMap.set('Key0', false);
@@ -268,7 +268,6 @@ export function getMousePosition(): Array<i32> {
 }
 
 export function setMousePosition(x: i32, y: i32): void {
-  Console.log("setMousePosition: " + x.toString() + "," + y.toString());
   mousePosition[0] = x;
   mousePosition[1] = y;
 }
@@ -278,12 +277,10 @@ export function getMouseClickState(): Map<string, bool> {
 }
 
 export function setClickOnMouseClickState(click: string): void {
-  Console.log("setClickOnMouseClickState: " + click);
   mouseClickMap.set(click, true);
 }
 
 export function getKeyFromByte(byte: i32): string | null {
-  Console.log("getKeyFromByte: " + byte.toString());
   if (byteToInputKeyMap.has(byte)) {
     return byteToInputKeyMap.get(byte);
   }
@@ -295,6 +292,5 @@ export function getKeyPressState(): Map<string, bool> {
 }
 
 export function setKeyOnKeyPressState(key: string): void {
-  Console.log("setKeyOnKeyPressState: " + key);
   keyPressStateMap.set(key, true);
 }

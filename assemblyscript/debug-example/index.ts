@@ -1,6 +1,6 @@
 // The entry file of your WebAssembly module.
 
-import {CommandLine, FileSystem, Descriptor, Date, Console, Random, Time} from "../node_modules/as-wasi/assembly/index";
+import {CommandLine, Console, Random, Time} from "../node_modules/as-wasi/assembly/index";
 
 import {openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToFrameBuffer, updateInput, getKeyPressState, getMousePosition, getMouseClickState} from "../lib/lib";
 
@@ -34,25 +34,55 @@ function getRandomFrame(): Array<u8> {
   return frame;
 }
 
+function getMousePositionCopy(mousePosition: Array<i32>): Array<i32> {
+  let copy = new Array<i32>();
+  copy[0] = mousePosition[0];
+  copy[1] = mousePosition[1];
+  return copy;
+}
+
 // Entry point into WASI Module
 export function _start(): void {
 
   // Open a framebuffer
   let frameBuffer = openFrameBufferWindow(width, height, 0);
 
+  // Values we want to track and log
+  let oldMousePosition: Array<i32> = getMousePositionCopy(getMousePosition());
+  let pressedKeys: Array<string> = new Array<string>();
+
   // Create a loop to subscribe to call events
   while(true) {
 
     // Update the Input
-    Console.log("updateInput");
     updateInput();
 
+    // Check if anything changes
+    let newMousePosition: Array<i32> = getMousePosition();
+    if (newMousePosition[0] != oldMousePosition[0] || newMousePosition[1] != oldMousePosition[1]) {
+      oldMousePosition = getMousePositionCopy(newMousePosition);
+      Console.log("New Mouse Position / X: " + newMousePosition[0].toString() + " Y: " + newMousePosition[1].toString());
+    }
+
+    let keyPressState: Map<string, bool> = getKeyPressState();
+    // Some keys we want to check
+    let keysToCheck: Array<string> = new Array<string>();
+    keysToCheck.push('KeyW');
+    keysToCheck.push('KeyA');
+    keysToCheck.push('KeyS');
+    keysToCheck.push('KeyD');
+    keysToCheck.push('KeySpace');
+    for (let i = 0; i < keysToCheck.length; i++) {
+      let key = keysToCheck[i];
+      if (keyPressState.has(key) && keyPressState.get(key) == true) {
+        Console.log("Key is being pressed: " + key);
+      }
+    }
+    
     // Get / draw a frame
-    Console.log("Draw a frame");
     let frame: Array<u8> = getRandomFrame();
     drawRgbaArrayToFrameBuffer(frame, frameBuffer, 0);
 
-    Console.log("Sleep");
     Time.sleep(16 * Time.MILLISECOND);
   }
 }
