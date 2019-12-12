@@ -50,29 +50,42 @@ export function updateInput(): void {
   
   if (data != null && data.length > 0) {
 
-    // Get the type of event
-    if (data[0] == InputEventType.KEY_PRESS) {
-      let key: string | null = getKeyFromByte(data[1]);
-      if (key != null) {
-        setKeyOnKeyPressState(key as string);
-      }
-    } else if (data[0] == InputEventType.MOUSE_MOVE) {
-      let x: i32 = 0;
-      for (let i: u8 = 0; i < 4; i++) {
-        x = x | (data[i + 1] << (i * 8));
-      }
-      let y: i32 = 0;
-      for (let i: u8 = 0; i < 4; i++) {
-        y = y | (data[i + 5] << (i * 8));
-      }
-      setMousePosition(x, y);
-    } else if (data[0] == InputEventType.MOUSE_PRESS_LEFT) {
-      setClickOnMouseClickState('Left');
-    } else if (data[0] == InputEventType.MOUSE_PRESS_RIGHT) {
-      setClickOnMouseClickState('Right');
-    } else if (data[0] == InputEventType.MOUSE_PRESS_MIDDLE) {
-      setClickOnMouseClickState('Middle');
-    }  
+    // Iterate through the data and get all of our events.
+    let index = 0;
+    while (index < data.length) {
+      // Get the type of event
+      if (data[index] == InputEventType.KEY_PRESS) {
+        let key: string | null = getKeyFromByte(data[index + 1]);
+        if (key != null) {
+          setKeyOnKeyPressState(key as string);
+        }
+
+        index += 2;
+      } else if (data[index] == InputEventType.MOUSE_MOVE) {
+        let x: i32 = 0;
+        for (let i: u8 = 0; i < 4; i++) {
+          x = x | (data[index + i + 1] << (i * 8));
+        }
+        let y: i32 = 0;
+        for (let i: u8 = 0; i < 4; i++) {
+          y = y | (data[index + i + 5] << (i * 8));
+        }
+        setMousePosition(x, y);
+        index += 9;
+      } else if (data[index] == InputEventType.MOUSE_PRESS_LEFT) {
+        setClickOnMouseClickState('Left');
+        // Click Also has and x and y, see the movement above
+        index += 9;
+      } else if (data[index] == InputEventType.MOUSE_PRESS_RIGHT) {
+        setClickOnMouseClickState('Right');
+        // Click Also has and x and y, see the movement above
+        index += 9;
+      } else if (data[index] == InputEventType.MOUSE_PRESS_MIDDLE) {
+        setClickOnMouseClickState('Middle');
+        // Click Also has and x and y, see the movement above
+        index += 9;
+      }  
+    }
   }
 }
 

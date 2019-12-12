@@ -3446,6 +3446,7 @@
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
+  (local $4 i32)
   i32.const 4192
   call $~lib/as-wasi/as-wasi/FileSystem.open
   call $assemblyscript/lib/input-map/resetKeyPressState
@@ -3462,144 +3463,182 @@
    i32.const 0
   end
   if
-   local.get $2
-   i32.const 0
-   call $~lib/array/Array<u8>#__get
-   i32.const 1
-   i32.eq
-   if
-    block $__inlined_func$assemblyscript/lib/input-map/getKeyFromByte (result i32)
-     local.get $2
-     i32.const 1
-     call $~lib/array/Array<u8>#__get
-     local.set $0
-     global.get $assemblyscript/lib/input-map/byteToInputKeyMap
-     local.get $0
-     local.get $0
-     call $~lib/util/hash/hash32
-     call $~lib/map/Map<i32,~lib/string/String>#find
-     if
-      global.get $assemblyscript/lib/input-map/byteToInputKeyMap
-      local.get $0
-      call $~lib/map/Map<i32,~lib/string/String>#get
-      br $__inlined_func$assemblyscript/lib/input-map/getKeyFromByte
-     end
-     i32.const 0
-    end
-    local.tee $0
-    i32.const 0
-    call $~lib/string/String.__eq
-    i32.eqz
-    if
-     global.get $assemblyscript/lib/input-map/keyPressStateMap
-     local.get $0
-     i32.const 1
-     call $~lib/map/Map<~lib/string/String,bool>#set
-    end
-   else
+   loop $continue|0
+    local.get $1
     local.get $2
-    i32.const 0
-    call $~lib/array/Array<u8>#__get
-    i32.const 2
-    i32.eq
+    i32.load offset=12
+    i32.lt_s
     if
-     loop $loop|0
-      local.get $0
-      i32.const 4
-      i32.lt_u
-      if
-       local.get $2
-       local.get $0
-       i32.const 1
-       i32.add
-       local.tee $1
-       i32.const 255
-       i32.and
-       call $~lib/array/Array<u8>#__get
-       local.get $0
-       i32.const 3
-       i32.shl
-       i32.shl
-       i32.const 255
-       i32.and
-       local.get $3
-       i32.or
-       local.set $3
-       local.get $1
-       local.set $0
-       br $loop|0
-      end
-     end
-     i32.const 0
-     local.set $0
-     i32.const 0
-     local.set $1
-     loop $loop|1
-      local.get $1
-      i32.const 4
-      i32.lt_u
-      if
-       local.get $2
-       local.get $1
-       i32.const 5
-       i32.add
-       i32.const 255
-       i32.and
-       call $~lib/array/Array<u8>#__get
-       local.get $1
-       i32.const 3
-       i32.shl
-       i32.shl
-       i32.const 255
-       i32.and
-       local.get $0
-       i32.or
-       local.set $0
-       local.get $1
-       i32.const 1
-       i32.add
-       local.set $1
-       br $loop|1
-      end
-     end
-     global.get $assemblyscript/lib/input-map/mousePosition
-     i32.const 0
-     local.get $3
-     call $~lib/array/Array<i32>#__set
-     global.get $assemblyscript/lib/input-map/mousePosition
-     i32.const 1
-     local.get $0
-     call $~lib/array/Array<i32>#__set
-    else
      local.get $2
-     i32.const 0
+     local.get $1
      call $~lib/array/Array<u8>#__get
-     i32.const 4
+     i32.const 1
      i32.eq
-     if
-      i32.const 456
-      call $assemblyscript/lib/input-map/setClickOnMouseClickState
+     if (result i32)
+      block $__inlined_func$assemblyscript/lib/input-map/getKeyFromByte (result i32)
+       local.get $2
+       local.get $1
+       i32.const 1
+       i32.add
+       call $~lib/array/Array<u8>#__get
+       local.set $0
+       global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+       local.get $0
+       local.get $0
+       call $~lib/util/hash/hash32
+       call $~lib/map/Map<i32,~lib/string/String>#find
+       if
+        global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+        local.get $0
+        call $~lib/map/Map<i32,~lib/string/String>#get
+        br $__inlined_func$assemblyscript/lib/input-map/getKeyFromByte
+       end
+       i32.const 0
+      end
+      local.tee $0
+      i32.const 0
+      call $~lib/string/String.__eq
+      i32.eqz
+      if
+       global.get $assemblyscript/lib/input-map/keyPressStateMap
+       local.get $0
+       i32.const 1
+       call $~lib/map/Map<~lib/string/String,bool>#set
+      end
+      local.get $1
+      i32.const 2
+      i32.add
      else
       local.get $2
-      i32.const 0
+      local.get $1
       call $~lib/array/Array<u8>#__get
-      i32.const 5
+      i32.const 2
       i32.eq
-      if
-       i32.const 480
-       call $assemblyscript/lib/input-map/setClickOnMouseClickState
+      if (result i32)
+       i32.const 0
+       local.set $4
+       i32.const 0
+       local.set $0
+       loop $loop|1
+        local.get $0
+        i32.const 4
+        i32.lt_u
+        if
+         local.get $2
+         local.get $0
+         i32.const 255
+         i32.and
+         local.get $1
+         i32.add
+         i32.const 1
+         i32.add
+         call $~lib/array/Array<u8>#__get
+         local.get $0
+         i32.const 3
+         i32.shl
+         i32.shl
+         i32.const 255
+         i32.and
+         local.get $4
+         i32.or
+         local.set $4
+         local.get $0
+         i32.const 1
+         i32.add
+         local.set $0
+         br $loop|1
+        end
+       end
+       i32.const 0
+       local.set $0
+       i32.const 0
+       local.set $3
+       loop $loop|2
+        local.get $3
+        i32.const 4
+        i32.lt_u
+        if
+         local.get $2
+         local.get $3
+         i32.const 255
+         i32.and
+         local.get $1
+         i32.add
+         i32.const 5
+         i32.add
+         call $~lib/array/Array<u8>#__get
+         local.get $3
+         i32.const 3
+         i32.shl
+         i32.shl
+         i32.const 255
+         i32.and
+         local.get $0
+         i32.or
+         local.set $0
+         local.get $3
+         i32.const 1
+         i32.add
+         local.set $3
+         br $loop|2
+        end
+       end
+       global.get $assemblyscript/lib/input-map/mousePosition
+       i32.const 0
+       local.get $4
+       call $~lib/array/Array<i32>#__set
+       global.get $assemblyscript/lib/input-map/mousePosition
+       i32.const 1
+       local.get $0
+       call $~lib/array/Array<i32>#__set
+       local.get $1
+       i32.const 9
+       i32.add
       else
        local.get $2
-       i32.const 0
+       local.get $1
        call $~lib/array/Array<u8>#__get
-       i32.const 7
+       i32.const 4
        i32.eq
-       if
-        i32.const 512
+       if (result i32)
+        i32.const 456
         call $assemblyscript/lib/input-map/setClickOnMouseClickState
+        local.get $1
+        i32.const 9
+        i32.add
+       else
+        local.get $2
+        local.get $1
+        call $~lib/array/Array<u8>#__get
+        i32.const 5
+        i32.eq
+        if (result i32)
+         i32.const 480
+         call $assemblyscript/lib/input-map/setClickOnMouseClickState
+         local.get $1
+         i32.const 9
+         i32.add
+        else
+         local.get $2
+         local.get $1
+         call $~lib/array/Array<u8>#__get
+         i32.const 7
+         i32.eq
+         if (result i32)
+          i32.const 512
+          call $assemblyscript/lib/input-map/setClickOnMouseClickState
+          local.get $1
+          i32.const 9
+          i32.add
+         else
+          local.get $1
+         end
+        end
        end
       end
      end
+     local.set $1
+     br $continue|0
     end
    end
   end
