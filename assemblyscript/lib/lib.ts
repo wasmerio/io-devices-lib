@@ -2,7 +2,7 @@
 import {CommandLine, FileSystem, Descriptor} from "as-wasi";
 
 import {InputEventType, getKeyFromByte, resetKeyPressState, setKeyOnKeyPressState,  getMousePosition, setMousePosition, resetMouseClickState, setClickOnMouseClickState} from './input-map';
-export {getKeyPressState, getMousePosition, getMouseClickState} from './input-map';
+export {getKeyPressState, getMousePosition, getMouseClickState, isKeyPressed} from './input-map';
 
 // TODO: In current (December 3rd, 2019) verisons of as-wasi, the Current working directory (dirfd) defaults to: "/"
 

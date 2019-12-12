@@ -4066,7 +4066,7 @@
   i32.const 160
   i32.const 144
   call $assemblyscript/lib/lib/openFrameBufferWindow
-  local.set $5
+  local.set $4
   global.get $assemblyscript/lib/input-map/mousePosition
   call $assemblyscript/debug-example/index/getMousePositionCopy
   local.set $2
@@ -4112,8 +4112,6 @@
     call $~lib/string/String.__concat
     call $~lib/as-wasi/as-wasi/Console.log
    end
-   global.get $assemblyscript/lib/input-map/keyPressStateMap
-   local.set $4
    call $~lib/array/Array<~lib/string/String>#constructor
    local.tee $0
    i32.const 1312
@@ -4138,25 +4136,27 @@
     i32.load offset=12
     i32.lt_s
     if
-     local.get $4
      local.get $0
      local.get $1
      call $~lib/array/Array<~lib/string/String>#__get
      local.tee $3
+     local.set $5
+     global.get $assemblyscript/lib/input-map/keyPressStateMap
+     local.get $3
      local.get $3
      call $~lib/util/hash/hashStr
      call $~lib/map/Map<~lib/string/String,bool>#find
      if (result i32)
-      local.get $4
-      local.get $3
+      global.get $assemblyscript/lib/input-map/keyPressStateMap
+      local.get $5
       call $~lib/map/Map<~lib/string/String,bool>#get
-      i32.const 0
-      i32.ne
-      i32.const 1
-      i32.eq
      else
       i32.const 0
      end
+     i32.const 0
+     i32.ne
+     i32.const 1
+     i32.eq
      if
       i32.const 4544
       local.get $3
@@ -4171,7 +4171,7 @@
     end
    end
    call $assemblyscript/debug-example/index/getRandomFrame
-   local.get $5
+   local.get $4
    call $assemblyscript/lib/lib/drawRgbaArrayToFrameBuffer
    global.get $~lib/as-wasi/as-wasi/Time.MILLISECOND
    i32.const 4

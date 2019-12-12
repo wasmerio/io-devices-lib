@@ -294,3 +294,7 @@ export function getKeyPressState(): Map<string, bool> {
 export function setKeyOnKeyPressState(key: string): void {
   keyPressStateMap.set(key, true);
 }
+
+export function isKeyPressed(key: string): bool {
+  return keyPressStateMap.has(key) ? keyPressStateMap.get(key) : false;
+}

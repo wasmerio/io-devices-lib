@@ -6223,7 +6223,27 @@
   call $~lib/rt/stub/__release
   local.get $2
  )
- (func $~lib/typedarray/Uint8Array#constructor (; 94 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $assemblyscript/lib/input-map/isKeyPressed (; 94 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+  (local $1 i32)
+  local.get $0
+  call $~lib/rt/stub/__retain
+  drop
+  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  local.get $0
+  call $~lib/map/Map<~lib/string/String,bool>#has
+  if (result i32)
+   global.get $assemblyscript/lib/input-map/keyPressStateMap
+   local.get $0
+   call $~lib/map/Map<~lib/string/String,bool>#get
+  else
+   i32.const 0
+  end
+  local.set $1
+  local.get $0
+  call $~lib/rt/stub/__release
+  local.get $1
+ )
+ (func $~lib/typedarray/Uint8Array#constructor (; 95 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $0
   if (result i32)
    local.get $0
@@ -6239,13 +6259,13 @@
   local.set $0
   local.get $0
  )
- (func $~lib/arraybuffer/ArrayBuffer#get:byteLength (; 95 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/arraybuffer/ArrayBuffer#get:byteLength (; 96 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   local.get $0
   i32.const 16
   i32.sub
   i32.load offset=12
  )
- (func $~lib/as-wasi/as-wasi/Random.randomFill (; 96 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/as-wasi/as-wasi/Random.randomFill (; 97 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -6303,7 +6323,7 @@
   local.get $0
   call $~lib/rt/stub/__release
  )
- (func $~lib/as-wasi/as-wasi/Random.randomBytes (; 97 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/as-wasi/as-wasi/Random.randomBytes (; 98 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   i32.const 0
   local.get $0
@@ -6314,7 +6334,7 @@
   call $~lib/as-wasi/as-wasi/Random.randomFill
   local.get $1
  )
- (func $~lib/array/Array<u8>#constructor (; 98 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/array/Array<u8>#constructor (; 99 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $0
   if (result i32)
    local.get $0
@@ -6336,7 +6356,7 @@
   i32.store offset=12
   local.get $0
  )
- (func $~lib/typedarray/Uint8Array#__get (; 99 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/typedarray/Uint8Array#__get (; 100 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $1
   local.get $0
   i32.load offset=8
@@ -6355,7 +6375,7 @@
   i32.add
   i32.load8_u
  )
- (func $~lib/array/Array<u8>#__unchecked_set (; 100 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $~lib/array/Array<u8>#__unchecked_set (; 101 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
   local.get $0
   i32.load offset=4
   local.get $1
@@ -6365,7 +6385,7 @@
   local.get $2
   i32.store8
  )
- (func $~lib/array/Array<u8>#__set (; 101 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $~lib/array/Array<u8>#__set (; 102 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
   local.get $1
   local.get $0
   i32.load offset=12
@@ -6399,7 +6419,7 @@
   local.get $2
   call $~lib/array/Array<u8>#__unchecked_set
  )
- (func $assemblyscript/debug-example/index/getRandomFrame (; 102 ;) (type $FUNCSIG$i) (result i32)
+ (func $assemblyscript/debug-example/index/getRandomFrame (; 103 ;) (type $FUNCSIG$i) (result i32)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -6515,7 +6535,7 @@
   call $~lib/rt/stub/__release
   local.get $2
  )
- (func $~lib/as-wasi/as-wasi/Descriptor#seek (; 103 ;) (type $FUNCSIG$iiji) (param $0 i32) (param $1 i64) (param $2 i32) (result i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor#seek (; 104 ;) (type $FUNCSIG$iiji) (param $0 i32) (param $1 i64) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -6542,7 +6562,7 @@
   call $~lib/rt/stub/__release
   local.get $6
  )
- (func $~lib/as-wasi/as-wasi/Descriptor#write (; 104 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor#write (; 105 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -6621,7 +6641,7 @@
   local.get $1
   call $~lib/rt/stub/__release
  )
- (func $assemblyscript/lib/lib/drawRgbaArrayToFrameBuffer (; 105 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $assemblyscript/lib/lib/drawRgbaArrayToFrameBuffer (; 106 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -6679,7 +6699,7 @@
   local.get $1
   call $~lib/rt/stub/__release
  )
- (func $~lib/bindings/wasi_unstable/subscription#constructor (; 106 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/bindings/wasi_unstable/subscription#constructor (; 107 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   local.get $0
   i32.eqz
   if
@@ -6699,7 +6719,7 @@
   i32.store offset=12
   local.get $0
  )
- (func $~lib/bindings/wasi_unstable/clocksubscription#constructor (; 107 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/bindings/wasi_unstable/clocksubscription#constructor (; 108 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   local.get $0
   i32.eqz
   if
@@ -6731,7 +6751,7 @@
   i32.store offset=52
   local.get $0
  )
- (func $~lib/bindings/wasi_unstable/event#constructor (; 108 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/bindings/wasi_unstable/event#constructor (; 109 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   local.get $0
   i32.eqz
   if
@@ -6754,7 +6774,7 @@
   i32.store16 offset=12
   local.get $0
  )
- (func $~lib/as-wasi/as-wasi/Time.sleep (; 109 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/as-wasi/as-wasi/Time.sleep (; 110 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -6794,7 +6814,7 @@
   call $~lib/bindings/wasi_unstable/poll_oneoff
   drop
  )
- (func $assemblyscript/debug-example/index/_start (; 110 ;) (type $FUNCSIG$v)
+ (func $assemblyscript/debug-example/index/_start (; 111 ;) (type $FUNCSIG$v)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -6918,20 +6938,12 @@
      local.get $7
      call $~lib/array/Array<~lib/string/String>#__get
      local.set $6
-     local.get $9
      local.get $6
-     call $~lib/map/Map<~lib/string/String,bool>#has
-     if (result i32)
-      local.get $9
-      local.get $6
-      call $~lib/map/Map<~lib/string/String,bool>#get
-      i32.const 0
-      i32.ne
-      i32.const 1
-      i32.eq
-     else
-      i32.const 0
-     end
+     call $assemblyscript/lib/input-map/isKeyPressed
+     i32.const 0
+     i32.ne
+     i32.const 1
+     i32.eq
      if
       i32.const 4992
       local.get $6
@@ -6973,7 +6985,7 @@
   end
   unreachable
  )
- (func $start (; 111 ;) (type $FUNCSIG$v)
+ (func $start (; 112 ;) (type $FUNCSIG$v)
   global.get $~lib/heap/__heap_base
   i32.const 15
   i32.add
@@ -6986,6 +6998,6 @@
   global.set $~lib/rt/stub/offset
   call $start:assemblyscript/debug-example/index
  )
- (func $null (; 112 ;) (type $FUNCSIG$v)
+ (func $null (; 113 ;) (type $FUNCSIG$v)
  )
 )

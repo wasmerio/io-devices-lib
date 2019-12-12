@@ -2,7 +2,7 @@
 
 import {CommandLine, Console, Random, Time} from "as-wasi";
 
-import {openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToFrameBuffer, updateInput, getKeyPressState, getMousePosition, getMouseClickState} from "../lib/lib";
+import {openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToFrameBuffer, updateInput, getKeyPressState, isKeyPressed, getMousePosition, getMouseClickState} from "../lib/lib";
 
 // Width and height for our framebuffer
 let width: i32 = 160;
@@ -74,7 +74,7 @@ export function _start(): void {
     keysToCheck.push('KeySpace');
     for (let i = 0; i < keysToCheck.length; i++) {
       let key = keysToCheck[i];
-      if (keyPressState.has(key) && keyPressState.get(key) == true) {
+      if (isKeyPressed(key) == true) {
         Console.log("Key is being pressed: " + key);
       }
     }
