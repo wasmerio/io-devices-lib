@@ -2,7 +2,7 @@
 import {CommandLine, FileSystem, Descriptor} from "as-wasi";
 
 import {InputEventType, getKeyFromByte, resetKeyPressState, setKeyOnKeyPressState,  getMousePosition, setMousePosition, resetMouseClickState, setClickOnMouseClickState} from './input-map';
-export {getKeyPressState, getMousePosition, getMouseClickState, isKeyPressed} from './input-map';
+export {getKeyPressState, getMousePosition, getMouseClickState, isKeyPressed, isMouseButtonClicked} from './input-map';
 
 // TODO: In current (December 3rd, 2019) verisons of as-wasi, the Current working directory (dirfd) defaults to: "/"
 
@@ -41,8 +41,9 @@ export function drawRgbaArrayToFrameBuffer(rgbaArray: Array<u8>, frameBuffer: De
 export function updateInput(): void {
   let devInput: Descriptor = FileSystem.open('dev/input') as Descriptor;
 
-  // Reset the keyboard stat every update
+  // Reset the state every update
   resetKeyPressState();
+  resetMouseClickState();
 
   // Read the file as bytes
   let data: u8[] | null = devInput.read();
@@ -66,7 +67,6 @@ export function updateInput(): void {
       }
       setMousePosition(x, y);
     } else if (data[0] == InputEventType.MOUSE_PRESS_LEFT) {
-      resetMouseClickState();
       setClickOnMouseClickState('Left');
     } else if (data[0] == InputEventType.MOUSE_PRESS_RIGHT) {
       setClickOnMouseClickState('Right');

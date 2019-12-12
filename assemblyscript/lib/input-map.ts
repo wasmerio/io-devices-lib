@@ -276,6 +276,10 @@ export function getMouseClickState(): Map<string, bool> {
   return mouseClickMap;
 }
 
+export function isMouseButtonClicked(button: string): bool {
+  return mouseClickMap.has(button) ? mouseClickMap.get(button) : false;
+}
+
 export function setClickOnMouseClickState(click: string): void {
   mouseClickMap.set(click, true);
 }

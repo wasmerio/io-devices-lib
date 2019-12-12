@@ -2,7 +2,7 @@
 
 import {CommandLine, Console, Random, Time} from "as-wasi";
 
-import {openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToFrameBuffer, updateInput, getKeyPressState, isKeyPressed, getMousePosition, getMouseClickState} from "../lib/lib";
+import {openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToFrameBuffer, updateInput, getKeyPressState, isKeyPressed, getMousePosition, isMouseButtonClicked} from "../lib/lib";
 
 // Width and height for our framebuffer
 let width: i32 = 160;
@@ -84,6 +84,11 @@ export function _start(): void {
       if (isKeyPressed(key) == true) {
         Console.log("Key is being pressed: " + key);
       }
+    }
+
+    // Check left mouse
+    if (isMouseButtonClicked('Left')) {
+      Console.log("Left Mouse Button is clicked");
     }
     
     // Get / draw a frame
