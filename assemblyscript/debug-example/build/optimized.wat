@@ -4114,6 +4114,12 @@
    end
    call $~lib/array/Array<~lib/string/String>#constructor
    local.tee $0
+   i32.const 1384
+   call $~lib/array/Array<~lib/string/String>#push
+   local.get $0
+   i32.const 1336
+   call $~lib/array/Array<~lib/string/String>#push
+   local.get $0
    i32.const 1312
    call $~lib/array/Array<~lib/string/String>#push
    local.get $0
@@ -4126,7 +4132,22 @@
    i32.const 856
    call $~lib/array/Array<~lib/string/String>#push
    local.get $0
+   i32.const 1888
+   call $~lib/array/Array<~lib/string/String>#push
+   local.get $0
+   i32.const 1856
+   call $~lib/array/Array<~lib/string/String>#push
+   local.get $0
+   i32.const 1792
+   call $~lib/array/Array<~lib/string/String>#push
+   local.get $0
+   i32.const 1824
+   call $~lib/array/Array<~lib/string/String>#push
+   local.get $0
    i32.const 2720
+   call $~lib/array/Array<~lib/string/String>#push
+   local.get $0
+   i32.const 2464
    call $~lib/array/Array<~lib/string/String>#push
    i32.const 0
    local.set $1

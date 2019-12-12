@@ -67,11 +67,18 @@ export function _start(): void {
     let keyPressState: Map<string, bool> = getKeyPressState();
     // Some keys we want to check
     let keysToCheck: Array<string> = new Array<string>();
+    keysToCheck.push('KeyZ');
+    keysToCheck.push('KeyX');
     keysToCheck.push('KeyW');
     keysToCheck.push('KeyA');
     keysToCheck.push('KeyS');
     keysToCheck.push('KeyD');
+    keysToCheck.push('KeyUp');
+    keysToCheck.push('KeyRight');
+    keysToCheck.push('KeyDown');
+    keysToCheck.push('KeyLeft');
     keysToCheck.push('KeySpace');
+    keysToCheck.push('KeyEnter');
     for (let i = 0; i < keysToCheck.length; i++) {
       let key = keysToCheck[i];
       if (isKeyPressed(key) == true) {

@@ -6905,6 +6905,14 @@
    call $~lib/array/Array<~lib/string/String>#constructor
    local.set $8
    local.get $8
+   i32.const 1832
+   call $~lib/array/Array<~lib/string/String>#push
+   drop
+   local.get $8
+   i32.const 1784
+   call $~lib/array/Array<~lib/string/String>#push
+   drop
+   local.get $8
    i32.const 1760
    call $~lib/array/Array<~lib/string/String>#push
    drop
@@ -6921,7 +6929,27 @@
    call $~lib/array/Array<~lib/string/String>#push
    drop
    local.get $8
+   i32.const 2336
+   call $~lib/array/Array<~lib/string/String>#push
+   drop
+   local.get $8
+   i32.const 2304
+   call $~lib/array/Array<~lib/string/String>#push
+   drop
+   local.get $8
+   i32.const 2240
+   call $~lib/array/Array<~lib/string/String>#push
+   drop
+   local.get $8
+   i32.const 2272
+   call $~lib/array/Array<~lib/string/String>#push
+   drop
+   local.get $8
    i32.const 3168
+   call $~lib/array/Array<~lib/string/String>#push
+   drop
+   local.get $8
+   i32.const 2912
    call $~lib/array/Array<~lib/string/String>#push
    drop
    block $break|1
