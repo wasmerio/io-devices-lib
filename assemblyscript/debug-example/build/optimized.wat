@@ -3435,13 +3435,39 @@
   local.get $0
   i32.load offset=4
  )
- (func $assemblyscript/lib/input-map/setClickOnMouseClickState (; 60 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $assemblyscript/lib/input-map/getKeyFromByte (; 60 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  local.get $0
+  local.get $0
+  call $~lib/util/hash/hash32
+  call $~lib/map/Map<i32,~lib/string/String>#find
+  if
+   global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+   local.get $0
+   call $~lib/map/Map<i32,~lib/string/String>#get
+   return
+  end
+  i32.const 0
+ )
+ (func $~lib/string/String.__ne (; 61 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+  local.get $0
+  i32.const 0
+  call $~lib/string/String.__eq
+  i32.eqz
+ )
+ (func $assemblyscript/lib/input-map/setKeyOnKeyPressState (; 62 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  local.get $0
+  local.get $1
+  call $~lib/map/Map<~lib/string/String,bool>#set
+ )
+ (func $assemblyscript/lib/input-map/setClickOnMouseClickState (; 63 ;) (type $FUNCSIG$vi) (param $0 i32)
   global.get $assemblyscript/lib/input-map/mouseClickMap
   local.get $0
   i32.const 1
   call $~lib/map/Map<~lib/string/String,bool>#set
  )
- (func $assemblyscript/lib/lib/updateInput (; 61 ;) (type $FUNCSIG$v)
+ (func $assemblyscript/lib/lib/updateInput (; 64 ;) (type $FUNCSIG$v)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -3449,13 +3475,12 @@
   (local $4 i32)
   i32.const 4192
   call $~lib/as-wasi/as-wasi/FileSystem.open
-  call $assemblyscript/lib/input-map/resetKeyPressState
   call $assemblyscript/lib/input-map/resetMouseClickState
   call $~lib/rt/__allocArray
   call $~lib/as-wasi/as-wasi/Descriptor#read
-  local.tee $2
+  local.tee $1
   if (result i32)
-   local.get $2
+   local.get $1
    i32.load offset=12
    i32.const 0
    i32.gt_s
@@ -3464,193 +3489,203 @@
   end
   if
    loop $continue|0
+    local.get $0
     local.get $1
-    local.get $2
     i32.load offset=12
     i32.lt_s
     if
-     local.get $2
      local.get $1
+     local.get $0
      call $~lib/array/Array<u8>#__get
      i32.const 1
      i32.eq
-     if (result i32)
-      block $__inlined_func$assemblyscript/lib/input-map/getKeyFromByte (result i32)
-       local.get $2
-       local.get $1
-       i32.const 1
-       i32.add
-       call $~lib/array/Array<u8>#__get
-       local.set $0
-       global.get $assemblyscript/lib/input-map/byteToInputKeyMap
-       local.get $0
-       local.get $0
-       call $~lib/util/hash/hash32
-       call $~lib/map/Map<i32,~lib/string/String>#find
-       if
-        global.get $assemblyscript/lib/input-map/byteToInputKeyMap
-        local.get $0
-        call $~lib/map/Map<i32,~lib/string/String>#get
-        br $__inlined_func$assemblyscript/lib/input-map/getKeyFromByte
-       end
-       i32.const 0
-      end
-      local.tee $0
-      i32.const 0
-      call $~lib/string/String.__eq
-      i32.eqz
-      if
-       global.get $assemblyscript/lib/input-map/keyPressStateMap
-       local.get $0
-       i32.const 1
-       call $~lib/map/Map<~lib/string/String,bool>#set
-      end
+     if
       local.get $1
+      local.get $0
+      i32.const 1
+      i32.add
+      call $~lib/array/Array<u8>#__get
+      call $assemblyscript/lib/input-map/getKeyFromByte
+      local.tee $2
+      call $~lib/string/String.__ne
+      if
+       local.get $2
+       i32.const 1
+       call $assemblyscript/lib/input-map/setKeyOnKeyPressState
+      end
+      local.get $0
       i32.const 2
       i32.add
+      local.set $0
      else
-      local.get $2
       local.get $1
+      local.get $0
       call $~lib/array/Array<u8>#__get
-      i32.const 2
+      i32.const 3
       i32.eq
-      if (result i32)
-       i32.const 0
-       local.set $4
-       i32.const 0
-       local.set $0
-       loop $loop|1
-        local.get $0
-        i32.const 4
-        i32.lt_u
-        if
-         local.get $2
-         local.get $0
-         i32.const 255
-         i32.and
-         local.get $1
-         i32.add
-         i32.const 1
-         i32.add
-         call $~lib/array/Array<u8>#__get
-         local.get $0
-         i32.const 3
-         i32.shl
-         i32.shl
-         i32.const 255
-         i32.and
-         local.get $4
-         i32.or
-         local.set $4
-         local.get $0
-         i32.const 1
-         i32.add
-         local.set $0
-         br $loop|1
-        end
-       end
-       i32.const 0
-       local.set $0
-       i32.const 0
-       local.set $3
-       loop $loop|2
-        local.get $3
-        i32.const 4
-        i32.lt_u
-        if
-         local.get $2
-         local.get $3
-         i32.const 255
-         i32.and
-         local.get $1
-         i32.add
-         i32.const 5
-         i32.add
-         call $~lib/array/Array<u8>#__get
-         local.get $3
-         i32.const 3
-         i32.shl
-         i32.shl
-         i32.const 255
-         i32.and
-         local.get $0
-         i32.or
-         local.set $0
-         local.get $3
-         i32.const 1
-         i32.add
-         local.set $3
-         br $loop|2
-        end
-       end
-       global.get $assemblyscript/lib/input-map/mousePosition
-       i32.const 0
-       local.get $4
-       call $~lib/array/Array<i32>#__set
-       global.get $assemblyscript/lib/input-map/mousePosition
-       i32.const 1
+      if
+       local.get $1
        local.get $0
-       call $~lib/array/Array<i32>#__set
-       local.get $1
-       i32.const 9
+       i32.const 1
        i32.add
-      else
-       local.get $2
-       local.get $1
        call $~lib/array/Array<u8>#__get
-       i32.const 4
+       call $assemblyscript/lib/input-map/getKeyFromByte
+       local.tee $2
+       call $~lib/string/String.__ne
+       if
+        local.get $2
+        i32.const 0
+        call $assemblyscript/lib/input-map/setKeyOnKeyPressState
+       end
+       local.get $0
+       i32.const 2
+       i32.add
+       local.set $0
+      else
+       local.get $1
+       local.get $0
+       call $~lib/array/Array<u8>#__get
+       i32.const 2
        i32.eq
-       if (result i32)
-        i32.const 456
-        call $assemblyscript/lib/input-map/setClickOnMouseClickState
-        local.get $1
+       if
+        i32.const 0
+        local.set $2
+        i32.const 0
+        local.set $3
+        loop $loop|1
+         local.get $3
+         i32.const 4
+         i32.lt_u
+         if
+          local.get $1
+          local.get $3
+          i32.const 255
+          i32.and
+          local.get $0
+          i32.add
+          i32.const 1
+          i32.add
+          call $~lib/array/Array<u8>#__get
+          local.get $3
+          i32.const 3
+          i32.shl
+          i32.shl
+          i32.const 255
+          i32.and
+          local.get $2
+          i32.or
+          local.set $2
+          local.get $3
+          i32.const 1
+          i32.add
+          local.set $3
+          br $loop|1
+         end
+        end
+        i32.const 0
+        local.set $3
+        i32.const 0
+        local.set $4
+        loop $loop|2
+         local.get $4
+         i32.const 4
+         i32.lt_u
+         if
+          local.get $1
+          local.get $4
+          i32.const 255
+          i32.and
+          local.get $0
+          i32.add
+          i32.const 5
+          i32.add
+          call $~lib/array/Array<u8>#__get
+          local.get $4
+          i32.const 3
+          i32.shl
+          i32.shl
+          i32.const 255
+          i32.and
+          local.get $3
+          i32.or
+          local.set $3
+          local.get $4
+          i32.const 1
+          i32.add
+          local.set $4
+          br $loop|2
+         end
+        end
+        global.get $assemblyscript/lib/input-map/mousePosition
+        i32.const 0
+        local.get $2
+        call $~lib/array/Array<i32>#__set
+        global.get $assemblyscript/lib/input-map/mousePosition
+        i32.const 1
+        local.get $3
+        call $~lib/array/Array<i32>#__set
+        local.get $0
         i32.const 9
         i32.add
+        local.set $0
        else
-        local.get $2
         local.get $1
+        local.get $0
         call $~lib/array/Array<u8>#__get
-        i32.const 5
+        i32.const 4
         i32.eq
-        if (result i32)
-         i32.const 480
+        if
+         i32.const 456
          call $assemblyscript/lib/input-map/setClickOnMouseClickState
-         local.get $1
+         local.get $0
          i32.const 9
          i32.add
+         local.set $0
         else
-         local.get $2
          local.get $1
+         local.get $0
          call $~lib/array/Array<u8>#__get
-         i32.const 7
+         i32.const 5
          i32.eq
-         if (result i32)
-          i32.const 512
+         if
+          i32.const 480
           call $assemblyscript/lib/input-map/setClickOnMouseClickState
-          local.get $1
+          local.get $0
           i32.const 9
           i32.add
+          local.set $0
          else
           local.get $1
+          local.get $0
+          call $~lib/array/Array<u8>#__get
+          i32.const 7
+          i32.eq
+          if
+           i32.const 512
+           call $assemblyscript/lib/input-map/setClickOnMouseClickState
+           local.get $0
+           i32.const 9
+           i32.add
+           local.set $0
+          end
          end
         end
        end
       end
      end
-     local.set $1
      br $continue|0
     end
    end
   end
  )
- (func $~lib/as-wasi/as-wasi/Console.log (; 62 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/as-wasi/as-wasi/Console.log (; 65 ;) (type $FUNCSIG$vi) (param $0 i32)
   i32.const 1
   call $~lib/as-wasi/as-wasi/Descriptor#constructor
   local.get $0
   i32.const 1
   call $~lib/as-wasi/as-wasi/Descriptor#writeString
  )
- (func $~lib/array/Array<~lib/string/String>#push (; 63 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/array/Array<~lib/string/String>#push (; 66 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   local.get $0
@@ -3674,7 +3709,7 @@
   local.get $3
   i32.store offset=12
  )
- (func $~lib/array/Array<~lib/string/String>#__get (; 64 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/array/Array<~lib/string/String>#__get (; 67 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $1
   local.get $0
   i32.load offset=12
@@ -3706,7 +3741,7 @@
   end
   local.get $0
  )
- (func $~lib/map/Map<~lib/string/String,bool>#has (; 65 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/map/Map<~lib/string/String,bool>#has (; 68 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $0
   local.get $1
   local.get $1
@@ -3715,7 +3750,7 @@
   i32.const 0
   i32.ne
  )
- (func $~lib/map/Map<~lib/string/String,bool>#get (; 66 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/map/Map<~lib/string/String,bool>#get (; 69 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $0
   local.get $1
   local.get $1
@@ -3734,7 +3769,7 @@
   local.get $0
   i32.load8_u offset=4
  )
- (func $~lib/as-wasi/as-wasi/Random.randomFill (; 67 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/as-wasi/as-wasi/Random.randomFill (; 70 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   local.get $0
@@ -3777,7 +3812,7 @@
    end
   end
  )
- (func $~lib/typedarray/Uint8Array#__get (; 68 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/typedarray/Uint8Array#__get (; 71 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   i32.const 0
   local.get $0
   i32.load offset=8
@@ -3794,7 +3829,7 @@
   i32.load offset=4
   i32.load8_u
  )
- (func $~lib/array/Array<u8>#__set (; 69 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $~lib/array/Array<u8>#__set (; 72 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   local.get $1
   local.get $0
@@ -3830,7 +3865,7 @@
   local.get $2
   i32.store8
  )
- (func $assemblyscript/debug-example/index/getRandomFrame (; 70 ;) (type $FUNCSIG$i) (result i32)
+ (func $assemblyscript/debug-example/index/getRandomFrame (; 73 ;) (type $FUNCSIG$i) (result i32)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -3926,7 +3961,7 @@
   end
   local.get $0
  )
- (func $~lib/as-wasi/as-wasi/Descriptor#seek (; 71 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor#seek (; 74 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   i32.const 8
   call $~lib/arraybuffer/ArrayBuffer#constructor
@@ -3939,7 +3974,7 @@
   call $~lib/bindings/wasi_unstable/fd_seek
   drop
  )
- (func $~lib/as-wasi/as-wasi/Descriptor#write (; 72 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor#write (; 75 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -3988,7 +4023,7 @@
   call $~lib/bindings/wasi_unstable/fd_write
   drop
  )
- (func $assemblyscript/lib/lib/drawRgbaArrayToFrameBuffer (; 73 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $assemblyscript/lib/lib/drawRgbaArrayToFrameBuffer (; 76 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   local.get $1
   call $~lib/as-wasi/as-wasi/Descriptor#seek
   local.get $1
@@ -4009,7 +4044,7 @@
   i32.const 0
   call $~lib/as-wasi/as-wasi/Descriptor#writeString
  )
- (func $~lib/bindings/wasi_unstable/subscription#constructor (; 74 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/bindings/wasi_unstable/subscription#constructor (; 77 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   local.get $0
   i32.eqz
   if
@@ -4029,7 +4064,7 @@
   i32.store offset=12
   local.get $0
  )
- (func $~lib/bindings/wasi_unstable/clocksubscription#constructor (; 75 ;) (type $FUNCSIG$i) (result i32)
+ (func $~lib/bindings/wasi_unstable/clocksubscription#constructor (; 78 ;) (type $FUNCSIG$i) (result i32)
   (local $0 i32)
   i32.const 56
   i32.const 0
@@ -4055,7 +4090,7 @@
   i32.store offset=52
   local.get $0
  )
- (func $~lib/bindings/wasi_unstable/event#constructor (; 76 ;) (type $FUNCSIG$i) (result i32)
+ (func $~lib/bindings/wasi_unstable/event#constructor (; 79 ;) (type $FUNCSIG$i) (result i32)
   (local $0 i32)
   i32.const 14
   i32.const 0
@@ -4074,7 +4109,7 @@
   i32.store16 offset=12
   local.get $0
  )
- (func $~lib/as-wasi/as-wasi/Time.sleep (; 77 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/as-wasi/as-wasi/Time.sleep (; 80 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   call $~lib/bindings/wasi_unstable/clocksubscription#constructor
   local.tee $1
@@ -4105,7 +4140,7 @@
   call $~lib/bindings/wasi_unstable/poll_oneoff
   drop
  )
- (func $assemblyscript/debug-example/index/_start (; 78 ;) (type $FUNCSIG$v)
+ (func $assemblyscript/debug-example/index/_start (; 81 ;) (type $FUNCSIG$v)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -4263,7 +4298,7 @@
   end
   unreachable
  )
- (func $start (; 79 ;) (type $FUNCSIG$v)
+ (func $start (; 82 ;) (type $FUNCSIG$v)
   i32.const 4880
   global.set $~lib/rt/stub/startOffset
   i32.const 4880

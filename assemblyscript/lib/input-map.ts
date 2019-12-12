@@ -21,6 +21,9 @@ export namespace InputEventType {
   export const MOUSE_MOVE: u8 = 2;
   // @ts-ignore: decorator
   @inline
+  export const KEY_RELEASE: u8 = 3;
+  // @ts-ignore: decorator
+  @inline
   export const MOUSE_PRESS_LEFT: u8 = 4;
   // @ts-ignore: decorator
   @inline
@@ -295,8 +298,8 @@ export function getKeyPressState(): Map<string, bool> {
   return keyPressStateMap;
 }
 
-export function setKeyOnKeyPressState(key: string): void {
-  keyPressStateMap.set(key, true);
+export function setKeyOnKeyPressState(key: string, isPressed: bool): void {
+  keyPressStateMap.set(key, isPressed);
 }
 
 export function isKeyPressed(key: string): bool {

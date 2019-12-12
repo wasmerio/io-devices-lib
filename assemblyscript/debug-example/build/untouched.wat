@@ -5830,13 +5830,13 @@
   call $~lib/rt/stub/__release
   local.get $2
  )
- (func $assemblyscript/lib/input-map/setKeyOnKeyPressState (; 80 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $assemblyscript/lib/input-map/setKeyOnKeyPressState (; 80 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   local.get $0
   call $~lib/rt/stub/__retain
   drop
   global.get $assemblyscript/lib/input-map/keyPressStateMap
   local.get $0
-  i32.const 1
+  local.get $1
   call $~lib/map/Map<~lib/string/String,bool>#set
   local.get $0
   call $~lib/rt/stub/__release
@@ -5874,7 +5874,6 @@
   i32.const 4352
   call $~lib/as-wasi/as-wasi/FileSystem.open
   local.set $0
-  call $assemblyscript/lib/input-map/resetKeyPressState
   call $assemblyscript/lib/input-map/resetMouseClickState
   local.get $0
   i32.const 0
@@ -5927,6 +5926,7 @@
       call $~lib/string/String.__ne
       if
        local.get $4
+       i32.const 1
        call $assemblyscript/lib/input-map/setKeyOnKeyPressState
       end
       local.get $3
@@ -5939,99 +5939,114 @@
       local.get $1
       local.get $3
       call $~lib/array/Array<u8>#__get
-      i32.const 2
+      i32.const 3
       i32.eq
       if
-       i32.const 0
-       local.set $4
-       block $break|1
-        i32.const 0
-        local.set $5
-        loop $loop|1
-         local.get $5
-         i32.const 4
-         i32.lt_u
-         i32.eqz
-         br_if $break|1
-         local.get $4
-         local.get $1
-         local.get $3
-         local.get $5
-         i32.const 255
-         i32.and
-         i32.add
-         i32.const 1
-         i32.add
-         call $~lib/array/Array<u8>#__get
-         local.get $5
-         i32.const 8
-         i32.mul
-         i32.shl
-         i32.const 255
-         i32.and
-         i32.or
-         local.set $4
-         local.get $5
-         i32.const 1
-         i32.add
-         local.set $5
-         br $loop|1
-        end
-        unreachable
-       end
-       i32.const 0
-       local.set $5
-       block $break|2
-        i32.const 0
-        local.set $6
-        loop $loop|2
-         local.get $6
-         i32.const 4
-         i32.lt_u
-         i32.eqz
-         br_if $break|2
-         local.get $5
-         local.get $1
-         local.get $3
-         local.get $6
-         i32.const 255
-         i32.and
-         i32.add
-         i32.const 5
-         i32.add
-         call $~lib/array/Array<u8>#__get
-         local.get $6
-         i32.const 8
-         i32.mul
-         i32.shl
-         i32.const 255
-         i32.and
-         i32.or
-         local.set $5
-         local.get $6
-         i32.const 1
-         i32.add
-         local.set $6
-         br $loop|2
-        end
-        unreachable
-       end
-       local.get $4
-       local.get $5
-       call $assemblyscript/lib/input-map/setMousePosition
+       local.get $1
        local.get $3
-       i32.const 9
+       i32.const 1
+       i32.add
+       call $~lib/array/Array<u8>#__get
+       call $assemblyscript/lib/input-map/getKeyFromByte
+       local.set $4
+       local.get $4
+       i32.const 0
+       call $~lib/string/String.__ne
+       if
+        local.get $4
+        i32.const 0
+        call $assemblyscript/lib/input-map/setKeyOnKeyPressState
+       end
+       local.get $3
+       i32.const 2
        i32.add
        local.set $3
+       local.get $4
+       call $~lib/rt/stub/__release
       else
        local.get $1
        local.get $3
        call $~lib/array/Array<u8>#__get
-       i32.const 4
+       i32.const 2
        i32.eq
        if
-        i32.const 904
-        call $assemblyscript/lib/input-map/setClickOnMouseClickState
+        i32.const 0
+        local.set $4
+        block $break|1
+         i32.const 0
+         local.set $5
+         loop $loop|1
+          local.get $5
+          i32.const 4
+          i32.lt_u
+          i32.eqz
+          br_if $break|1
+          local.get $4
+          local.get $1
+          local.get $3
+          local.get $5
+          i32.const 255
+          i32.and
+          i32.add
+          i32.const 1
+          i32.add
+          call $~lib/array/Array<u8>#__get
+          local.get $5
+          i32.const 8
+          i32.mul
+          i32.shl
+          i32.const 255
+          i32.and
+          i32.or
+          local.set $4
+          local.get $5
+          i32.const 1
+          i32.add
+          local.set $5
+          br $loop|1
+         end
+         unreachable
+        end
+        i32.const 0
+        local.set $5
+        block $break|2
+         i32.const 0
+         local.set $6
+         loop $loop|2
+          local.get $6
+          i32.const 4
+          i32.lt_u
+          i32.eqz
+          br_if $break|2
+          local.get $5
+          local.get $1
+          local.get $3
+          local.get $6
+          i32.const 255
+          i32.and
+          i32.add
+          i32.const 5
+          i32.add
+          call $~lib/array/Array<u8>#__get
+          local.get $6
+          i32.const 8
+          i32.mul
+          i32.shl
+          i32.const 255
+          i32.and
+          i32.or
+          local.set $5
+          local.get $6
+          i32.const 1
+          i32.add
+          local.set $6
+          br $loop|2
+         end
+         unreachable
+        end
+        local.get $4
+        local.get $5
+        call $assemblyscript/lib/input-map/setMousePosition
         local.get $3
         i32.const 9
         i32.add
@@ -6040,10 +6055,10 @@
         local.get $1
         local.get $3
         call $~lib/array/Array<u8>#__get
-        i32.const 5
+        i32.const 4
         i32.eq
         if
-         i32.const 928
+         i32.const 904
          call $assemblyscript/lib/input-map/setClickOnMouseClickState
          local.get $3
          i32.const 9
@@ -6053,15 +6068,29 @@
          local.get $1
          local.get $3
          call $~lib/array/Array<u8>#__get
-         i32.const 7
+         i32.const 5
          i32.eq
          if
-          i32.const 960
+          i32.const 928
           call $assemblyscript/lib/input-map/setClickOnMouseClickState
           local.get $3
           i32.const 9
           i32.add
           local.set $3
+         else
+          local.get $1
+          local.get $3
+          call $~lib/array/Array<u8>#__get
+          i32.const 7
+          i32.eq
+          if
+           i32.const 960
+           call $assemblyscript/lib/input-map/setClickOnMouseClickState
+           local.get $3
+           i32.const 9
+           i32.add
+           local.set $3
+          end
          end
         end
        end

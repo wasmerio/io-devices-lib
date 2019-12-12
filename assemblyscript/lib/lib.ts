@@ -42,7 +42,6 @@ export function updateInput(): void {
   let devInput: Descriptor = FileSystem.open('dev/input') as Descriptor;
 
   // Reset the state every update
-  resetKeyPressState();
   resetMouseClickState();
 
   // Read the file as bytes
@@ -57,7 +56,14 @@ export function updateInput(): void {
       if (data[index] == InputEventType.KEY_PRESS) {
         let key: string | null = getKeyFromByte(data[index + 1]);
         if (key != null) {
-          setKeyOnKeyPressState(key as string);
+          setKeyOnKeyPressState(key as string, true);
+        }
+
+        index += 2;
+      } else if (data[index] == InputEventType.KEY_RELEASE) {
+        let key: string | null = getKeyFromByte(data[index + 1]);
+        if (key != null) {
+          setKeyOnKeyPressState(key as string, false);
         }
 
         index += 2;
