@@ -41,6 +41,9 @@ export function drawRgbaArrayToFrameBuffer(rgbaArray: Array<u8>, frameBuffer: De
 export function updateInput(): void {
   let devInput: Descriptor = FileSystem.open('dev/input') as Descriptor;
 
+  // Reset the keyboard stat every update
+  resetKeyPressState();
+
   // Read the file as bytes
   let data: u8[] | null = devInput.read();
   
@@ -48,7 +51,6 @@ export function updateInput(): void {
 
     // Get the type of event
     if (data[0] == InputEventType.KEY_PRESS) {
-      resetKeyPressState();
       let key: string | null = getKeyFromByte(data[1]);
       if (key != null) {
         setKeyOnKeyPressState(key as string);
