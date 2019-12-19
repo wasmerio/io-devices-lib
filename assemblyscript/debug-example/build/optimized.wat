@@ -3114,47 +3114,46 @@
   end
   local.get $2
  )
- (func $~lib/as-wasi/as-wasi/FileSystem.open (; 49 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
-  (local $1 i32)
-  (local $2 i64)
-  (local $3 i32)
+ (func $~lib/as-wasi/as-wasi/FileSystem.open (; 49 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+  (local $2 i32)
+  (local $3 i64)
   (local $4 i32)
   (local $5 i32)
-  i32.const 3904
+  local.get $1
   i32.const 3928
   call $~lib/string/String.__eq
   if (result i64)
    i64.const 2113574
   else
-   i32.const 3904
+   local.get $1
    i32.const 3952
    call $~lib/string/String.__eq
    if (result i64)
     i64.const 2098278
    else
-    i32.const 3904
+    local.get $1
     i32.const 3976
     call $~lib/string/String.__eq
     if (result i64)
      i32.const 9
-     local.set $1
+     local.set $2
      i64.const 2098276
     else
-     i32.const 3904
+     local.get $1
      i32.const 4000
      call $~lib/string/String.__eq
      if (result i64)
       i32.const 13
-      local.set $1
+      local.set $2
       i64.const 2098276
      else
-      i32.const 3904
+      local.get $1
       i32.const 3904
       call $~lib/string/String.__eq
       if (result i32)
        i32.const 9
       else
-       i32.const 3904
+       local.get $1
        i32.const 4024
        call $~lib/string/String.__eq
        i32.eqz
@@ -3164,16 +3163,16 @@
        end
        i32.const 13
       end
-      local.set $1
+      local.set $2
       i64.const 2098278
      end
     end
    end
   end
-  local.set $2
+  local.set $3
   local.get $0
   call $~lib/string/String.UTF8.byteLength
-  local.set $3
+  local.set $1
   local.get $0
   call $~lib/string/String.UTF8.encode
   local.set $0
@@ -3183,10 +3182,10 @@
   i32.const 3
   i32.const 1
   local.get $0
-  local.get $3
   local.get $1
   local.get $2
-  local.get $2
+  local.get $3
+  local.get $3
   i32.const 0
   local.get $4
   call $~lib/bindings/wasi_unstable/path_open
@@ -3205,6 +3204,7 @@
   i32.const 0
   call $~lib/util/number/itoa32
   call $~lib/string/String.__concat
+  i32.const 3904
   call $~lib/as-wasi/as-wasi/FileSystem.open
   i32.const 4048
   i32.const 0
@@ -3212,6 +3212,7 @@
   call $~lib/string/String.__concat
   i32.const 4120
   call $~lib/string/String.__concat
+  i32.const 3904
   call $~lib/as-wasi/as-wasi/FileSystem.open
   local.get $0
   call $~lib/util/number/itoa32
@@ -3474,6 +3475,7 @@
   (local $3 i32)
   (local $4 i32)
   i32.const 4192
+  i32.const 3928
   call $~lib/as-wasi/as-wasi/FileSystem.open
   call $assemblyscript/lib/input-map/resetMouseClickState
   call $~lib/rt/__allocArray
@@ -4035,6 +4037,7 @@
   call $~lib/string/String.__concat
   i32.const 4736
   call $~lib/string/String.__concat
+  i32.const 3976
   call $~lib/as-wasi/as-wasi/FileSystem.open
   local.tee $0
   call $~lib/as-wasi/as-wasi/Descriptor#seek

@@ -5871,7 +5871,7 @@
   (local $5 i32)
   (local $6 i32)
   i32.const 4640
-  i32.const 4352
+  i32.const 4376
   call $~lib/as-wasi/as-wasi/FileSystem.open
   local.set $0
   call $assemblyscript/lib/input-map/resetMouseClickState
@@ -6761,7 +6761,7 @@
   i32.const 5184
   call $~lib/string/String.__concat
   local.tee $5
-  i32.const 4352
+  i32.const 4424
   call $~lib/as-wasi/as-wasi/FileSystem.open
   local.set $6
   local.get $6
