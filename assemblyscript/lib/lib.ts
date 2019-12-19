@@ -8,8 +8,8 @@ export {getKeyPressState, getMousePosition, getMouseClickState, isKeyPressed, is
 
 // Function to open a framebuffer
 export function openFrameBufferWindow(width: i32, height: i32, frameBufferIndex: i32): Descriptor {
-  let frameBuffer: Descriptor = FileSystem.open('dev/wasmerfb' + frameBufferIndex.toString()) as Descriptor;
-  let virtualSize: Descriptor = FileSystem.open('sys/class/graphics/wasmerfb' + frameBufferIndex.toString() + '/virtual_size') as Descriptor;
+  let frameBuffer: Descriptor = FileSystem.open('dev/wasmerfb' + frameBufferIndex.toString(), "w+") as Descriptor;
+  let virtualSize: Descriptor = FileSystem.open('sys/class/graphics/wasmerfb' + frameBufferIndex.toString() + '/virtual_size', "w+") as Descriptor;
 
   virtualSize.writeString(width.toString() + 'x' + height.toString());
 
@@ -18,7 +18,7 @@ export function openFrameBufferWindow(width: i32, height: i32, frameBufferIndex:
 
 // Function to close a framebuffer
 export function closeFrameBufferWindow(frameBufferIndex: i32): void {
-  let virtualSize: Descriptor = FileSystem.open('sys/class/graphics/wasmerfb' + frameBufferIndex.toString() + '/virtual_size') as Descriptor;
+  let virtualSize: Descriptor = FileSystem.open('sys/class/graphics/wasmerfb' + frameBufferIndex.toString() + '/virtual_size', "w+") as Descriptor;
   virtualSize.writeString('0x0');
 }
 
@@ -30,7 +30,7 @@ export function drawRgbaArrayToFrameBuffer(rgbaArray: Array<u8>, frameBuffer: De
   frameBuffer.write(rgbaArray);
 
   // Draw the framebuffer
-  let bufferIndexDisplay: Descriptor = FileSystem.open('sys/class/graphics/wasmerfb' + frameBufferIndex.toString() + '/buffer_index_display') as Descriptor;
+  let bufferIndexDisplay: Descriptor = FileSystem.open('sys/class/graphics/wasmerfb' + frameBufferIndex.toString() + '/buffer_index_display', "w+") as Descriptor;
   bufferIndexDisplay.seek(0, 2);
   bufferIndexDisplay.writeString(frameBufferIndex.toString());
 }
@@ -39,7 +39,7 @@ export function drawRgbaArrayToFrameBuffer(rgbaArray: Array<u8>, frameBuffer: De
 // Should Reference: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
 // Should be inspired by: https://torch2424.github.io/responsive-gamepad/
 export function updateInput(): void {
-  let devInput: Descriptor = FileSystem.open('dev/input') as Descriptor;
+  let devInput: Descriptor = FileSystem.open('dev/input', "w+") as Descriptor;
 
   // Reset the state every update
   resetMouseClickState();
