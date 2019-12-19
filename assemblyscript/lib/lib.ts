@@ -35,7 +35,6 @@ export function drawRgbaArrayToFrameBuffer(rgbaArray: Array<u8>, frameBufferInde
 
   // Draw the framebuffer
   let bufferIndexDisplay: Descriptor = FileSystem.open('sys/class/graphics/wasmerfb' + frameBufferIndex.toString() + '/buffer_index_display', "w") as Descriptor;
-  bufferIndexDisplay.seek(0, 2);
   bufferIndexDisplay.writeString(frameBufferIndex.toString());
 }
 
