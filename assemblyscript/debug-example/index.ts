@@ -45,7 +45,7 @@ function getMousePositionCopy(mousePosition: Array<i32>): Array<i32> {
 export function _start(): void {
 
   // Open a framebuffer
-  let frameBuffer = openFrameBufferWindow(width, height, 0);
+  openFrameBufferWindow(width, height, 0);
 
   // Values we want to track and log
   let oldMousePosition: Array<i32> = getMousePositionCopy(getMousePosition());
@@ -93,7 +93,7 @@ export function _start(): void {
     
     // Get / draw a frame
     let frame: Array<u8> = getRandomFrame();
-    drawRgbaArrayToFrameBuffer(frame, frameBuffer, 0);
+    drawRgbaArrayToFrameBuffer(frame, 0);
 
     Time.sleep(16 * Time.MILLISECOND);
   }

@@ -6626,34 +6626,7 @@
   call $~lib/rt/stub/__release
   local.get $2
  )
- (func $~lib/as-wasi/as-wasi/Descriptor#seek (; 105 ;) (type $FUNCSIG$iiji) (param $0 i32) (param $1 i64) (param $2 i32) (result i32)
-  (local $3 i32)
-  (local $4 i32)
-  (local $5 i32)
-  (local $6 i32)
-  i32.const 0
-  i32.const 8
-  call $~lib/arraybuffer/ArrayBuffer#constructor
-  local.tee $3
-  local.set $4
-  local.get $0
-  i32.load
-  local.get $1
-  local.get $2
-  local.get $4
-  call $~lib/bindings/wasi_unstable/fd_seek
-  local.set $5
-  local.get $5
-  i32.const 65535
-  i32.and
-  i32.const 0
-  i32.eq
-  local.set $6
-  local.get $3
-  call $~lib/rt/stub/__release
-  local.get $6
- )
- (func $~lib/as-wasi/as-wasi/Descriptor#write (; 106 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor#write (; 105 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -6732,49 +6705,82 @@
   local.get $1
   call $~lib/rt/stub/__release
  )
- (func $assemblyscript/lib/lib/drawRgbaArrayToFrameBuffer (; 107 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor#seek (; 106 ;) (type $FUNCSIG$iiji) (param $0 i32) (param $1 i64) (param $2 i32) (result i32)
+  (local $3 i32)
+  (local $4 i32)
+  (local $5 i32)
+  (local $6 i32)
+  i32.const 0
+  i32.const 8
+  call $~lib/arraybuffer/ArrayBuffer#constructor
+  local.tee $3
+  local.set $4
+  local.get $0
+  i32.load
+  local.get $1
+  local.get $2
+  local.get $4
+  call $~lib/bindings/wasi_unstable/fd_seek
+  local.set $5
+  local.get $5
+  i32.const 65535
+  i32.and
+  i32.const 0
+  i32.eq
+  local.set $6
+  local.get $3
+  call $~lib/rt/stub/__release
+  local.get $6
+ )
+ (func $assemblyscript/lib/lib/drawRgbaArrayToFrameBuffer (; 107 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+  (local $2 i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
   (local $6 i32)
   (local $7 i32)
+  (local $8 i32)
+  (local $9 i32)
   local.get $0
   call $~lib/rt/stub/__retain
   drop
+  i32.const 4312
   local.get $1
-  call $~lib/rt/stub/__retain
-  drop
-  local.get $1
-  i64.const 0
-  i32.const 2
-  call $~lib/as-wasi/as-wasi/Descriptor#seek
-  drop
-  local.get $1
+  call $~lib/number/I32#toString
+  local.tee $2
+  call $~lib/string/String.__concat
+  local.tee $3
+  i32.const 4352
+  call $~lib/as-wasi/as-wasi/FileSystem.open
+  local.set $4
+  local.get $4
   local.get $0
   call $~lib/as-wasi/as-wasi/Descriptor#write
   i32.const 4496
-  local.get $2
+  local.get $1
   call $~lib/number/I32#toString
-  local.tee $3
+  local.tee $5
   call $~lib/string/String.__concat
-  local.tee $4
+  local.tee $6
   i32.const 5184
   call $~lib/string/String.__concat
-  local.tee $5
+  local.tee $7
   i32.const 4424
   call $~lib/as-wasi/as-wasi/FileSystem.open
-  local.set $6
-  local.get $6
+  local.set $8
+  local.get $8
   i64.const 0
   i32.const 2
   call $~lib/as-wasi/as-wasi/Descriptor#seek
   drop
-  local.get $6
-  local.get $2
+  local.get $8
+  local.get $1
   call $~lib/number/I32#toString
-  local.tee $7
+  local.tee $9
   i32.const 0
   call $~lib/as-wasi/as-wasi/Descriptor#writeString
+  local.get $2
+  call $~lib/rt/stub/__release
   local.get $3
   call $~lib/rt/stub/__release
   local.get $4
@@ -6785,9 +6791,11 @@
   call $~lib/rt/stub/__release
   local.get $7
   call $~lib/rt/stub/__release
-  local.get $0
+  local.get $8
   call $~lib/rt/stub/__release
-  local.get $1
+  local.get $9
+  call $~lib/rt/stub/__release
+  local.get $0
   call $~lib/rt/stub/__release
  )
  (func $~lib/bindings/wasi_unstable/subscription#constructor (; 108 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
@@ -6915,69 +6923,70 @@
   (local $6 i32)
   (local $7 i32)
   (local $8 i32)
-  (local $9 i32)
   global.get $assemblyscript/debug-example/index/width
   global.get $assemblyscript/debug-example/index/height
   i32.const 0
   call $assemblyscript/lib/lib/openFrameBufferWindow
-  local.set $0
+  call $~lib/rt/stub/__release
   call $assemblyscript/lib/input-map/getMousePosition
-  local.tee $1
+  local.tee $0
   call $assemblyscript/debug-example/index/getMousePositionCopy
-  local.set $2
+  local.set $1
   i32.const 0
   i32.const 0
   call $~lib/array/Array<~lib/string/String>#constructor
-  local.set $3
+  local.set $2
   loop $continue|0
    call $assemblyscript/lib/lib/updateInput
    call $assemblyscript/lib/input-map/getMousePosition
-   local.set $4
-   local.get $4
+   local.set $3
+   local.get $3
    i32.const 0
    call $~lib/array/Array<i32>#__get
-   local.get $2
+   local.get $1
    i32.const 0
    call $~lib/array/Array<i32>#__get
    i32.ne
    if (result i32)
     i32.const 1
    else
-    local.get $4
+    local.get $3
     i32.const 1
     call $~lib/array/Array<i32>#__get
-    local.get $2
+    local.get $1
     i32.const 1
     call $~lib/array/Array<i32>#__get
     i32.ne
    end
    if
-    local.get $4
+    local.get $3
     call $assemblyscript/debug-example/index/getMousePositionCopy
-    local.set $5
-    local.get $2
+    local.set $4
+    local.get $1
     call $~lib/rt/stub/__release
-    local.get $5
-    local.set $2
-    i32.const 4792
     local.get $4
+    local.set $1
+    i32.const 4792
+    local.get $3
     i32.const 0
     call $~lib/array/Array<i32>#__get
     call $~lib/number/I32#toString
-    local.tee $5
+    local.tee $4
     call $~lib/string/String.__concat
-    local.tee $6
+    local.tee $5
     i32.const 4856
     call $~lib/string/String.__concat
-    local.tee $7
-    local.get $4
+    local.tee $6
+    local.get $3
     i32.const 1
     call $~lib/array/Array<i32>#__get
     call $~lib/number/I32#toString
-    local.tee $8
+    local.tee $7
     call $~lib/string/String.__concat
-    local.tee $9
+    local.tee $8
     call $~lib/as-wasi/as-wasi/Console.log
+    local.get $4
+    call $~lib/rt/stub/__release
     local.get $5
     call $~lib/rt/stub/__release
     local.get $6
@@ -6986,78 +6995,76 @@
     call $~lib/rt/stub/__release
     local.get $8
     call $~lib/rt/stub/__release
-    local.get $9
-    call $~lib/rt/stub/__release
    end
    call $assemblyscript/lib/input-map/getKeyPressState
-   local.set $9
+   local.set $8
    i32.const 0
    i32.const 0
    call $~lib/array/Array<~lib/string/String>#constructor
-   local.set $8
-   local.get $8
+   local.set $7
+   local.get $7
    i32.const 1832
    call $~lib/array/Array<~lib/string/String>#push
    drop
-   local.get $8
+   local.get $7
    i32.const 1784
    call $~lib/array/Array<~lib/string/String>#push
    drop
-   local.get $8
+   local.get $7
    i32.const 1760
    call $~lib/array/Array<~lib/string/String>#push
    drop
-   local.get $8
+   local.get $7
    i32.const 1232
    call $~lib/array/Array<~lib/string/String>#push
    drop
-   local.get $8
+   local.get $7
    i32.const 1664
    call $~lib/array/Array<~lib/string/String>#push
    drop
-   local.get $8
+   local.get $7
    i32.const 1304
    call $~lib/array/Array<~lib/string/String>#push
    drop
-   local.get $8
+   local.get $7
    i32.const 2336
    call $~lib/array/Array<~lib/string/String>#push
    drop
-   local.get $8
+   local.get $7
    i32.const 2304
    call $~lib/array/Array<~lib/string/String>#push
    drop
-   local.get $8
+   local.get $7
    i32.const 2240
    call $~lib/array/Array<~lib/string/String>#push
    drop
-   local.get $8
+   local.get $7
    i32.const 2272
    call $~lib/array/Array<~lib/string/String>#push
    drop
-   local.get $8
+   local.get $7
    i32.const 3168
    call $~lib/array/Array<~lib/string/String>#push
    drop
-   local.get $8
+   local.get $7
    i32.const 2912
    call $~lib/array/Array<~lib/string/String>#push
    drop
    block $break|1
     i32.const 0
-    local.set $7
+    local.set $6
     loop $loop|1
+     local.get $6
      local.get $7
-     local.get $8
      call $~lib/array/Array<~lib/string/String>#get:length
      i32.lt_s
      i32.eqz
      br_if $break|1
-     local.get $8
      local.get $7
-     call $~lib/array/Array<~lib/string/String>#__get
-     local.set $6
      local.get $6
+     call $~lib/array/Array<~lib/string/String>#__get
+     local.set $5
+     local.get $5
      call $assemblyscript/lib/input-map/isKeyPressed
      i32.const 0
      i32.ne
@@ -7065,19 +7072,19 @@
      i32.eq
      if
       i32.const 4992
-      local.get $6
-      call $~lib/string/String.__concat
-      local.tee $5
-      call $~lib/as-wasi/as-wasi/Console.log
       local.get $5
+      call $~lib/string/String.__concat
+      local.tee $4
+      call $~lib/as-wasi/as-wasi/Console.log
+      local.get $4
       call $~lib/rt/stub/__release
      end
-     local.get $6
+     local.get $5
      call $~lib/rt/stub/__release
-     local.get $7
+     local.get $6
      i32.const 1
      i32.add
-     local.set $7
+     local.set $6
      br $loop|1
     end
     unreachable
@@ -7089,22 +7096,21 @@
     call $~lib/as-wasi/as-wasi/Console.log
    end
    call $assemblyscript/debug-example/index/getRandomFrame
-   local.set $7
-   local.get $7
-   local.get $0
+   local.set $6
+   local.get $6
    i32.const 0
    call $assemblyscript/lib/lib/drawRgbaArrayToFrameBuffer
    i32.const 16
    global.get $~lib/as-wasi/as-wasi/Time.MILLISECOND
    i32.mul
    call $~lib/as-wasi/as-wasi/Time.sleep
-   local.get $4
-   call $~lib/rt/stub/__release
-   local.get $9
+   local.get $3
    call $~lib/rt/stub/__release
    local.get $8
    call $~lib/rt/stub/__release
    local.get $7
+   call $~lib/rt/stub/__release
+   local.get $6
    call $~lib/rt/stub/__release
    br $continue|0
   end

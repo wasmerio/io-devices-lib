@@ -22,11 +22,13 @@ export function closeFrameBufferWindow(frameBufferIndex: i32): void {
   virtualSize.writeString('0x0');
 }
 
+// TODO: Make this a class, and allow returning the current framebuffer
+
 // Function to draw an RGB Array to the Framebufffer 
-export function drawRgbaArrayToFrameBuffer(rgbaArray: Array<u8>, frameBuffer: Descriptor, frameBufferIndex: i32): void {
+export function drawRgbaArrayToFrameBuffer(rgbaArray: Array<u8>, frameBufferIndex: i32): void {
 
   // Fill the framebuffer
-  frameBuffer.seek(0, 2);
+  let frameBuffer: Descriptor = FileSystem.open('dev/wasmerfb' + frameBufferIndex.toString(), "w+") as Descriptor;
   frameBuffer.write(rgbaArray);
 
   // Draw the framebuffer
