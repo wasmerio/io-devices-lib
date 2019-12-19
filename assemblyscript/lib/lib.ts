@@ -6,6 +6,10 @@ export {getKeyPressState, getMousePosition, getMouseClickState, isKeyPressed, is
 
 // TODO: In current (December 3rd, 2019) verisons of as-wasi, the Current working directory (dirfd) defaults to: "/"
 
+// TODO:
+// 1. Just make this a class where you get an instance of a framebuffer index
+// 2. Make a function that allows for gettinng the current framebuffer as an rgba array
+
 // Function to open a framebuffer
 export function openFrameBufferWindow(width: i32, height: i32, frameBufferIndex: i32): Descriptor {
   let frameBuffer: Descriptor = FileSystem.open('dev/wasmerfb' + frameBufferIndex.toString(), "w+") as Descriptor;
@@ -21,8 +25,6 @@ export function closeFrameBufferWindow(frameBufferIndex: i32): void {
   let virtualSize: Descriptor = FileSystem.open('sys/class/graphics/wasmerfb' + frameBufferIndex.toString() + '/virtual_size', "w+") as Descriptor;
   virtualSize.writeString('0x0');
 }
-
-// TODO: Make this a class, and allow returning the current framebuffer
 
 // Function to draw an RGB Array to the Framebufffer 
 export function drawRgbaArrayToFrameBuffer(rgbaArray: Array<u8>, frameBufferIndex: i32): void {
