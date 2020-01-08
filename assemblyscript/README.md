@@ -17,7 +17,7 @@ You can install `io-devices-lib-assemblyscript` in your project by running the f
 
 Here is an annotated snipped on displaying a static frame with the library. We recommend using [as-wasi](https://github.com/jedisct1/as-wasi) as well:
 
-```
+```typescript
 // Import some common functions from io-devices-lib-assemblyscript
 import {
   openFrameBufferWindow, 

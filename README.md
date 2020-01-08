@@ -9,7 +9,7 @@ Libraries for interacting with the Wasmer Experimental IO Devices. 🔌
 ## Supported Languages
 
 * [AssemblyScript](./assemblyscript) 🚀
-* [TODO Rust]() 🦀
+* [Rust](./rust) 🦀
 
 ## Contributing
 
