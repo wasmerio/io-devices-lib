@@ -2,7 +2,7 @@
 
 Libraries for interacting with the Wasmer Experimental IO Devices.
 
-![Screenshot of the open framebuffer](./framebufferScreenshot.png)
+![Screenshot of the open framebuffer](./assets/framebufferScreenshot.png)
 
 [TODO: Documentation]()
 
