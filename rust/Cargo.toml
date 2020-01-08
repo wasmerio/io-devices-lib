@@ -1,0 +1,15 @@
+[package]
+name = "wasmer-experimental-io-devices-lib"
+version = "0.0.0"
+authors = ["The Wasmer Engineering Team <engineering@wasmer.io>"]
+edition = "2018"
+publish = true
+descriptionr= "Convenient bindings to use the experimental wasmer framebuffer"
+license = "MIT"
+
+[badges]
+maintenance = { status = "experimental" }
+
+[dependencies]
+num-traits = "0.2"
+num-derive = "0.2"

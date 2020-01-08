@@ -1,0 +1,12 @@
+[package]
+name = "fb_test_2"
+version = "0.1.0"
+authors = ["Mark McCaskey <mark@wasmer.io>"]
+edition = "2018"
+
+[workspace]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+wasmer-experimental-framebuffer-lib = { path = "../.." }
