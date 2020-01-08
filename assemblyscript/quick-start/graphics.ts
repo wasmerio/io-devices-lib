@@ -1,25 +1,8 @@
-# io-devices-lib AssemblyScript
-
-AssemblyScript library for building applications using the Wasmer Experimental IO Devices.
-
-## Features
-
-## Installation
-
-You can install `io-devices-lib-assemblyscript` in your project by running the following:
-
-`npm install @wasmer/io-devices-lib-assemblyscript`
-
-## Quick Start
-
-Here is an annotated snipped on displaying a static frame with the library. We recommend using [as-wasi](https://github.com/jedisct1/as-wasi) as well:
-
-```
 // Import some common functions from io-devices-lib-assemblyscript
 import {
   openFrameBufferWindow, 
-    closeFrameBufferWindow, 
-    drawRgbaArrayToFrameBuffer, 
+  closeFrameBufferWindow, 
+  drawRgbaArrayToFrameBuffer, 
 } from "../lib/lib";
 
 // Import some useful utilities from as-wasi
@@ -62,6 +45,5 @@ export function _start(): void {
     Time.sleep(16 * Time.MILLISECOND);
   }
 }
-```
 
-Usage of other features of the library, such as input support, can be found at [the documentation]().
+
