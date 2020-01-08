@@ -1,10 +1,10 @@
 # io-devices-lib
 
-Libraries for interacting with the Wasmer Experimental IO Devices.
+Libraries for interacting with the Wasmer Experimental IO Devices. 🔌
+
+[TODO: Documentation]() 📚
 
 ![Screenshot of the open framebuffer](./assets/framebufferScreenshot.png)
-
-[TODO: Documentation]()
 
 ## Supported Languages
 
