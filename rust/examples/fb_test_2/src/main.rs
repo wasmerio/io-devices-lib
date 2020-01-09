@@ -1,23 +1,30 @@
-use wasmer_experimental_framebuffer_lib::{color::*, *};
+use std::iter;
+use wasmer_experimental_io_devices_lib::{color::*, *};
+
+const X_RES: u32 = 300;
+const Y_RES: u32 = 300;
 
 fn main() {
-    let mut fb_ctx = FrameBufferCtx::new(300, 300).unwrap();
+    // create a framebuffer instance with the specified resolution
+    let mut fb_ctx = FrameBufferCtx::new(X_RES, Y_RES).unwrap();
 
-    let colors = vec![
-        vec![(255, 0, 0).into(); 300],
-        vec![(0, 255, 0).into(); 300],
-        vec![(0, 0, 255).into(); 300],
-        vec![(255, 255, 0).into(); 300],
-        vec![(255, 255, 255).into(); 300],
+    // declare some data
+    let colors: Vec<RGBA> = vec![
+        (255, 0, 0).into(),     // red
+        (0, 255, 0).into(),     // green
+        (0, 0, 255).into(),     // blue
+        (255, 255, 0).into(),   // yellow
+        (255, 255, 255).into(), // white
     ];
 
     let mut color_selector = 1;
     'mainloop: loop {
+        // get input event iterator
         let iter = fb_ctx.get_input().unwrap();
 
         for ie in iter {
             match ie {
-                InputEvent::KeyPress(Key::Escape) => break 'mainloop,
+                InputEvent::WindowClosed | InputEvent::KeyPress(Key::Escape) => break 'mainloop,
                 InputEvent::KeyPress(Key::Key1) => color_selector = 1,
                 InputEvent::KeyPress(Key::Key2) => color_selector = 2,
                 InputEvent::KeyPress(Key::Key3) => color_selector = 3,
@@ -30,12 +37,14 @@ fn main() {
             }
         }
 
-        let color_ref = &colors[color_selector - 1];
-        for y in 0..300 {
-            fb_ctx.update_pixels(0, y, color_ref).unwrap();
-        }
+        let color = colors[color_selector - 1];
+        // draw all the pixels with the selected color
+        fb_ctx
+            .update_pixels(0, 0, iter::repeat(color).take((X_RES * Y_RES) as usize))
+            .unwrap();
 
         fb_ctx.draw().unwrap();
-        std::thread::sleep_ms(16);
+        // FIXME(mark): sleeping broke again
+        //std::thread::sleep_ms(16);
     }
 }

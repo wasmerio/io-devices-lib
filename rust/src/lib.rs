@@ -92,18 +92,20 @@ impl FrameBufferCtx {
     /// written to the buffer.
     ///
     /// To be able to see these updates, you must call `draw`
-    pub fn update_pixels(&mut self, x: u32, y: u32, pixels: &[RGBA]) -> Option<u32> {
+pub fn update_pixels<I>(&mut self, x: u32, y: u32, pixels: I) -> Option<u32>
+where I: Iterator<Item = RGBA>
+{
         self.frame_buffer_handle
             .seek(SeekFrom::Start((self.resolution.0 * y + x) as u64 * 4))
             .ok()?;
 
-        let pixel_len = pixels.len();
-        let bytes: &[u8] = unsafe {
-            let bytes: &[u8] = std::mem::transmute(pixels);
-            std::slice::from_raw_parts(bytes.as_ptr(), pixel_len * 4)
-        };
+    let mut bytes_written = 0;
+    for pixel in pixels {
+        // TODO: if this is too slow, try stepping the iterator by a larger
+        // amount and feeding more bytes at a time to the write calls
+        bytes_written += self.frame_buffer_handle.write(&pixel.as_bytes()).ok()?;
 
-        let bytes_written = self.frame_buffer_handle.write(bytes).ok()?;
+    }
 
         Some(bytes_written as u32)
     }
@@ -117,6 +119,7 @@ const KEY_RELEASE: u8 = 3;
 const MOUSE_PRESS_LEFT: u8 = 4;
 const MOUSE_PRESS_RIGHT: u8 = 5;
 const MOUSE_PRESS_MIDDLE: u8 = 7;
+const WINDOW_CLOSED: u8 = 8;
 
 pub struct InputIter {
     idx: usize,
@@ -169,6 +172,9 @@ impl Iterator for InputIter {
                     self.idx += 9;
                     return Some(InputEvent::MouseEvent(x, y, event_type));
                 }
+            }
+            WINDOW_CLOSED => {
+                return Some(InputEvent::WindowClosed);
             }
             _ => {
                 // data corrupted
@@ -310,4 +316,5 @@ pub enum InputEvent {
     KeyPress(Key),
     KeyRelease(Key),
     MouseEvent(u32, u32, MouseEventType),
+    WindowClosed,
 }

@@ -1,13 +1,20 @@
 //! Data and functions for dealing with color
 
 /// A color value representing Red, Green, Blue, and Alpha
-#[derive(Debug, PartialEq, Eq, Clone, Hash, PartialOrd, Ord)]
+#[derive(Debug, PartialEq, Eq, Clone, Copy, Hash, PartialOrd, Ord)]
 #[repr(C)]
 pub struct RGBA {
     pub b: u8,
     pub g: u8,
     pub r: u8,
     pub a: u8,
+}
+
+impl RGBA {
+    /// return the raw bytes 
+    pub const fn as_bytes(&self) -> [u8; 4] {
+        [self.b, self.g, self.r, self.a]
+    }
 }
 
 impl std::convert::From<(u8, u8, u8, u8)> for RGBA {

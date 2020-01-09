@@ -4,7 +4,7 @@ version = "0.0.0"
 authors = ["The Wasmer Engineering Team <engineering@wasmer.io>"]
 edition = "2018"
 publish = true
-descriptionr= "Convenient bindings to use the experimental wasmer framebuffer"
+description = "Convenient bindings to use the experimental wasmer io devices"
 license = "MIT"
 
 [badges]
