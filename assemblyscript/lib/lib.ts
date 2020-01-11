@@ -6,14 +6,10 @@ export {getKeyPressState, getMousePosition, getMouseClickState, isKeyPressed, is
 
 // TODO: In current (December 3rd, 2019) verisons of as-wasi, the Current working directory (dirfd) defaults to: "/"
 
-// TODO:
-// 1. Just make this a class where you get an instance of a framebuffer index
-// 2. Make a function that allows for gettinng the current framebuffer as an rgba array
-
 // Function to open a framebuffer
 export function openFrameBufferWindow(width: i32, height: i32, frameBufferIndex: i32): Descriptor {
-  let frameBuffer: Descriptor = FileSystem.open('dev/wasmerfb' + frameBufferIndex.toString(), "w+") as Descriptor;
-  let virtualSize: Descriptor = FileSystem.open('sys/class/graphics/wasmerfb' + frameBufferIndex.toString() + '/virtual_size', "w+") as Descriptor;
+  let frameBuffer: Descriptor = FileSystem.open('_wasmer/dev/fb' + frameBufferIndex.toString() + "/fb", "w+") as Descriptor;
+  let virtualSize: Descriptor = FileSystem.open('_wasmer/dev/fb' + frameBufferIndex.toString() + '/virtual_size', "w+") as Descriptor;
 
   virtualSize.writeString(width.toString() + 'x' + height.toString());
 
@@ -22,7 +18,7 @@ export function openFrameBufferWindow(width: i32, height: i32, frameBufferIndex:
 
 // Function to close a framebuffer
 export function closeFrameBufferWindow(frameBufferIndex: i32): void {
-  let virtualSize: Descriptor = FileSystem.open('sys/class/graphics/wasmerfb' + frameBufferIndex.toString() + '/virtual_size', "w+") as Descriptor;
+  let virtualSize: Descriptor = FileSystem.open('_wasmer/dev/fb' + frameBufferIndex.toString() + '/virtual_size', "w+") as Descriptor;
   virtualSize.writeString('0x0');
 }
 
@@ -30,19 +26,19 @@ export function closeFrameBufferWindow(frameBufferIndex: i32): void {
 export function drawRgbaArrayToFrameBuffer(rgbaArray: Array<u8>, frameBufferIndex: i32): void {
 
   // Fill the framebuffer
-  let frameBuffer: Descriptor = FileSystem.open('dev/wasmerfb' + frameBufferIndex.toString(), "w+") as Descriptor;
+  let frameBuffer: Descriptor = FileSystem.open('_wasmer/dev/fb' + frameBufferIndex.toString() + '/fb', "w+") as Descriptor;
   frameBuffer.write(rgbaArray);
 
   // Draw the framebuffer
-  let bufferIndexDisplay: Descriptor = FileSystem.open('sys/class/graphics/wasmerfb' + frameBufferIndex.toString() + '/buffer_index_display', "w") as Descriptor;
+  let bufferIndexDisplay: Descriptor = FileSystem.open('_wasmer/dev/fb' + frameBufferIndex.toString() + '/draw', "w") as Descriptor;
   bufferIndexDisplay.writeString(frameBufferIndex.toString());
 }
 
 // Function to update the current Keyboard State 
 // Should Reference: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
 // Should be inspired by: https://torch2424.github.io/responsive-gamepad/
-export function updateInput(): void {
-  let devInput: Descriptor = FileSystem.open('dev/input', "r") as Descriptor;
+export function updateInput(frameBufferIndex: i32): void {
+  let devInput: Descriptor = FileSystem.open('/_wasmer/fb' + frameBufferIndex.toString() + '/input', "r") as Descriptor;
 
   // Reset the state every update
   resetMouseClickState();

@@ -55,7 +55,7 @@ export function _start(): void {
   while(true) {
 
     // Update the Input
-    updateInput();
+    updateInput(0);
 
     // Check if anything changes
     let newMousePosition: Array<i32> = getMousePosition();
