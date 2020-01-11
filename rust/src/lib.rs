@@ -24,24 +24,24 @@ impl FrameBufferCtx {
         let frame_buffer_handle = std::fs::OpenOptions::new()
             .read(true)
             .write(true)
-            .open("/_wasmer/fb0/fb")
+            .open("/_wasmer/dev/fb0/fb")
             .ok()?;
 
         let mut resolution_handle = std::fs::OpenOptions::new()
             .read(true)
             .write(true)
-            .open("/_wasmer/fb0/virtual_size")
+            .open("/_wasmer/dev/fb0/virtual_size")
             .ok()?;
 
         let index_handle = std::fs::OpenOptions::new()
             .read(true)
             .write(true)
-            .open("/_wasmer/fb0/buffer_index_display")
+            .open("/_wasmer/dev/fb0/buffer_index_display")
             .ok()?;
 
         let input_handle = std::fs::OpenOptions::new()
             .read(true)
-            .open("/_wasmer/fb0/input")
+            .open("/_wasmer/dev/fb0/input")
             .ok()?;
 
         resolution_handle
