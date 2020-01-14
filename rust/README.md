@@ -64,8 +64,7 @@ fn main() {
             .unwrap();
 
         fb_ctx.draw().unwrap();
-        // FIXME(mark): sleeping broke again
-        //std::thread::sleep_ms(16);
+        // std::thread::sleep_ms(16);
     }
 }
 ```

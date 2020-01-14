@@ -1,3 +1,4 @@
+import {whence} from "bindings/wasi";
 
 import {CommandLine, FileSystem, Descriptor} from "as-wasi";
 
@@ -7,18 +8,16 @@ export {getKeyPressState, getMousePosition, getMouseClickState, isKeyPressed, is
 // TODO: In current (December 3rd, 2019) verisons of as-wasi, the Current working directory (dirfd) defaults to: "/"
 
 // Function to open a framebuffer
-export function openFrameBufferWindow(width: i32, height: i32, frameBufferIndex: i32): Descriptor {
-  let frameBuffer: Descriptor = FileSystem.open('_wasmer/dev/fb' + frameBufferIndex.toString() + "/fb", "w+") as Descriptor;
+export function openFrameBufferWindow(width: i32, height: i32, frameBufferIndex: i32): void {
   let virtualSize: Descriptor = FileSystem.open('_wasmer/dev/fb' + frameBufferIndex.toString() + '/virtual_size', "w+") as Descriptor;
-
+  virtualSize.seek(0, whence.SET);
   virtualSize.writeString(width.toString() + 'x' + height.toString());
-
-  return frameBuffer;
 }
 
 // Function to close a framebuffer
 export function closeFrameBufferWindow(frameBufferIndex: i32): void {
   let virtualSize: Descriptor = FileSystem.open('_wasmer/dev/fb' + frameBufferIndex.toString() + '/virtual_size', "w+") as Descriptor;
+  virtualSize.seek(0, whence.SET);
   virtualSize.writeString('0x0');
 }
 
@@ -27,10 +26,13 @@ export function drawRgbaArrayToFrameBuffer(rgbaArray: Array<u8>, frameBufferInde
 
   // Fill the framebuffer
   let frameBuffer: Descriptor = FileSystem.open('_wasmer/dev/fb' + frameBufferIndex.toString() + '/fb', "w+") as Descriptor;
+  frameBuffer.seek(0, whence.SET);
+
   frameBuffer.write(rgbaArray);
 
   // Draw the framebuffer
   let bufferIndexDisplay: Descriptor = FileSystem.open('_wasmer/dev/fb' + frameBufferIndex.toString() + '/draw', "w") as Descriptor;
+  bufferIndexDisplay.seek(0, whence.SET);
   bufferIndexDisplay.writeString(frameBufferIndex.toString());
 }
 
