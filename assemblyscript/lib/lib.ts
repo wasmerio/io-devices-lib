@@ -1,3 +1,4 @@
+import {whence} from "bindings/wasi";
 
 import {CommandLine, FileSystem, Descriptor} from "as-wasi";
 
@@ -11,18 +12,16 @@ export {getKeyPressState, getMousePosition, getMouseClickState, isKeyPressed, is
 // 2. Make a function that allows for gettinng the current framebuffer as an rgba array
 
 // Function to open a framebuffer
-export function openFrameBufferWindow(width: i32, height: i32, frameBufferIndex: i32): Descriptor {
-  let frameBuffer: Descriptor = FileSystem.open('dev/wasmerfb' + frameBufferIndex.toString(), "w+") as Descriptor;
+export function openFrameBufferWindow(width: i32, height: i32, frameBufferIndex: i32): void {
   let virtualSize: Descriptor = FileSystem.open('sys/class/graphics/wasmerfb' + frameBufferIndex.toString() + '/virtual_size', "w+") as Descriptor;
-
+  virtualSize.seek(0, whence.SET);
   virtualSize.writeString(width.toString() + 'x' + height.toString());
-
-  return frameBuffer;
 }
 
 // Function to close a framebuffer
 export function closeFrameBufferWindow(frameBufferIndex: i32): void {
   let virtualSize: Descriptor = FileSystem.open('sys/class/graphics/wasmerfb' + frameBufferIndex.toString() + '/virtual_size', "w+") as Descriptor;
+  virtualSize.seek(0, whence.SET);
   virtualSize.writeString('0x0');
 }
 
@@ -31,10 +30,12 @@ export function drawRgbaArrayToFrameBuffer(rgbaArray: Array<u8>, frameBufferInde
 
   // Fill the framebuffer
   let frameBuffer: Descriptor = FileSystem.open('dev/wasmerfb' + frameBufferIndex.toString(), "w+") as Descriptor;
+  frameBuffer.seek(0, whence.SET);
   frameBuffer.write(rgbaArray);
 
   // Draw the framebuffer
-  let bufferIndexDisplay: Descriptor = FileSystem.open('sys/class/graphics/wasmerfb' + frameBufferIndex.toString() + '/buffer_index_display', "w") as Descriptor;
+  let bufferIndexDisplay: Descriptor = FileSystem.open('sys/class/graphics/wasmerfb' + frameBufferIndex.toString() + '/buffer_index_display', "w+") as Descriptor;
+  bufferIndexDisplay.seek(0, whence.SET);
   bufferIndexDisplay.writeString(frameBufferIndex.toString());
 }
 
