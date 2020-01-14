@@ -135,28 +135,29 @@
  (data (i32.const 4168) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00K\00e\00y\00R\00i\00g\00h\00t\00S\00u\00p\00e\00r\00")
  (data (i32.const 4216) "\0e\00\00\00\01\00\00\00\01\00\00\00\0e\00\00\00K\00e\00y\00M\00e\00n\00u\00")
  (data (i32.const 4248) "\1c\00\00\00\01\00\00\00\01\00\00\00\1c\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\00E\00n\00t\00e\00r\00")
- (data (i32.const 4296) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00d\00e\00v\00/\00w\00a\00s\00m\00e\00r\00f\00b\00")
- (data (i32.const 4336) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00+\00")
- (data (i32.const 4360) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00r\00")
- (data (i32.const 4384) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00r\00+\00")
- (data (i32.const 4408) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00w\00")
- (data (i32.const 4432) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00x\00")
- (data (i32.const 4456) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00x\00w\00+\00")
- (data (i32.const 4480) "6\00\00\00\01\00\00\00\01\00\00\006\00\00\00s\00y\00s\00/\00c\00l\00a\00s\00s\00/\00g\00r\00a\00p\00h\00i\00c\00s\00/\00w\00a\00s\00m\00e\00r\00f\00b\00")
- (data (i32.const 4552) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00/\00v\00i\00r\00t\00u\00a\00l\00_\00s\00i\00z\00e\00")
- (data (i32.const 4600) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00x\00")
- (data (i32.const 4624) "\12\00\00\00\01\00\00\00\01\00\00\00\12\00\00\00d\00e\00v\00/\00i\00n\00p\00u\00t\00")
- (data (i32.const 4664) "\00\00\00\00\01\00\00\00\00\00\00\00\00\00\00\00")
- (data (i32.const 4680) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00K\00e\00y\00 \00d\00o\00e\00s\00 \00n\00o\00t\00 \00e\00x\00i\00s\00t\00")
- (data (i32.const 4736) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00~\00l\00i\00b\00/\00m\00a\00p\00.\00t\00s\00")
- (data (i32.const 4776) "0\00\00\00\01\00\00\00\01\00\00\000\00\00\00N\00e\00w\00 \00M\00o\00u\00s\00e\00 \00P\00o\00s\00i\00t\00i\00o\00n\00 \00/\00 \00X\00:\00 \00")
- (data (i32.const 4840) "\08\00\00\00\01\00\00\00\01\00\00\00\08\00\00\00 \00Y\00:\00 \00")
- (data (i32.const 4864) "^\00\00\00\01\00\00\00\01\00\00\00^\00\00\00E\00l\00e\00m\00e\00n\00t\00 \00t\00y\00p\00e\00 \00m\00u\00s\00t\00 \00b\00e\00 \00n\00u\00l\00l\00a\00b\00l\00e\00 \00i\00f\00 \00a\00r\00r\00a\00y\00 \00i\00s\00 \00h\00o\00l\00e\00y\00")
- (data (i32.const 4976) ",\00\00\00\01\00\00\00\01\00\00\00,\00\00\00K\00e\00y\00 \00i\00s\00 \00b\00e\00i\00n\00g\00 \00p\00r\00e\00s\00s\00e\00d\00:\00 \00")
- (data (i32.const 5040) "8\00\00\00\01\00\00\00\01\00\00\008\00\00\00L\00e\00f\00t\00 \00M\00o\00u\00s\00e\00 \00B\00u\00t\00t\00o\00n\00 \00i\00s\00 \00c\00l\00i\00c\00k\00e\00d\00")
- (data (i32.const 5112) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00~\00l\00i\00b\00/\00t\00y\00p\00e\00d\00a\00r\00r\00a\00y\00.\00t\00s\00")
- (data (i32.const 5168) "*\00\00\00\01\00\00\00\01\00\00\00*\00\00\00/\00b\00u\00f\00f\00e\00r\00_\00i\00n\00d\00e\00x\00_\00d\00i\00s\00p\00l\00a\00y\00")
- (data (i32.const 5232) "\0b\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\00\93\00\00\00\02\00\00\00\10\00\00\00\00\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\00\93 \00\00\02\00\00\003\00\00\00\02\00\00\001\00\00\00\02\00\00\00")
+ (data (i32.const 4296) "\1c\00\00\00\01\00\00\00\01\00\00\00\1c\00\00\00_\00w\00a\00s\00m\00e\00r\00/\00d\00e\00v\00/\00f\00b\00")
+ (data (i32.const 4344) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00/\00f\00b\00")
+ (data (i32.const 4368) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00+\00")
+ (data (i32.const 4392) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00r\00")
+ (data (i32.const 4416) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00r\00+\00")
+ (data (i32.const 4440) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00w\00")
+ (data (i32.const 4464) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00x\00")
+ (data (i32.const 4488) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00x\00w\00+\00")
+ (data (i32.const 4512) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00/\00v\00i\00r\00t\00u\00a\00l\00_\00s\00i\00z\00e\00")
+ (data (i32.const 4560) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00x\00")
+ (data (i32.const 4584) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00_\00w\00a\00s\00m\00e\00r\00/\00f\00b\00")
+ (data (i32.const 4624) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00/\00i\00n\00p\00u\00t\00")
+ (data (i32.const 4656) "\00\00\00\00\01\00\00\00\00\00\00\00\00\00\00\00")
+ (data (i32.const 4672) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00K\00e\00y\00 \00d\00o\00e\00s\00 \00n\00o\00t\00 \00e\00x\00i\00s\00t\00")
+ (data (i32.const 4728) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00~\00l\00i\00b\00/\00m\00a\00p\00.\00t\00s\00")
+ (data (i32.const 4768) "0\00\00\00\01\00\00\00\01\00\00\000\00\00\00N\00e\00w\00 \00M\00o\00u\00s\00e\00 \00P\00o\00s\00i\00t\00i\00o\00n\00 \00/\00 \00X\00:\00 \00")
+ (data (i32.const 4832) "\08\00\00\00\01\00\00\00\01\00\00\00\08\00\00\00 \00Y\00:\00 \00")
+ (data (i32.const 4856) "^\00\00\00\01\00\00\00\01\00\00\00^\00\00\00E\00l\00e\00m\00e\00n\00t\00 \00t\00y\00p\00e\00 \00m\00u\00s\00t\00 \00b\00e\00 \00n\00u\00l\00l\00a\00b\00l\00e\00 \00i\00f\00 \00a\00r\00r\00a\00y\00 \00i\00s\00 \00h\00o\00l\00e\00y\00")
+ (data (i32.const 4968) ",\00\00\00\01\00\00\00\01\00\00\00,\00\00\00K\00e\00y\00 \00i\00s\00 \00b\00e\00i\00n\00g\00 \00p\00r\00e\00s\00s\00e\00d\00:\00 \00")
+ (data (i32.const 5032) "8\00\00\00\01\00\00\00\01\00\00\008\00\00\00L\00e\00f\00t\00 \00M\00o\00u\00s\00e\00 \00B\00u\00t\00t\00o\00n\00 \00i\00s\00 \00c\00l\00i\00c\00k\00e\00d\00")
+ (data (i32.const 5104) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00~\00l\00i\00b\00/\00t\00y\00p\00e\00d\00a\00r\00r\00a\00y\00.\00t\00s\00")
+ (data (i32.const 5160) "\n\00\00\00\01\00\00\00\01\00\00\00\n\00\00\00/\00d\00r\00a\00w\00")
+ (data (i32.const 5192) "\0b\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\00\93\00\00\00\02\00\00\00\10\00\00\00\00\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\00\93 \00\00\02\00\00\003\00\00\00\02\00\00\001\00\00\00\02\00\00\00")
  (table $0 1 funcref)
  (elem (i32.const 0) $null)
  (global $~lib/rt/stub/startOffset (mut i32) (i32.const 0))
@@ -171,8 +172,8 @@
  (global $assemblyscript/lib/input-map/keyPressStateMap (mut i32) (i32.const 0))
  (global $assemblyscript/debug-example/index/width (mut i32) (i32.const 160))
  (global $assemblyscript/debug-example/index/height (mut i32) (i32.const 144))
- (global $~lib/rt/__rtti_base i32 (i32.const 5232))
- (global $~lib/heap/__heap_base i32 (i32.const 5324))
+ (global $~lib/rt/__rtti_base i32 (i32.const 5192))
+ (global $~lib/heap/__heap_base i32 (i32.const 5284))
  (export "memory" (memory $0))
  (export "__alloc" (func $~lib/rt/stub/__alloc))
  (export "__retain" (func $~lib/rt/stub/__retain))
@@ -5198,7 +5199,7 @@
   i64.const 0
   local.set $5
   local.get $1
-  i32.const 4376
+  i32.const 4408
   call $~lib/string/String.__eq
   if
    i64.const 2
@@ -5213,7 +5214,7 @@
    local.set $5
   else
    local.get $1
-   i32.const 4400
+   i32.const 4432
    call $~lib/string/String.__eq
    if
     i64.const 64
@@ -5230,7 +5231,7 @@
     local.set $5
    else
     local.get $1
-    i32.const 4424
+    i32.const 4456
     call $~lib/string/String.__eq
     if
      i32.const 1
@@ -5249,7 +5250,7 @@
      local.set $5
     else
      local.get $1
-     i32.const 4448
+     i32.const 4480
      call $~lib/string/String.__eq
      if
       i32.const 1
@@ -5270,7 +5271,7 @@
       local.set $5
      else
       local.get $1
-      i32.const 4352
+      i32.const 4384
       call $~lib/string/String.__eq
       if
        i32.const 1
@@ -5291,7 +5292,7 @@
        local.set $5
       else
        local.get $1
-       i32.const 4472
+       i32.const 4504
        call $~lib/string/String.__eq
        if
         i32.const 1
@@ -5407,48 +5408,52 @@
   (local $12 i32)
   (local $13 i32)
   (local $14 i32)
+  (local $15 i32)
   i32.const 4312
   local.get $2
   call $~lib/number/I32#toString
   local.tee $3
   call $~lib/string/String.__concat
   local.tee $4
-  i32.const 4352
+  i32.const 4360
+  call $~lib/string/String.__concat
+  local.tee $5
+  i32.const 4384
   call $~lib/as-wasi/as-wasi/FileSystem.open
-  local.set $5
-  i32.const 4496
+  local.set $6
+  i32.const 4312
   local.get $2
   call $~lib/number/I32#toString
-  local.tee $6
-  call $~lib/string/String.__concat
   local.tee $7
-  i32.const 4568
   call $~lib/string/String.__concat
   local.tee $8
-  i32.const 4352
+  i32.const 4528
+  call $~lib/string/String.__concat
+  local.tee $9
+  i32.const 4384
   call $~lib/as-wasi/as-wasi/FileSystem.open
-  local.set $9
-  local.get $9
+  local.set $10
+  local.get $10
   local.get $0
   call $~lib/number/I32#toString
-  local.tee $10
-  i32.const 4616
-  call $~lib/string/String.__concat
   local.tee $11
+  i32.const 4576
+  call $~lib/string/String.__concat
+  local.tee $12
   local.get $1
   call $~lib/number/I32#toString
-  local.tee $12
-  call $~lib/string/String.__concat
   local.tee $13
+  call $~lib/string/String.__concat
+  local.tee $14
   i32.const 0
   call $~lib/as-wasi/as-wasi/Descriptor#writeString
-  local.get $5
-  local.set $14
+  local.get $6
+  local.set $15
   local.get $3
   call $~lib/rt/stub/__release
   local.get $4
   call $~lib/rt/stub/__release
-  local.get $6
+  local.get $5
   call $~lib/rt/stub/__release
   local.get $7
   call $~lib/rt/stub/__release
@@ -5465,6 +5470,8 @@
   local.get $13
   call $~lib/rt/stub/__release
   local.get $14
+  call $~lib/rt/stub/__release
+  local.get $15
  )
  (func $assemblyscript/lib/input-map/getMousePosition (; 64 ;) (type $FUNCSIG$i) (result i32)
   global.get $assemblyscript/lib/input-map/mousePosition
@@ -5784,8 +5791,8 @@
   local.get $3
   i32.eqz
   if
-   i32.const 4696
-   i32.const 4752
+   i32.const 4688
+   i32.const 4744
    i32.const 111
    i32.const 16
    call $~lib/as-wasi/as-wasi/wasi_abort
@@ -5859,35 +5866,46 @@
   local.get $0
   call $~lib/rt/stub/__release
  )
- (func $assemblyscript/lib/lib/updateInput (; 82 ;) (type $FUNCSIG$v)
-  (local $0 i32)
+ (func $assemblyscript/lib/lib/updateInput (; 82 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
   (local $6 i32)
-  i32.const 4640
-  i32.const 4376
-  call $~lib/as-wasi/as-wasi/FileSystem.open
-  local.set $0
-  call $assemblyscript/lib/input-map/resetMouseClickState
+  (local $7 i32)
+  (local $8 i32)
+  (local $9 i32)
+  (local $10 i32)
+  i32.const 4600
   local.get $0
+  call $~lib/number/I32#toString
+  local.tee $1
+  call $~lib/string/String.__concat
+  local.tee $2
+  i32.const 4640
+  call $~lib/string/String.__concat
+  local.tee $3
+  i32.const 4408
+  call $~lib/as-wasi/as-wasi/FileSystem.open
+  local.set $4
+  call $assemblyscript/lib/input-map/resetMouseClickState
+  local.get $4
   i32.const 0
   i32.const 0
   i32.const 9
-  i32.const 4680
+  i32.const 4672
   call $~lib/rt/__allocArray
   call $~lib/rt/stub/__retain
-  local.tee $2
+  local.tee $6
   i32.const 4096
   call $~lib/as-wasi/as-wasi/Descriptor#read
-  local.set $1
-  local.get $1
+  local.set $5
+  local.get $5
   i32.const 0
   i32.ne
   if (result i32)
-   local.get $1
+   local.get $5
    call $~lib/array/Array<u8>#get:length
    i32.const 0
    i32.gt_s
@@ -5896,197 +5914,197 @@
   end
   if
    i32.const 0
-   local.set $3
+   local.set $7
    block $break|0
     loop $continue|0
-     local.get $3
-     local.get $1
+     local.get $7
+     local.get $5
      call $~lib/array/Array<u8>#get:length
      i32.lt_s
      i32.eqz
      br_if $break|0
-     local.get $1
-     local.get $3
+     local.get $5
+     local.get $7
      call $~lib/array/Array<u8>#__get
      i32.const 1
      i32.eq
      if
-      local.get $1
-      local.get $3
+      local.get $5
+      local.get $7
       i32.const 1
       i32.add
       call $~lib/array/Array<u8>#__get
       call $assemblyscript/lib/input-map/getKeyFromByte
-      local.set $4
-      local.get $4
+      local.set $8
+      local.get $8
       i32.const 0
       call $~lib/string/String.__ne
       if
-       local.get $4
+       local.get $8
        i32.const 1
        call $assemblyscript/lib/input-map/setKeyOnKeyPressState
       end
-      local.get $3
+      local.get $7
       i32.const 2
       i32.add
-      local.set $3
-      local.get $4
+      local.set $7
+      local.get $8
       call $~lib/rt/stub/__release
      else
-      local.get $1
-      local.get $3
+      local.get $5
+      local.get $7
       call $~lib/array/Array<u8>#__get
       i32.const 3
       i32.eq
       if
-       local.get $1
-       local.get $3
+       local.get $5
+       local.get $7
        i32.const 1
        i32.add
        call $~lib/array/Array<u8>#__get
        call $assemblyscript/lib/input-map/getKeyFromByte
-       local.set $4
-       local.get $4
+       local.set $8
+       local.get $8
        i32.const 0
        call $~lib/string/String.__ne
        if
-        local.get $4
+        local.get $8
         i32.const 0
         call $assemblyscript/lib/input-map/setKeyOnKeyPressState
        end
-       local.get $3
+       local.get $7
        i32.const 2
        i32.add
-       local.set $3
-       local.get $4
+       local.set $7
+       local.get $8
        call $~lib/rt/stub/__release
       else
-       local.get $1
-       local.get $3
+       local.get $5
+       local.get $7
        call $~lib/array/Array<u8>#__get
        i32.const 2
        i32.eq
        if
         i32.const 0
-        local.set $4
+        local.set $8
         block $break|1
          i32.const 0
-         local.set $5
+         local.set $9
          loop $loop|1
-          local.get $5
+          local.get $9
           i32.const 4
           i32.lt_u
           i32.eqz
           br_if $break|1
-          local.get $4
-          local.get $1
-          local.get $3
+          local.get $8
           local.get $5
+          local.get $7
+          local.get $9
           i32.const 255
           i32.and
           i32.add
           i32.const 1
           i32.add
           call $~lib/array/Array<u8>#__get
-          local.get $5
+          local.get $9
           i32.const 8
           i32.mul
           i32.shl
           i32.const 255
           i32.and
           i32.or
-          local.set $4
-          local.get $5
+          local.set $8
+          local.get $9
           i32.const 1
           i32.add
-          local.set $5
+          local.set $9
           br $loop|1
          end
          unreachable
         end
         i32.const 0
-        local.set $5
+        local.set $9
         block $break|2
          i32.const 0
-         local.set $6
+         local.set $10
          loop $loop|2
-          local.get $6
+          local.get $10
           i32.const 4
           i32.lt_u
           i32.eqz
           br_if $break|2
+          local.get $9
           local.get $5
-          local.get $1
-          local.get $3
-          local.get $6
+          local.get $7
+          local.get $10
           i32.const 255
           i32.and
           i32.add
           i32.const 5
           i32.add
           call $~lib/array/Array<u8>#__get
-          local.get $6
+          local.get $10
           i32.const 8
           i32.mul
           i32.shl
           i32.const 255
           i32.and
           i32.or
-          local.set $5
-          local.get $6
+          local.set $9
+          local.get $10
           i32.const 1
           i32.add
-          local.set $6
+          local.set $10
           br $loop|2
          end
          unreachable
         end
-        local.get $4
-        local.get $5
+        local.get $8
+        local.get $9
         call $assemblyscript/lib/input-map/setMousePosition
-        local.get $3
+        local.get $7
         i32.const 9
         i32.add
-        local.set $3
+        local.set $7
        else
-        local.get $1
-        local.get $3
+        local.get $5
+        local.get $7
         call $~lib/array/Array<u8>#__get
         i32.const 4
         i32.eq
         if
          i32.const 904
          call $assemblyscript/lib/input-map/setClickOnMouseClickState
-         local.get $3
+         local.get $7
          i32.const 9
          i32.add
-         local.set $3
+         local.set $7
         else
-         local.get $1
-         local.get $3
+         local.get $5
+         local.get $7
          call $~lib/array/Array<u8>#__get
          i32.const 5
          i32.eq
          if
           i32.const 928
           call $assemblyscript/lib/input-map/setClickOnMouseClickState
-          local.get $3
+          local.get $7
           i32.const 9
           i32.add
-          local.set $3
+          local.set $7
          else
-          local.get $1
-          local.get $3
+          local.get $5
+          local.get $7
           call $~lib/array/Array<u8>#__get
           i32.const 7
           i32.eq
           if
            i32.const 960
            call $assemblyscript/lib/input-map/setClickOnMouseClickState
-           local.get $3
+           local.get $7
            i32.const 9
            i32.add
-           local.set $3
+           local.set $7
           end
          end
         end
@@ -6098,11 +6116,17 @@
     unreachable
    end
   end
-  local.get $0
+  local.get $1
   call $~lib/rt/stub/__release
   local.get $2
   call $~lib/rt/stub/__release
-  local.get $1
+  local.get $3
+  call $~lib/rt/stub/__release
+  local.get $4
+  call $~lib/rt/stub/__release
+  local.get $6
+  call $~lib/rt/stub/__release
+  local.get $5
   call $~lib/rt/stub/__release
  )
  (func $~lib/as-wasi/as-wasi/Descriptor.Stdout (; 83 ;) (type $FUNCSIG$i) (result i32)
@@ -6212,7 +6236,7 @@
   if
    local.get $2
    call $~lib/rt/stub/__release
-   i32.const 4880
+   i32.const 4872
    i32.const 856
    i32.const 97
    i32.const 39
@@ -6277,8 +6301,8 @@
   if
    local.get $1
    call $~lib/rt/stub/__release
-   i32.const 4696
-   i32.const 4752
+   i32.const 4688
+   i32.const 4744
    i32.const 111
    i32.const 16
    call $~lib/as-wasi/as-wasi/wasi_abort
@@ -6451,7 +6475,7 @@
   i32.ge_u
   if
    i32.const 800
-   i32.const 5128
+   i32.const 5120
    i32.const 148
    i32.const 44
    call $~lib/as-wasi/as-wasi/wasi_abort
@@ -6711,6 +6735,7 @@
   (local $7 i32)
   (local $8 i32)
   (local $9 i32)
+  (local $10 i32)
   local.get $0
   call $~lib/rt/stub/__retain
   drop
@@ -6720,28 +6745,31 @@
   local.tee $2
   call $~lib/string/String.__concat
   local.tee $3
-  i32.const 4352
+  i32.const 4360
+  call $~lib/string/String.__concat
+  local.tee $4
+  i32.const 4384
   call $~lib/as-wasi/as-wasi/FileSystem.open
-  local.set $4
-  local.get $4
+  local.set $5
+  local.get $5
   local.get $0
   call $~lib/as-wasi/as-wasi/Descriptor#write
-  i32.const 4496
+  i32.const 4312
   local.get $1
   call $~lib/number/I32#toString
-  local.tee $5
-  call $~lib/string/String.__concat
   local.tee $6
-  i32.const 5184
   call $~lib/string/String.__concat
   local.tee $7
-  i32.const 4424
+  i32.const 5176
+  call $~lib/string/String.__concat
+  local.tee $8
+  i32.const 4456
   call $~lib/as-wasi/as-wasi/FileSystem.open
-  local.set $8
-  local.get $8
+  local.set $9
+  local.get $9
   local.get $1
   call $~lib/number/I32#toString
-  local.tee $9
+  local.tee $10
   i32.const 0
   call $~lib/as-wasi/as-wasi/Descriptor#writeString
   local.get $2
@@ -6759,6 +6787,8 @@
   local.get $8
   call $~lib/rt/stub/__release
   local.get $9
+  call $~lib/rt/stub/__release
+  local.get $10
   call $~lib/rt/stub/__release
   local.get $0
   call $~lib/rt/stub/__release
@@ -6902,6 +6932,7 @@
   call $~lib/array/Array<~lib/string/String>#constructor
   local.set $2
   loop $continue|0
+   i32.const 0
    call $assemblyscript/lib/lib/updateInput
    call $assemblyscript/lib/input-map/getMousePosition
    local.set $3
@@ -6931,7 +6962,7 @@
     call $~lib/rt/stub/__release
     local.get $4
     local.set $1
-    i32.const 4792
+    i32.const 4784
     local.get $3
     i32.const 0
     call $~lib/array/Array<i32>#__get
@@ -6939,7 +6970,7 @@
     local.tee $4
     call $~lib/string/String.__concat
     local.tee $5
-    i32.const 4856
+    i32.const 4848
     call $~lib/string/String.__concat
     local.tee $6
     local.get $3
@@ -7036,7 +7067,7 @@
      i32.const 1
      i32.eq
      if
-      i32.const 4992
+      i32.const 4984
       local.get $5
       call $~lib/string/String.__concat
       local.tee $4
@@ -7057,7 +7088,7 @@
    i32.const 904
    call $assemblyscript/lib/input-map/isMouseButtonClicked
    if
-    i32.const 5056
+    i32.const 5048
     call $~lib/as-wasi/as-wasi/Console.log
    end
    call $assemblyscript/debug-example/index/getRandomFrame

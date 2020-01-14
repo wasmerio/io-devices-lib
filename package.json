@@ -4,10 +4,10 @@
   "description": "Library for interacting with the Wasmer Experimental IO Devices in AssemblyScript",
   "main": "assemblyscript/lib/lib.ts",
   "scripts": {
-    "start": "../wasmer/target/release/wasmer run --enable-experimental-framebuffer assemblyscript/debug-example/build/optimized.wasm",
-    "start:quick-start": "../wasmer/target/release/wasmer run --enable-experimental-framebuffer assemblyscript/quick-start/build/optimized.wasm",
+    "start": "../wasmer/target/release/wasmer run --enable-experimental-io-devices assemblyscript/debug-example/build/optimized.wasm",
+    "start:quick-start": "../wasmer/target/release/wasmer run --enable-experimental-io-devices assemblyscript/quick-start/build/optimized.wasm",
     "build": "npm run asbuild",
-    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized && npm run asbuild:quickstart",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized && npm run asbuild:quick-start",
     "asbuild:untouched": "asc assemblyscript/debug-example/index.ts -b assemblyscript/debug-example/build/untouched.wasm -t assemblyscript/debug-example/build/untouched.wat --sourceMap --validate --debug --use abort=wasi_abort --runtime stub",
     "asbuild:optimized": "asc assemblyscript/debug-example/index.ts -b assemblyscript/debug-example/build/optimized.wasm -t assemblyscript/debug-example/build/optimized.wat --sourceMap --validate --optimize --use abort=wasi_abort --runtime stub",
     "asbuild:quick-start": "asc assemblyscript/quick-start/graphics.ts -b assemblyscript/quick-start/build/optimized.wasm -t assemblyscript/quick-start/build/optimized.wat --sourceMap --validate --optimize --use abort=wasi_abort --runtime stub"

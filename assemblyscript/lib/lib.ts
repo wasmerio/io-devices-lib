@@ -38,7 +38,7 @@ export function drawRgbaArrayToFrameBuffer(rgbaArray: Array<u8>, frameBufferInde
 // Should Reference: https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent
 // Should be inspired by: https://torch2424.github.io/responsive-gamepad/
 export function updateInput(frameBufferIndex: i32): void {
-  let devInput: Descriptor = FileSystem.open('/_wasmer/fb' + frameBufferIndex.toString() + '/input', "r") as Descriptor;
+  let devInput: Descriptor = FileSystem.open('_wasmer/fb' + frameBufferIndex.toString() + '/input', "r") as Descriptor;
 
   // Reset the state every update
   resetMouseClickState();

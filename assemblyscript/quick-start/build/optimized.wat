@@ -130,18 +130,18 @@
  (data (i32.const 3720) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00K\00e\00y\00R\00i\00g\00h\00t\00S\00u\00p\00e\00r")
  (data (i32.const 3768) "\0e\00\00\00\01\00\00\00\01\00\00\00\0e\00\00\00K\00e\00y\00M\00e\00n\00u")
  (data (i32.const 3800) "\1c\00\00\00\01\00\00\00\01\00\00\00\1c\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\00E\00n\00t\00e\00r")
- (data (i32.const 3848) "\18\00\00\00\01\00\00\00\01\00\00\00\18\00\00\00d\00e\00v\00/\00w\00a\00s\00m\00e\00r\00f\00b")
- (data (i32.const 3888) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00+")
- (data (i32.const 3912) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00r")
- (data (i32.const 3936) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00r\00+")
- (data (i32.const 3960) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00w")
- (data (i32.const 3984) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00x")
- (data (i32.const 4008) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00x\00w\00+")
- (data (i32.const 4032) "6\00\00\00\01\00\00\00\01\00\00\006\00\00\00s\00y\00s\00/\00c\00l\00a\00s\00s\00/\00g\00r\00a\00p\00h\00i\00c\00s\00/\00w\00a\00s\00m\00e\00r\00f\00b")
- (data (i32.const 4104) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00/\00v\00i\00r\00t\00u\00a\00l\00_\00s\00i\00z\00e")
- (data (i32.const 4152) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00x")
- (data (i32.const 4176) "*\00\00\00\01\00\00\00\01\00\00\00*\00\00\00/\00b\00u\00f\00f\00e\00r\00_\00i\00n\00d\00e\00x\00_\00d\00i\00s\00p\00l\00a\00y")
- (data (i32.const 4240) "\08\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\00\10\00\00\00\00\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\003\00\00\00\02")
+ (data (i32.const 3848) "\1c\00\00\00\01\00\00\00\01\00\00\00\1c\00\00\00_\00w\00a\00s\00m\00e\00r\00/\00d\00e\00v\00/\00f\00b")
+ (data (i32.const 3896) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00/\00f\00b")
+ (data (i32.const 3920) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00+")
+ (data (i32.const 3944) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00r")
+ (data (i32.const 3968) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00r\00+")
+ (data (i32.const 3992) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00w")
+ (data (i32.const 4016) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00x")
+ (data (i32.const 4040) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00x\00w\00+")
+ (data (i32.const 4064) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00/\00v\00i\00r\00t\00u\00a\00l\00_\00s\00i\00z\00e")
+ (data (i32.const 4112) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00x")
+ (data (i32.const 4136) "\n\00\00\00\01\00\00\00\01\00\00\00\n\00\00\00/\00d\00r\00a\00w")
+ (data (i32.const 4168) "\08\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\00\10\00\00\00\00\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\003\00\00\00\02")
  (global $~lib/rt/stub/startOffset (mut i32) (i32.const 0))
  (global $~lib/rt/stub/offset (mut i32) (i32.const 0))
  (global $~lib/as-wasi/as-wasi/Time.MILLISECOND (mut i32) (i32.const 0))
@@ -150,7 +150,7 @@
  (global $assemblyscript/lib/input-map/mouseClickMap (mut i32) (i32.const 0))
  (global $assemblyscript/lib/input-map/byteToInputKeyMap (mut i32) (i32.const 0))
  (global $assemblyscript/lib/input-map/keyPressStateMap (mut i32) (i32.const 0))
- (global $~lib/rt/__rtti_base i32 (i32.const 4240))
+ (global $~lib/rt/__rtti_base i32 (i32.const 4168))
  (export "memory" (memory $0))
  (export "__alloc" (func $~lib/rt/stub/__alloc))
  (export "__retain" (func $~lib/rt/stub/__retain))
@@ -2990,19 +2990,19 @@
   (local $4 i32)
   (local $5 i32)
   local.get $1
-  i32.const 3928
+  i32.const 3960
   call $~lib/string/String.__eq
   if (result i64)
    i64.const 2113574
   else
    local.get $1
-   i32.const 3952
+   i32.const 3984
    call $~lib/string/String.__eq
    if (result i64)
     i64.const 2098278
    else
     local.get $1
-    i32.const 3976
+    i32.const 4008
     call $~lib/string/String.__eq
     if (result i64)
      i32.const 9
@@ -3010,7 +3010,7 @@
      i64.const 2098276
     else
      local.get $1
-     i32.const 4000
+     i32.const 4032
      call $~lib/string/String.__eq
      if (result i64)
       i32.const 13
@@ -3018,13 +3018,13 @@
       i64.const 2098276
      else
       local.get $1
-      i32.const 3904
+      i32.const 3936
       call $~lib/string/String.__eq
       if (result i32)
        i32.const 9
       else
        local.get $1
-       i32.const 4024
+       i32.const 4056
        call $~lib/string/String.__eq
        i32.eqz
        if
@@ -3074,19 +3074,21 @@
   i32.const 0
   call $~lib/util/number/itoa32
   call $~lib/string/String.__concat
-  i32.const 3904
+  i32.const 3912
+  call $~lib/string/String.__concat
+  i32.const 3936
   call $~lib/as-wasi/as-wasi/FileSystem.open
-  i32.const 4048
+  i32.const 3864
   i32.const 0
   call $~lib/util/number/itoa32
   call $~lib/string/String.__concat
-  i32.const 4120
+  i32.const 4080
   call $~lib/string/String.__concat
-  i32.const 3904
+  i32.const 3936
   call $~lib/as-wasi/as-wasi/FileSystem.open
   i32.const 400
   call $~lib/util/number/itoa32
-  i32.const 4168
+  i32.const 4128
   call $~lib/string/String.__concat
   i32.const 400
   call $~lib/util/number/itoa32
@@ -3186,17 +3188,19 @@
   i32.const 0
   call $~lib/util/number/itoa32
   call $~lib/string/String.__concat
-  i32.const 3904
+  i32.const 3912
+  call $~lib/string/String.__concat
+  i32.const 3936
   call $~lib/as-wasi/as-wasi/FileSystem.open
   local.get $0
   call $~lib/as-wasi/as-wasi/Descriptor#write
-  i32.const 4048
+  i32.const 3864
   i32.const 0
   call $~lib/util/number/itoa32
   call $~lib/string/String.__concat
-  i32.const 4192
+  i32.const 4152
   call $~lib/string/String.__concat
-  i32.const 3976
+  i32.const 4008
   call $~lib/as-wasi/as-wasi/FileSystem.open
   i32.const 0
   call $~lib/util/number/itoa32
@@ -3380,9 +3384,9 @@
   unreachable
  )
  (func $start (; 54 ;) (type $FUNCSIG$v)
-  i32.const 4320
+  i32.const 4240
   global.set $~lib/rt/stub/startOffset
-  i32.const 4320
+  i32.const 4240
   global.set $~lib/rt/stub/offset
   i32.const 1000000
   global.set $~lib/as-wasi/as-wasi/Time.MILLISECOND
