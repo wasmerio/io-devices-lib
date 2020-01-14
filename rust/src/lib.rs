@@ -36,7 +36,7 @@ impl FrameBufferCtx {
         let index_handle = std::fs::OpenOptions::new()
             .read(true)
             .write(true)
-            .open("/_wasmer/dev/fb0/buffer_index_display")
+            .open("/_wasmer/dev/fb0/draw")
             .ok()?;
 
         let input_handle = std::fs::OpenOptions::new()
