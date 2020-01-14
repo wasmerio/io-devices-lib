@@ -140,8 +140,8 @@
  (data (i32.const 4040) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00x\00w\00+")
  (data (i32.const 4064) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00/\00v\00i\00r\00t\00u\00a\00l\00_\00s\00i\00z\00e")
  (data (i32.const 4112) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00x")
- (data (i32.const 4136) "*\00\00\00\01\00\00\00\01\00\00\00*\00\00\00/\00b\00u\00f\00f\00e\00r\00_\00i\00n\00d\00e\00x\00_\00d\00i\00s\00p\00l\00a\00y")
- (data (i32.const 4200) "\08\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\00\10\00\00\00\00\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\003\00\00\00\02")
+ (data (i32.const 4136) "\n\00\00\00\01\00\00\00\01\00\00\00\n\00\00\00/\00d\00r\00a\00w")
+ (data (i32.const 4168) "\08\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\00\10\00\00\00\00\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\003\00\00\00\02")
  (global $~lib/rt/stub/startOffset (mut i32) (i32.const 0))
  (global $~lib/rt/stub/offset (mut i32) (i32.const 0))
  (global $~lib/as-wasi/as-wasi/Time.MILLISECOND (mut i32) (i32.const 0))
@@ -150,7 +150,7 @@
  (global $assemblyscript/lib/input-map/mouseClickMap (mut i32) (i32.const 0))
  (global $assemblyscript/lib/input-map/byteToInputKeyMap (mut i32) (i32.const 0))
  (global $assemblyscript/lib/input-map/keyPressStateMap (mut i32) (i32.const 0))
- (global $~lib/rt/__rtti_base i32 (i32.const 4200))
+ (global $~lib/rt/__rtti_base i32 (i32.const 4168))
  (export "memory" (memory $0))
  (export "__alloc" (func $~lib/rt/stub/__alloc))
  (export "__retain" (func $~lib/rt/stub/__retain))
@@ -2984,47 +2984,46 @@
   end
   local.get $2
  )
- (func $~lib/as-wasi/as-wasi/FileSystem.open (; 44 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
-  (local $1 i32)
-  (local $2 i64)
-  (local $3 i32)
+ (func $~lib/as-wasi/as-wasi/FileSystem.open (; 44 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+  (local $2 i32)
+  (local $3 i64)
   (local $4 i32)
   (local $5 i32)
-  i32.const 3936
+  local.get $1
   i32.const 3960
   call $~lib/string/String.__eq
   if (result i64)
    i64.const 2113574
   else
-   i32.const 3936
+   local.get $1
    i32.const 3984
    call $~lib/string/String.__eq
    if (result i64)
     i64.const 2098278
    else
-    i32.const 3936
+    local.get $1
     i32.const 4008
     call $~lib/string/String.__eq
     if (result i64)
      i32.const 9
-     local.set $1
+     local.set $2
      i64.const 2098276
     else
-     i32.const 3936
+     local.get $1
      i32.const 4032
      call $~lib/string/String.__eq
      if (result i64)
       i32.const 13
-      local.set $1
+      local.set $2
       i64.const 2098276
      else
-      i32.const 3936
+      local.get $1
       i32.const 3936
       call $~lib/string/String.__eq
       if (result i32)
        i32.const 9
       else
-       i32.const 3936
+       local.get $1
        i32.const 4056
        call $~lib/string/String.__eq
        i32.eqz
@@ -3034,16 +3033,16 @@
        end
        i32.const 13
       end
-      local.set $1
+      local.set $2
       i64.const 2098278
      end
     end
    end
   end
-  local.set $2
+  local.set $3
   local.get $0
   call $~lib/string/String.UTF8.byteLength
-  local.set $3
+  local.set $1
   local.get $0
   call $~lib/string/String.UTF8.encode
   local.set $0
@@ -3053,10 +3052,10 @@
   i32.const 3
   i32.const 1
   local.get $0
-  local.get $3
   local.get $1
   local.get $2
-  local.get $2
+  local.get $3
+  local.get $3
   i32.const 0
   local.get $4
   call $~lib/bindings/wasi_unstable/path_open
@@ -3077,6 +3076,7 @@
   call $~lib/string/String.__concat
   i32.const 3912
   call $~lib/string/String.__concat
+  i32.const 3936
   call $~lib/as-wasi/as-wasi/FileSystem.open
   i32.const 3864
   i32.const 0
@@ -3084,6 +3084,7 @@
   call $~lib/string/String.__concat
   i32.const 4080
   call $~lib/string/String.__concat
+  i32.const 3936
   call $~lib/as-wasi/as-wasi/FileSystem.open
   i32.const 400
   call $~lib/util/number/itoa32
@@ -3189,6 +3190,7 @@
   call $~lib/string/String.__concat
   i32.const 3912
   call $~lib/string/String.__concat
+  i32.const 3936
   call $~lib/as-wasi/as-wasi/FileSystem.open
   local.get $0
   call $~lib/as-wasi/as-wasi/Descriptor#write
@@ -3198,6 +3200,7 @@
   call $~lib/string/String.__concat
   i32.const 4152
   call $~lib/string/String.__concat
+  i32.const 4008
   call $~lib/as-wasi/as-wasi/FileSystem.open
   i32.const 0
   call $~lib/util/number/itoa32
@@ -3381,9 +3384,9 @@
   unreachable
  )
  (func $start (; 54 ;) (type $FUNCSIG$v)
-  i32.const 4272
+  i32.const 4240
   global.set $~lib/rt/stub/startOffset
-  i32.const 4272
+  i32.const 4240
   global.set $~lib/rt/stub/offset
   i32.const 1000000
   global.set $~lib/as-wasi/as-wasi/Time.MILLISECOND

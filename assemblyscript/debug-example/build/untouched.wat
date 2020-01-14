@@ -155,8 +155,8 @@
  (data (i32.const 4928) ",\00\00\00\01\00\00\00\01\00\00\00,\00\00\00K\00e\00y\00 \00i\00s\00 \00b\00e\00i\00n\00g\00 \00p\00r\00e\00s\00s\00e\00d\00:\00 \00")
  (data (i32.const 4992) "8\00\00\00\01\00\00\00\01\00\00\008\00\00\00L\00e\00f\00t\00 \00M\00o\00u\00s\00e\00 \00B\00u\00t\00t\00o\00n\00 \00i\00s\00 \00c\00l\00i\00c\00k\00e\00d\00")
  (data (i32.const 5064) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00~\00l\00i\00b\00/\00t\00y\00p\00e\00d\00a\00r\00r\00a\00y\00.\00t\00s\00")
- (data (i32.const 5120) "*\00\00\00\01\00\00\00\01\00\00\00*\00\00\00/\00b\00u\00f\00f\00e\00r\00_\00i\00n\00d\00e\00x\00_\00d\00i\00s\00p\00l\00a\00y\00")
- (data (i32.const 5184) "\0b\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\00\93\00\00\00\02\00\00\00\10\00\00\00\00\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\00\93 \00\00\02\00\00\003\00\00\00\02\00\00\001\00\00\00\02\00\00\00")
+ (data (i32.const 5120) "\n\00\00\00\01\00\00\00\01\00\00\00\n\00\00\00/\00d\00r\00a\00w\00")
+ (data (i32.const 5152) "\0b\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\00\93\00\00\00\02\00\00\00\10\00\00\00\00\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\00\93 \00\00\02\00\00\003\00\00\00\02\00\00\001\00\00\00\02\00\00\00")
  (table $0 1 funcref)
  (elem (i32.const 0) $null)
  (global $~lib/rt/stub/startOffset (mut i32) (i32.const 0))
@@ -171,8 +171,8 @@
  (global $assemblyscript/lib/input-map/keyPressStateMap (mut i32) (i32.const 0))
  (global $assemblyscript/debug-example/index/width (mut i32) (i32.const 160))
  (global $assemblyscript/debug-example/index/height (mut i32) (i32.const 144))
- (global $~lib/rt/__rtti_base i32 (i32.const 5184))
- (global $~lib/heap/__heap_base i32 (i32.const 5276))
+ (global $~lib/rt/__rtti_base i32 (i32.const 5152))
+ (global $~lib/heap/__heap_base i32 (i32.const 5244))
  (export "memory" (memory $0))
  (export "__alloc" (func $~lib/rt/stub/__alloc))
  (export "__retain" (func $~lib/rt/stub/__retain))
@@ -6762,7 +6762,7 @@
   i32.const 5136
   call $~lib/string/String.__concat
   local.tee $8
-  i32.const 4384
+  i32.const 4456
   call $~lib/as-wasi/as-wasi/FileSystem.open
   local.set $9
   local.get $9

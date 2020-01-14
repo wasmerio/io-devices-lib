@@ -152,8 +152,8 @@
  (data (i32.const 4480) ",\00\00\00\01\00\00\00\01\00\00\00,\00\00\00K\00e\00y\00 \00i\00s\00 \00b\00e\00i\00n\00g\00 \00p\00r\00e\00s\00s\00e\00d\00:\00 ")
  (data (i32.const 4544) "8\00\00\00\01\00\00\00\01\00\00\008\00\00\00L\00e\00f\00t\00 \00M\00o\00u\00s\00e\00 \00B\00u\00t\00t\00o\00n\00 \00i\00s\00 \00c\00l\00i\00c\00k\00e\00d")
  (data (i32.const 4616) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00~\00l\00i\00b\00/\00t\00y\00p\00e\00d\00a\00r\00r\00a\00y\00.\00t\00s")
- (data (i32.const 4672) "*\00\00\00\01\00\00\00\01\00\00\00*\00\00\00/\00b\00u\00f\00f\00e\00r\00_\00i\00n\00d\00e\00x\00_\00d\00i\00s\00p\00l\00a\00y")
- (data (i32.const 4736) "\n\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\00\10\00\00\00\00\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\00\93 \00\00\02\00\00\003\00\00\00\02\00\00\001\00\00\00\02")
+ (data (i32.const 4672) "\n\00\00\00\01\00\00\00\01\00\00\00\n\00\00\00/\00d\00r\00a\00w")
+ (data (i32.const 4704) "\n\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\00\10\00\00\00\00\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\00\93 \00\00\02\00\00\003\00\00\00\02\00\00\001\00\00\00\02")
  (global $~lib/rt/stub/startOffset (mut i32) (i32.const 0))
  (global $~lib/rt/stub/offset (mut i32) (i32.const 0))
  (global $~lib/as-wasi/as-wasi/Time.MILLISECOND (mut i32) (i32.const 0))
@@ -162,7 +162,7 @@
  (global $assemblyscript/lib/input-map/mouseClickMap (mut i32) (i32.const 0))
  (global $assemblyscript/lib/input-map/byteToInputKeyMap (mut i32) (i32.const 0))
  (global $assemblyscript/lib/input-map/keyPressStateMap (mut i32) (i32.const 0))
- (global $~lib/rt/__rtti_base i32 (i32.const 4736))
+ (global $~lib/rt/__rtti_base i32 (i32.const 4704))
  (export "memory" (memory $0))
  (export "__alloc" (func $~lib/rt/stub/__alloc))
  (export "__retain" (func $~lib/rt/stub/__retain))
@@ -4034,7 +4034,7 @@
   call $~lib/string/String.__concat
   i32.const 4688
   call $~lib/string/String.__concat
-  i32.const 3936
+  i32.const 4008
   call $~lib/as-wasi/as-wasi/FileSystem.open
   i32.const 0
   call $~lib/util/number/itoa32
@@ -4294,9 +4294,9 @@
   unreachable
  )
  (func $start (; 80 ;) (type $FUNCSIG$v)
-  i32.const 4832
+  i32.const 4800
   global.set $~lib/rt/stub/startOffset
-  i32.const 4832
+  i32.const 4800
   global.set $~lib/rt/stub/offset
   i32.const 1000000
   global.set $~lib/as-wasi/as-wasi/Time.MILLISECOND
