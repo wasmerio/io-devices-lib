@@ -142,19 +142,18 @@
  (data (i32.const 4040) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00x\00w\00+")
  (data (i32.const 4064) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00/\00v\00i\00r\00t\00u\00a\00l\00_\00s\00i\00z\00e")
  (data (i32.const 4112) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00x")
- (data (i32.const 4136) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00_\00w\00a\00s\00m\00e\00r\00/\00f\00b")
- (data (i32.const 4176) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00/\00i\00n\00p\00u\00t")
- (data (i32.const 4212) "\01")
- (data (i32.const 4224) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00K\00e\00y\00 \00d\00o\00e\00s\00 \00n\00o\00t\00 \00e\00x\00i\00s\00t")
- (data (i32.const 4280) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00~\00l\00i\00b\00/\00m\00a\00p\00.\00t\00s")
- (data (i32.const 4320) "0\00\00\00\01\00\00\00\01\00\00\000\00\00\00N\00e\00w\00 \00M\00o\00u\00s\00e\00 \00P\00o\00s\00i\00t\00i\00o\00n\00 \00/\00 \00X\00:\00 ")
- (data (i32.const 4384) "\08\00\00\00\01\00\00\00\01\00\00\00\08\00\00\00 \00Y\00:\00 ")
- (data (i32.const 4408) "^\00\00\00\01\00\00\00\01\00\00\00^\00\00\00E\00l\00e\00m\00e\00n\00t\00 \00t\00y\00p\00e\00 \00m\00u\00s\00t\00 \00b\00e\00 \00n\00u\00l\00l\00a\00b\00l\00e\00 \00i\00f\00 \00a\00r\00r\00a\00y\00 \00i\00s\00 \00h\00o\00l\00e\00y")
- (data (i32.const 4520) ",\00\00\00\01\00\00\00\01\00\00\00,\00\00\00K\00e\00y\00 \00i\00s\00 \00b\00e\00i\00n\00g\00 \00p\00r\00e\00s\00s\00e\00d\00:\00 ")
- (data (i32.const 4584) "8\00\00\00\01\00\00\00\01\00\00\008\00\00\00L\00e\00f\00t\00 \00M\00o\00u\00s\00e\00 \00B\00u\00t\00t\00o\00n\00 \00i\00s\00 \00c\00l\00i\00c\00k\00e\00d")
- (data (i32.const 4656) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00~\00l\00i\00b\00/\00t\00y\00p\00e\00d\00a\00r\00r\00a\00y\00.\00t\00s")
- (data (i32.const 4712) "\n\00\00\00\01\00\00\00\01\00\00\00\n\00\00\00/\00d\00r\00a\00w")
- (data (i32.const 4744) "\n\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\00\10\00\00\00\00\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\00\93 \00\00\02\00\00\003\00\00\00\02\00\00\001\00\00\00\02")
+ (data (i32.const 4136) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00/\00i\00n\00p\00u\00t")
+ (data (i32.const 4172) "\01")
+ (data (i32.const 4184) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00K\00e\00y\00 \00d\00o\00e\00s\00 \00n\00o\00t\00 \00e\00x\00i\00s\00t")
+ (data (i32.const 4240) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00~\00l\00i\00b\00/\00m\00a\00p\00.\00t\00s")
+ (data (i32.const 4280) "0\00\00\00\01\00\00\00\01\00\00\000\00\00\00N\00e\00w\00 \00M\00o\00u\00s\00e\00 \00P\00o\00s\00i\00t\00i\00o\00n\00 \00/\00 \00X\00:\00 ")
+ (data (i32.const 4344) "\08\00\00\00\01\00\00\00\01\00\00\00\08\00\00\00 \00Y\00:\00 ")
+ (data (i32.const 4368) "^\00\00\00\01\00\00\00\01\00\00\00^\00\00\00E\00l\00e\00m\00e\00n\00t\00 \00t\00y\00p\00e\00 \00m\00u\00s\00t\00 \00b\00e\00 \00n\00u\00l\00l\00a\00b\00l\00e\00 \00i\00f\00 \00a\00r\00r\00a\00y\00 \00i\00s\00 \00h\00o\00l\00e\00y")
+ (data (i32.const 4480) ",\00\00\00\01\00\00\00\01\00\00\00,\00\00\00K\00e\00y\00 \00i\00s\00 \00b\00e\00i\00n\00g\00 \00p\00r\00e\00s\00s\00e\00d\00:\00 ")
+ (data (i32.const 4544) "8\00\00\00\01\00\00\00\01\00\00\008\00\00\00L\00e\00f\00t\00 \00M\00o\00u\00s\00e\00 \00B\00u\00t\00t\00o\00n\00 \00i\00s\00 \00c\00l\00i\00c\00k\00e\00d")
+ (data (i32.const 4616) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00~\00l\00i\00b\00/\00t\00y\00p\00e\00d\00a\00r\00r\00a\00y\00.\00t\00s")
+ (data (i32.const 4672) "*\00\00\00\01\00\00\00\01\00\00\00*\00\00\00/\00b\00u\00f\00f\00e\00r\00_\00i\00n\00d\00e\00x\00_\00d\00i\00s\00p\00l\00a\00y")
+ (data (i32.const 4736) "\n\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\00\10\00\00\00\00\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\00\93 \00\00\02\00\00\003\00\00\00\02\00\00\001\00\00\00\02")
  (global $~lib/rt/stub/startOffset (mut i32) (i32.const 0))
  (global $~lib/rt/stub/offset (mut i32) (i32.const 0))
  (global $~lib/as-wasi/as-wasi/Time.MILLISECOND (mut i32) (i32.const 0))
@@ -163,7 +162,7 @@
  (global $assemblyscript/lib/input-map/mouseClickMap (mut i32) (i32.const 0))
  (global $assemblyscript/lib/input-map/byteToInputKeyMap (mut i32) (i32.const 0))
  (global $assemblyscript/lib/input-map/keyPressStateMap (mut i32) (i32.const 0))
- (global $~lib/rt/__rtti_base i32 (i32.const 4744))
+ (global $~lib/rt/__rtti_base i32 (i32.const 4736))
  (export "memory" (memory $0))
  (export "__alloc" (func $~lib/rt/stub/__alloc))
  (export "__retain" (func $~lib/rt/stub/__retain))
@@ -3389,7 +3388,7 @@
   i32.const 0
   i32.store offset=12
   local.get $1
-  i32.const 4224
+  i32.const 4184
   i32.const 0
   call $~lib/memory/memory.copy
   local.get $0
@@ -3427,8 +3426,8 @@
   local.tee $0
   i32.eqz
   if
-   i32.const 4240
-   i32.const 4296
+   i32.const 4200
+   i32.const 4256
    i32.const 111
    i32.const 16
    call $~lib/as-wasi/as-wasi/wasi_abort
@@ -3475,11 +3474,11 @@
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
-  i32.const 4152
+  i32.const 3864
   i32.const 0
   call $~lib/util/number/itoa32
   call $~lib/string/String.__concat
-  i32.const 4192
+  i32.const 4152
   call $~lib/string/String.__concat
   i32.const 3960
   call $~lib/as-wasi/as-wasi/FileSystem.open
@@ -3740,7 +3739,7 @@
   local.tee $0
   i32.eqz
   if
-   i32.const 4424
+   i32.const 4384
    i32.const 408
    i32.const 97
    i32.const 39
@@ -3767,8 +3766,8 @@
   local.tee $0
   i32.eqz
   if
-   i32.const 4240
-   i32.const 4296
+   i32.const 4200
+   i32.const 4256
    i32.const 111
    i32.const 16
    call $~lib/as-wasi/as-wasi/wasi_abort
@@ -3827,7 +3826,7 @@
   i32.ge_u
   if
    i32.const 352
-   i32.const 4672
+   i32.const 4632
    i32.const 148
    i32.const 44
    call $~lib/as-wasi/as-wasi/wasi_abort
@@ -4033,9 +4032,9 @@
   i32.const 0
   call $~lib/util/number/itoa32
   call $~lib/string/String.__concat
-  i32.const 4728
+  i32.const 4688
   call $~lib/string/String.__concat
-  i32.const 4008
+  i32.const 3936
   call $~lib/as-wasi/as-wasi/FileSystem.open
   i32.const 0
   call $~lib/util/number/itoa32
@@ -4178,13 +4177,13 @@
     local.get $0
     call $assemblyscript/debug-example/index/getMousePositionCopy
     local.set $2
-    i32.const 4336
+    i32.const 4296
     local.get $0
     i32.const 0
     call $~lib/array/Array<i32>#__get
     call $~lib/util/number/itoa32
     call $~lib/string/String.__concat
-    i32.const 4400
+    i32.const 4360
     call $~lib/string/String.__concat
     local.get $0
     i32.const 1
@@ -4258,7 +4257,7 @@
      i32.const 1
      i32.eq
      if
-      i32.const 4536
+      i32.const 4496
       local.get $3
       call $~lib/string/String.__concat
       call $~lib/as-wasi/as-wasi/Console.log
@@ -4281,7 +4280,7 @@
     i32.const 0
    end
    if
-    i32.const 4600
+    i32.const 4560
     call $~lib/as-wasi/as-wasi/Console.log
    end
    call $assemblyscript/debug-example/index/getRandomFrame
