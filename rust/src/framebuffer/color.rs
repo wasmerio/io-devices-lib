@@ -11,7 +11,7 @@ pub struct RGBA {
 }
 
 impl RGBA {
-    /// return the raw bytes 
+    /// return the raw bytes
     pub const fn as_bytes(&self) -> [u8; 4] {
         [self.b, self.g, self.r, self.a]
     }

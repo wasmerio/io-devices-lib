@@ -1,5 +1,7 @@
 use std::iter;
-use wasmer_experimental_io_devices_lib::{color::*, *};
+use wasmer_experimental_io_devices_lib::framebuffer::{
+    color::RGBA, FrameBufferCtx, InputEvent, Key,
+};
 
 const X_RES: u32 = 300;
 const Y_RES: u32 = 300;
