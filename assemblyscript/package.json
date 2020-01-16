@@ -1,6 +1,6 @@
 {
   "name": "@wasmer/io-devices-lib-assemblyscript",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Library for interacting with the Wasmer Experimental IO Devices in AssemblyScript",
   "main": "lib/lib.ts",
   "scripts": {
