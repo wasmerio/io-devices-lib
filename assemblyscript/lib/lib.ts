@@ -26,7 +26,7 @@ export function isIoDevicesEnabled(shouldThrowIfNotEnabled: bool): bool {
 
   if (!isEnabled && shouldThrowIfNotEnabled) {
     Console.log("Failed to open I/O Devices files (E.g `_wasmer/dev/fb0/fb`). These are non-standard files. " + 
-      "If you're using Wasmer, please ensure that you've updated to version 0.13.0 and are using the" + 
+      "If you're using Wasmer, please ensure that you've updated to version 0.13.1 and are using the" + 
       " `--enable-experimental-io-devices` flag.");
     throw new Error("");
   }
