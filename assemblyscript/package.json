@@ -1,0 +1,44 @@
+{
+  "name": "@wasmer/io-devices-lib-assemblyscript",
+  "version": "0.1.1",
+  "description": "Library for interacting with the Wasmer Experimental IO Devices in AssemblyScript",
+  "main": "lib/lib.ts",
+  "scripts": {
+    "start": "../../wasmer/target/release/wasmer run --enable-experimental-io-devices debug-example/build/optimized.wasm",
+    "start:quick-start": "../../wasmer/target/release/wasmer run --enable-experimental-io-devices quick-start/build/optimized.wasm",
+    "build": "npm run asbuild",
+    "deploy": "npm run build && np",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized && npm run asbuild:quick-start",
+    "asbuild:untouched": "asc debug-example/index.ts -b debug-example/build/untouched.wasm -t debug-example/build/untouched.wat --sourceMap --validate --debug --use abort=wasi_abort --runtime stub",
+    "asbuild:optimized": "asc debug-example/index.ts -b debug-example/build/optimized.wasm -t debug-example/build/optimized.wat --sourceMap --validate --optimize --use abort=wasi_abort --runtime stub",
+    "asbuild:quick-start": "asc quick-start/graphics.ts -b quick-start/build/optimized.wasm -t quick-start/build/optimized.wat --sourceMap --validate --optimize --use abort=wasi_abort --runtime stub"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wasmerio/io-devices-lib.git"
+  },
+  "keywords": [
+    "assemblyscript",
+    "wasmer",
+    "graphics",
+    "audio",
+    "input",
+    "wasi",
+    "wasm",
+    "web",
+    "assembly",
+    "webassembly"
+  ],
+  "author": "Wasmer Engineering Team <engineering@wasmer.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wasmerio/io-devices-lib/issues"
+  },
+  "homepage": "https://github.com/wasmerio/io-devices-lib#readme",
+  "dependencies": {
+    "as-wasi": "git+https://github.com/jedisct1/as-wasi.git"
+  },
+  "devDependencies": {
+    "np": "^5.2.1"
+  }
+}

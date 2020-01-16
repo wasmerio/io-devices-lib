@@ -168,12 +168,12 @@
  (global $~lib/as-wasi/as-wasi/Time.MILLISECOND (mut i32) (i32.const 0))
  (global $~lib/as-wasi/as-wasi/Time.SECOND (mut i32) (i32.const 0))
  (global $~lib/ASC_SHRINK_LEVEL i32 (i32.const 0))
- (global $assemblyscript/lib/input-map/mousePosition (mut i32) (i32.const 0))
- (global $assemblyscript/lib/input-map/mouseClickMap (mut i32) (i32.const 0))
- (global $assemblyscript/lib/input-map/byteToInputKeyMap (mut i32) (i32.const 0))
- (global $assemblyscript/lib/input-map/keyPressStateMap (mut i32) (i32.const 0))
- (global $assemblyscript/debug-example/index/width (mut i32) (i32.const 160))
- (global $assemblyscript/debug-example/index/height (mut i32) (i32.const 144))
+ (global $lib/input-map/mousePosition (mut i32) (i32.const 0))
+ (global $lib/input-map/mouseClickMap (mut i32) (i32.const 0))
+ (global $lib/input-map/byteToInputKeyMap (mut i32) (i32.const 0))
+ (global $lib/input-map/keyPressStateMap (mut i32) (i32.const 0))
+ (global $debug-example/index/width (mut i32) (i32.const 160))
+ (global $debug-example/index/height (mut i32) (i32.const 144))
  (global $~lib/rt/__rtti_base i32 (i32.const 5152))
  (global $~lib/heap/__heap_base i32 (i32.const 5244))
  (export "memory" (memory $0))
@@ -182,7 +182,7 @@
  (export "__release" (func $~lib/rt/stub/__release))
  (export "__collect" (func $~lib/rt/stub/__collect))
  (export "__rtti_base" (global $~lib/rt/__rtti_base))
- (export "_start" (func $assemblyscript/debug-example/index/_start))
+ (export "_start" (func $debug-example/index/_start))
  (start $start)
  (func $~lib/rt/stub/maybeGrowMemory (; 7 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
@@ -3808,16 +3808,16 @@
   local.get $1
   call $~lib/rt/stub/__release
  )
- (func $assemblyscript/lib/input-map/resetMouseClickState (; 48 ;) (type $FUNCSIG$v)
-  global.get $assemblyscript/lib/input-map/mouseClickMap
+ (func $lib/input-map/resetMouseClickState (; 48 ;) (type $FUNCSIG$v)
+  global.get $lib/input-map/mouseClickMap
   i32.const 904
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/mouseClickMap
+  global.get $lib/input-map/mouseClickMap
   i32.const 928
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/mouseClickMap
+  global.get $lib/input-map/mouseClickMap
   i32.const 960
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
@@ -4261,839 +4261,839 @@
   local.get $2
   call $~lib/rt/stub/__release
  )
- (func $assemblyscript/lib/input-map/resetKeyPressState (; 55 ;) (type $FUNCSIG$v)
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+ (func $lib/input-map/resetKeyPressState (; 55 ;) (type $FUNCSIG$v)
+  global.get $lib/input-map/keyPressStateMap
   i32.const 992
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1016
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1040
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1064
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1088
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1112
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1136
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1160
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1184
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1208
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1232
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1256
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1280
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1304
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1328
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1352
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1376
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1400
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1424
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1448
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1472
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1496
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1520
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1544
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1568
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1592
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1616
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1640
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1664
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1688
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1712
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1736
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1760
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1784
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1808
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1832
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1856
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1888
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1920
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1952
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 1984
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2016
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2048
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2080
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2112
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2144
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2176
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2208
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2240
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2272
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2304
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2336
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2368
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2416
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2456
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2496
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2528
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2560
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2608
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2640
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2680
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2728
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2768
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2800
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2840
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2880
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2912
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2944
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 2984
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3016
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 4232
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3056
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3096
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3136
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3168
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3200
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3232
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3272
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3312
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3360
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3392
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3432
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3472
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3512
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3552
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3592
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3632
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3672
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3712
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3752
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3792
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3832
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3872
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3912
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 3960
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 4016
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 4064
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 4264
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 4112
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 4144
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   i32.const 4184
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#set
  )
- (func $start:assemblyscript/lib/input-map (; 56 ;) (type $FUNCSIG$v)
+ (func $start:lib/input-map (; 56 ;) (type $FUNCSIG$v)
   i32.const 0
   i32.const 0
   call $~lib/array/Array<i32>#constructor
-  global.set $assemblyscript/lib/input-map/mousePosition
-  global.get $assemblyscript/lib/input-map/mousePosition
+  global.set $lib/input-map/mousePosition
+  global.get $lib/input-map/mousePosition
   i32.const 0
   i32.const 0
   call $~lib/array/Array<i32>#__set
-  global.get $assemblyscript/lib/input-map/mousePosition
+  global.get $lib/input-map/mousePosition
   i32.const 1
   i32.const 0
   call $~lib/array/Array<i32>#__set
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#constructor
-  global.set $assemblyscript/lib/input-map/mouseClickMap
-  call $assemblyscript/lib/input-map/resetMouseClickState
+  global.set $lib/input-map/mouseClickMap
+  call $lib/input-map/resetMouseClickState
   i32.const 0
   call $~lib/map/Map<i32,~lib/string/String>#constructor
-  global.set $assemblyscript/lib/input-map/byteToInputKeyMap
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.set $lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 48
   i32.const 992
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 49
   i32.const 1016
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 50
   i32.const 1040
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 51
   i32.const 1064
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 52
   i32.const 1088
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 53
   i32.const 1112
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 54
   i32.const 1136
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 55
   i32.const 1160
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 56
   i32.const 1184
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 57
   i32.const 1208
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 65
   i32.const 1232
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 66
   i32.const 1256
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 67
   i32.const 1280
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 68
   i32.const 1304
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 69
   i32.const 1328
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 70
   i32.const 1352
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 71
   i32.const 1376
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 72
   i32.const 1400
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 73
   i32.const 1424
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 74
   i32.const 1448
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 75
   i32.const 1472
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 76
   i32.const 1496
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 77
   i32.const 1520
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 78
   i32.const 1544
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 79
   i32.const 1568
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 80
   i32.const 1592
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 81
   i32.const 1616
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 82
   i32.const 1640
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 83
   i32.const 1664
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 84
   i32.const 1688
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 85
   i32.const 1712
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 86
   i32.const 1736
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 87
   i32.const 1760
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 88
   i32.const 1784
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 89
   i32.const 1808
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 90
   i32.const 1832
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 112
   i32.const 1856
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 113
   i32.const 1888
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 114
   i32.const 1920
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 115
   i32.const 1952
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 116
   i32.const 1984
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 117
   i32.const 2016
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 118
   i32.const 2048
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 119
   i32.const 2080
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 120
   i32.const 2112
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 121
   i32.const 2144
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 122
   i32.const 2176
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 123
   i32.const 2208
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 40
   i32.const 2240
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 37
   i32.const 2272
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 39
   i32.const 2304
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 38
   i32.const 2336
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 222
   i32.const 2368
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 192
   i32.const 2416
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 220
   i32.const 2456
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 188
   i32.const 2496
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 187
   i32.const 2528
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 219
   i32.const 2560
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 189
   i32.const 2608
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 190
   i32.const 2640
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 221
   i32.const 2680
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 186
   i32.const 2728
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 191
   i32.const 2768
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 8
   i32.const 2800
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 46
   i32.const 2840
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 35
   i32.const 2880
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 13
   i32.const 2912
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 27
   i32.const 2944
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 36
   i32.const 2984
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 45
   i32.const 3016
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 34
   i32.const 3056
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 33
   i32.const 3096
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 19
   i32.const 3136
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 32
   i32.const 3168
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 9
   i32.const 3200
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 144
   i32.const 3232
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 20
   i32.const 3272
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 145
   i32.const 3312
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 16
   i32.const 3360
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 162
   i32.const 3392
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 163
   i32.const 3432
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 96
   i32.const 3472
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 97
   i32.const 3512
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 98
   i32.const 3552
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 99
   i32.const 3592
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 100
   i32.const 3632
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 101
   i32.const 3672
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 102
   i32.const 3712
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 103
   i32.const 3752
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 104
   i32.const 3792
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 105
   i32.const 3832
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 110
   i32.const 3872
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 111
   i32.const 3912
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 106
   i32.const 3960
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 109
   i32.const 4016
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 107
   i32.const 4064
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 18
   i32.const 4112
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 91
   i32.const 4144
   call $~lib/map/Map<i32,~lib/string/String>#set
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+  global.get $lib/input-map/byteToInputKeyMap
   i32.const 93
   i32.const 4184
   call $~lib/map/Map<i32,~lib/string/String>#set
   i32.const 0
   call $~lib/map/Map<~lib/string/String,bool>#constructor
-  global.set $assemblyscript/lib/input-map/keyPressStateMap
-  call $assemblyscript/lib/input-map/resetKeyPressState
+  global.set $lib/input-map/keyPressStateMap
+  call $lib/input-map/resetKeyPressState
  )
- (func $start:assemblyscript/lib/lib (; 57 ;) (type $FUNCSIG$v)
-  call $start:assemblyscript/lib/input-map
+ (func $start:lib/lib (; 57 ;) (type $FUNCSIG$v)
+  call $start:lib/input-map
  )
- (func $start:assemblyscript/debug-example/index (; 58 ;) (type $FUNCSIG$v)
+ (func $start:debug-example/index (; 58 ;) (type $FUNCSIG$v)
   call $start:~lib/as-wasi/index
-  call $start:assemblyscript/lib/lib
+  call $start:lib/lib
  )
  (func $~lib/util/number/itoa32 (; 59 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
@@ -5424,7 +5424,7 @@
   call $~lib/rt/stub/__release
   local.get $6
  )
- (func $assemblyscript/lib/lib/openFrameBufferWindow (; 65 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $lib/lib/openFrameBufferWindow (; 65 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
@@ -5481,8 +5481,8 @@
   local.get $10
   call $~lib/rt/stub/__release
  )
- (func $assemblyscript/lib/input-map/getMousePosition (; 66 ;) (type $FUNCSIG$i) (result i32)
-  global.get $assemblyscript/lib/input-map/mousePosition
+ (func $lib/input-map/getMousePosition (; 66 ;) (type $FUNCSIG$i) (result i32)
+  global.get $lib/input-map/mousePosition
   call $~lib/rt/stub/__retain
  )
  (func $~lib/array/Array<i32>#__unchecked_get (; 67 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
@@ -5514,7 +5514,7 @@
   local.set $2
   local.get $2
  )
- (func $assemblyscript/debug-example/index/getMousePositionCopy (; 69 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $debug-example/index/getMousePositionCopy (; 69 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   local.get $0
@@ -5810,12 +5810,12 @@
   i32.load offset=4
   call $~lib/rt/stub/__retain
  )
- (func $assemblyscript/lib/input-map/getKeyFromByte (; 79 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
-  global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+ (func $lib/input-map/getKeyFromByte (; 79 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+  global.get $lib/input-map/byteToInputKeyMap
   local.get $0
   call $~lib/map/Map<i32,~lib/string/String>#has
   if
-   global.get $assemblyscript/lib/input-map/byteToInputKeyMap
+   global.get $lib/input-map/byteToInputKeyMap
    local.get $0
    call $~lib/map/Map<i32,~lib/string/String>#get
    return
@@ -5842,39 +5842,39 @@
   call $~lib/rt/stub/__release
   local.get $2
  )
- (func $assemblyscript/lib/input-map/setKeyOnKeyPressState (; 81 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $lib/input-map/setKeyOnKeyPressState (; 81 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   local.get $0
   call $~lib/rt/stub/__retain
   drop
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   local.get $0
   local.get $1
   call $~lib/map/Map<~lib/string/String,bool>#set
   local.get $0
   call $~lib/rt/stub/__release
  )
- (func $assemblyscript/lib/input-map/setMousePosition (; 82 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
-  global.get $assemblyscript/lib/input-map/mousePosition
+ (func $lib/input-map/setMousePosition (; 82 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+  global.get $lib/input-map/mousePosition
   i32.const 0
   local.get $0
   call $~lib/array/Array<i32>#__set
-  global.get $assemblyscript/lib/input-map/mousePosition
+  global.get $lib/input-map/mousePosition
   i32.const 1
   local.get $1
   call $~lib/array/Array<i32>#__set
  )
- (func $assemblyscript/lib/input-map/setClickOnMouseClickState (; 83 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $lib/input-map/setClickOnMouseClickState (; 83 ;) (type $FUNCSIG$vi) (param $0 i32)
   local.get $0
   call $~lib/rt/stub/__retain
   drop
-  global.get $assemblyscript/lib/input-map/mouseClickMap
+  global.get $lib/input-map/mouseClickMap
   local.get $0
   i32.const 1
   call $~lib/map/Map<~lib/string/String,bool>#set
   local.get $0
   call $~lib/rt/stub/__release
  )
- (func $assemblyscript/lib/lib/updateInput (; 84 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $lib/lib/updateInput (; 84 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
@@ -5897,7 +5897,7 @@
   i32.const 4432
   call $~lib/as-wasi/as-wasi/FileSystem.open
   local.set $4
-  call $assemblyscript/lib/input-map/resetMouseClickState
+  call $lib/input-map/resetMouseClickState
   local.get $4
   i32.const 0
   i32.const 0
@@ -5942,7 +5942,7 @@
       i32.const 1
       i32.add
       call $~lib/array/Array<u8>#__get
-      call $assemblyscript/lib/input-map/getKeyFromByte
+      call $lib/input-map/getKeyFromByte
       local.set $8
       local.get $8
       i32.const 0
@@ -5950,7 +5950,7 @@
       if
        local.get $8
        i32.const 1
-       call $assemblyscript/lib/input-map/setKeyOnKeyPressState
+       call $lib/input-map/setKeyOnKeyPressState
       end
       local.get $7
       i32.const 2
@@ -5970,7 +5970,7 @@
        i32.const 1
        i32.add
        call $~lib/array/Array<u8>#__get
-       call $assemblyscript/lib/input-map/getKeyFromByte
+       call $lib/input-map/getKeyFromByte
        local.set $8
        local.get $8
        i32.const 0
@@ -5978,7 +5978,7 @@
        if
         local.get $8
         i32.const 0
-        call $assemblyscript/lib/input-map/setKeyOnKeyPressState
+        call $lib/input-map/setKeyOnKeyPressState
        end
        local.get $7
        i32.const 2
@@ -6069,7 +6069,7 @@
         end
         local.get $8
         local.get $9
-        call $assemblyscript/lib/input-map/setMousePosition
+        call $lib/input-map/setMousePosition
         local.get $7
         i32.const 9
         i32.add
@@ -6082,7 +6082,7 @@
         i32.eq
         if
          i32.const 904
-         call $assemblyscript/lib/input-map/setClickOnMouseClickState
+         call $lib/input-map/setClickOnMouseClickState
          local.get $7
          i32.const 9
          i32.add
@@ -6095,7 +6095,7 @@
          i32.eq
          if
           i32.const 928
-          call $assemblyscript/lib/input-map/setClickOnMouseClickState
+          call $lib/input-map/setClickOnMouseClickState
           local.get $7
           i32.const 9
           i32.add
@@ -6108,7 +6108,7 @@
           i32.eq
           if
            i32.const 960
-           call $assemblyscript/lib/input-map/setClickOnMouseClickState
+           call $lib/input-map/setClickOnMouseClickState
            local.get $7
            i32.const 9
            i32.add
@@ -6167,8 +6167,8 @@
   local.get $0
   call $~lib/rt/stub/__release
  )
- (func $assemblyscript/lib/input-map/getKeyPressState (; 88 ;) (type $FUNCSIG$i) (result i32)
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+ (func $lib/input-map/getKeyPressState (; 88 ;) (type $FUNCSIG$i) (result i32)
+  global.get $lib/input-map/keyPressStateMap
   call $~lib/rt/stub/__retain
  )
  (func $~lib/array/Array<~lib/string/String>#push (; 89 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
@@ -6323,16 +6323,16 @@
   call $~lib/rt/stub/__release
   local.get $2
  )
- (func $assemblyscript/lib/input-map/isKeyPressed (; 95 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $lib/input-map/isKeyPressed (; 95 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   local.get $0
   call $~lib/rt/stub/__retain
   drop
-  global.get $assemblyscript/lib/input-map/keyPressStateMap
+  global.get $lib/input-map/keyPressStateMap
   local.get $0
   call $~lib/map/Map<~lib/string/String,bool>#has
   if (result i32)
-   global.get $assemblyscript/lib/input-map/keyPressStateMap
+   global.get $lib/input-map/keyPressStateMap
    local.get $0
    call $~lib/map/Map<~lib/string/String,bool>#get
   else
@@ -6343,16 +6343,16 @@
   call $~lib/rt/stub/__release
   local.get $1
  )
- (func $assemblyscript/lib/input-map/isMouseButtonClicked (; 96 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $lib/input-map/isMouseButtonClicked (; 96 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   local.get $0
   call $~lib/rt/stub/__retain
   drop
-  global.get $assemblyscript/lib/input-map/mouseClickMap
+  global.get $lib/input-map/mouseClickMap
   local.get $0
   call $~lib/map/Map<~lib/string/String,bool>#has
   if (result i32)
-   global.get $assemblyscript/lib/input-map/mouseClickMap
+   global.get $lib/input-map/mouseClickMap
    local.get $0
    call $~lib/map/Map<~lib/string/String,bool>#get
   else
@@ -6539,7 +6539,7 @@
   local.get $2
   call $~lib/array/Array<u8>#__unchecked_set
  )
- (func $assemblyscript/debug-example/index/getRandomFrame (; 105 ;) (type $FUNCSIG$i) (result i32)
+ (func $debug-example/index/getRandomFrame (; 105 ;) (type $FUNCSIG$i) (result i32)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -6560,18 +6560,18 @@
    local.set $2
    loop $loop|0
     local.get $2
-    global.get $assemblyscript/debug-example/index/height
+    global.get $debug-example/index/height
     i32.lt_s
     i32.eqz
     br_if $break|0
     local.get $2
-    global.get $assemblyscript/debug-example/index/width
+    global.get $debug-example/index/width
     i32.const 3
     i32.mul
     i32.mul
     local.set $3
     local.get $2
-    global.get $assemblyscript/debug-example/index/width
+    global.get $debug-example/index/width
     i32.const 4
     i32.mul
     i32.mul
@@ -6581,7 +6581,7 @@
      local.set $5
      loop $loop|1
       local.get $5
-      global.get $assemblyscript/debug-example/index/width
+      global.get $debug-example/index/width
       i32.lt_s
       i32.eqz
       br_if $break|1
@@ -6734,7 +6734,7 @@
   local.get $1
   call $~lib/rt/stub/__release
  )
- (func $assemblyscript/lib/lib/drawRgbaArrayToFrameBuffer (; 107 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $lib/lib/drawRgbaArrayToFrameBuffer (; 107 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -6926,7 +6926,7 @@
   call $~lib/bindings/wasi_unstable/poll_oneoff
   drop
  )
- (func $assemblyscript/debug-example/index/_start (; 112 ;) (type $FUNCSIG$v)
+ (func $debug-example/index/_start (; 112 ;) (type $FUNCSIG$v)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -6936,13 +6936,13 @@
   (local $6 i32)
   (local $7 i32)
   (local $8 i32)
-  global.get $assemblyscript/debug-example/index/width
-  global.get $assemblyscript/debug-example/index/height
+  global.get $debug-example/index/width
+  global.get $debug-example/index/height
   i32.const 0
-  call $assemblyscript/lib/lib/openFrameBufferWindow
-  call $assemblyscript/lib/input-map/getMousePosition
+  call $lib/lib/openFrameBufferWindow
+  call $lib/input-map/getMousePosition
   local.tee $0
-  call $assemblyscript/debug-example/index/getMousePositionCopy
+  call $debug-example/index/getMousePositionCopy
   local.set $1
   i32.const 0
   i32.const 0
@@ -6950,8 +6950,8 @@
   local.set $2
   loop $continue|0
    i32.const 0
-   call $assemblyscript/lib/lib/updateInput
-   call $assemblyscript/lib/input-map/getMousePosition
+   call $lib/lib/updateInput
+   call $lib/input-map/getMousePosition
    local.set $3
    local.get $3
    i32.const 0
@@ -6973,7 +6973,7 @@
    end
    if
     local.get $3
-    call $assemblyscript/debug-example/index/getMousePositionCopy
+    call $debug-example/index/getMousePositionCopy
     local.set $4
     local.get $1
     call $~lib/rt/stub/__release
@@ -7009,7 +7009,7 @@
     local.get $8
     call $~lib/rt/stub/__release
    end
-   call $assemblyscript/lib/input-map/getKeyPressState
+   call $lib/input-map/getKeyPressState
    local.set $8
    i32.const 0
    i32.const 0
@@ -7078,7 +7078,7 @@
      call $~lib/array/Array<~lib/string/String>#__get
      local.set $5
      local.get $5
-     call $assemblyscript/lib/input-map/isKeyPressed
+     call $lib/input-map/isKeyPressed
      i32.const 0
      i32.ne
      i32.const 1
@@ -7103,16 +7103,16 @@
     unreachable
    end
    i32.const 904
-   call $assemblyscript/lib/input-map/isMouseButtonClicked
+   call $lib/input-map/isMouseButtonClicked
    if
     i32.const 4984
     call $~lib/as-wasi/as-wasi/Console.log
    end
-   call $assemblyscript/debug-example/index/getRandomFrame
+   call $debug-example/index/getRandomFrame
    local.set $6
    local.get $6
    i32.const 0
-   call $assemblyscript/lib/lib/drawRgbaArrayToFrameBuffer
+   call $lib/lib/drawRgbaArrayToFrameBuffer
    i32.const 16
    global.get $~lib/as-wasi/as-wasi/Time.MILLISECOND
    i32.mul
@@ -7140,7 +7140,7 @@
   global.set $~lib/rt/stub/startOffset
   global.get $~lib/rt/stub/startOffset
   global.set $~lib/rt/stub/offset
-  call $start:assemblyscript/debug-example/index
+  call $start:debug-example/index
  )
  (func $null (; 114 ;) (type $FUNCSIG$v)
  )
