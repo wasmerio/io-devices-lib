@@ -29,7 +29,7 @@
     "assembly",
     "webassembly"
   ],
-  "author": "",
+  "author": "Wasmer Engineering Team <engineering@wasmer.io>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/wasmerio/io-devices-lib/issues"
