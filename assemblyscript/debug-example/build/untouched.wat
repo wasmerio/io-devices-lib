@@ -5096,7 +5096,14 @@
   global.set $lib/input-map/keyPressStateMap
   call $lib/input-map/resetKeyPressState
  )
- (func $~lib/as-wasi/as-wasi/FileSystem.dirfdForPath (; 57 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $start:lib/lib (; 57 ;) (type $FUNCSIG$v)
+  call $start:lib/input-map
+ )
+ (func $start:debug-example/index (; 58 ;) (type $FUNCSIG$v)
+  call $start:~lib/as-wasi/index
+  call $start:lib/lib
+ )
+ (func $~lib/as-wasi/as-wasi/FileSystem.dirfdForPath (; 59 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   local.get $0
   call $~lib/rt/stub/__retain
@@ -5107,7 +5114,7 @@
   call $~lib/rt/stub/__release
   local.get $1
  )
- (func $~lib/as-wasi/as-wasi/FileSystem.open (; 58 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/as-wasi/as-wasi/FileSystem.open (; 60 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -5334,12 +5341,12 @@
   call $~lib/rt/stub/__release
   local.get $15
  )
- (func $~lib/as-wasi/as-wasi/Descriptor.Stdout (; 59 ;) (type $FUNCSIG$i) (result i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor.Stdout (; 61 ;) (type $FUNCSIG$i) (result i32)
   i32.const 0
   i32.const 1
   call $~lib/as-wasi/as-wasi/Descriptor#constructor
  )
- (func $~lib/as-wasi/as-wasi/Console.write (; 60 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/as-wasi/as-wasi/Console.write (; 62 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   local.get $0
   call $~lib/rt/stub/__retain
@@ -5354,7 +5361,7 @@
   local.get $0
   call $~lib/rt/stub/__release
  )
- (func $~lib/as-wasi/as-wasi/Console.log (; 61 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/as-wasi/as-wasi/Console.log (; 63 ;) (type $FUNCSIG$vi) (param $0 i32)
   local.get $0
   call $~lib/rt/stub/__retain
   drop
@@ -5364,39 +5371,35 @@
   local.get $0
   call $~lib/rt/stub/__release
  )
- (func $lib/lib/ioDevicesCheck (; 62 ;) (type $FUNCSIG$v)
-  (local $0 i32)
+ (func $lib/lib/isIoDevicesEnabled (; 64 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
+  (local $6 i32)
+  (local $7 i32)
   i32.const 4312
   i32.const 4384
   call $~lib/as-wasi/as-wasi/FileSystem.open
-  local.set $0
+  local.set $1
   i32.const 4528
   i32.const 4456
   call $~lib/as-wasi/as-wasi/FileSystem.open
-  local.set $1
+  local.set $2
   i32.const 4584
   i32.const 4384
   call $~lib/as-wasi/as-wasi/FileSystem.open
-  local.set $2
+  local.set $3
   i32.const 4640
   i32.const 4408
   call $~lib/as-wasi/as-wasi/FileSystem.open
-  local.set $3
-  local.get $0
+  local.set $4
+  i32.const 1
+  local.set $5
+  local.get $1
   i32.const 0
   i32.eq
-  if (result i32)
-   i32.const 1
-  else
-   local.get $1
-   i32.const 0
-   i32.eq
-  end
   if (result i32)
    i32.const 1
   else
@@ -5411,17 +5414,33 @@
    i32.const 0
    i32.eq
   end
+  if (result i32)
+   i32.const 1
+  else
+   local.get $4
+   i32.const 0
+   i32.eq
+  end
+  if
+   i32.const 0
+   local.set $5
+  end
+  local.get $5
+  i32.eqz
+  if (result i32)
+   local.get $0
+  else
+   i32.const 0
+  end
   if
    i32.const 4704
    i32.const 4904
    call $~lib/string/String.__concat
-   local.tee $4
+   local.tee $6
    i32.const 5112
    call $~lib/string/String.__concat
-   local.tee $5
+   local.tee $7
    call $~lib/as-wasi/as-wasi/Console.log
-   local.get $0
-   call $~lib/rt/stub/__release
    local.get $1
    call $~lib/rt/stub/__release
    local.get $2
@@ -5430,31 +5449,28 @@
    call $~lib/rt/stub/__release
    local.get $4
    call $~lib/rt/stub/__release
-   local.get $5
+   local.get $6
+   call $~lib/rt/stub/__release
+   local.get $7
    call $~lib/rt/stub/__release
    i32.const 72
    i32.const 5216
-   i32.const 26
+   i32.const 31
    i32.const 4
    call $~lib/as-wasi/as-wasi/wasi_abort
    unreachable
   end
-  local.get $0
-  call $~lib/rt/stub/__release
+  local.get $5
+  local.set $7
   local.get $1
   call $~lib/rt/stub/__release
   local.get $2
   call $~lib/rt/stub/__release
   local.get $3
   call $~lib/rt/stub/__release
- )
- (func $start:lib/lib (; 63 ;) (type $FUNCSIG$v)
-  call $start:lib/input-map
-  call $lib/lib/ioDevicesCheck
- )
- (func $start:debug-example/index (; 64 ;) (type $FUNCSIG$v)
-  call $start:~lib/as-wasi/index
-  call $start:lib/lib
+  local.get $4
+  call $~lib/rt/stub/__release
+  local.get $7
  )
  (func $~lib/util/number/itoa32 (; 65 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
@@ -7029,6 +7045,9 @@
   (local $6 i32)
   (local $7 i32)
   (local $8 i32)
+  i32.const 1
+  call $lib/lib/isIoDevicesEnabled
+  drop
   global.get $debug-example/index/width
   global.get $debug-example/index/height
   i32.const 0

@@ -3172,7 +3172,7 @@
   i32.const 1
   call $~lib/as-wasi/as-wasi/Descriptor#writeString
  )
- (func $lib/lib/ioDevicesCheck (; 50 ;) (type $FUNCSIG$v)
+ (func $lib/lib/isIoDevicesEnabled (; 50 ;) (type $FUNCSIG$v)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -3188,6 +3188,8 @@
   i32.const 3936
   call $~lib/as-wasi/as-wasi/FileSystem.open
   local.set $2
+  i32.const 0
+  i32.const 1
   i32.const 1
   i32.const 4192
   i32.const 3960
@@ -3203,6 +3205,12 @@
   select
   select
   select
+  select
+  if (result i32)
+   i32.const 0
+  else
+   i32.const 1
+  end
   if
    i32.const 4256
    i32.const 4456
@@ -3212,7 +3220,7 @@
    call $~lib/as-wasi/as-wasi/Console.log
    i32.const 72
    i32.const 4768
-   i32.const 26
+   i32.const 31
    i32.const 4
    call $~lib/as-wasi/as-wasi/wasi_abort
    unreachable
@@ -4214,6 +4222,7 @@
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
+  call $lib/lib/isIoDevicesEnabled
   i32.const 160
   i32.const 144
   call $lib/lib/openFrameBufferWindow
@@ -4375,6 +4384,5 @@
   i32.mul
   global.set $~lib/as-wasi/as-wasi/Time.SECOND
   call $start:lib/input-map
-  call $lib/lib/ioDevicesCheck
  )
 )
