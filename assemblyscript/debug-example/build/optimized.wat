@@ -134,28 +134,36 @@
  (data (i32.const 3720) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00K\00e\00y\00R\00i\00g\00h\00t\00S\00u\00p\00e\00r")
  (data (i32.const 3768) "\0e\00\00\00\01\00\00\00\01\00\00\00\0e\00\00\00K\00e\00y\00M\00e\00n\00u")
  (data (i32.const 3800) "\1c\00\00\00\01\00\00\00\01\00\00\00\1c\00\00\00K\00e\00y\00N\00u\00m\00P\00a\00d\00E\00n\00t\00e\00r")
- (data (i32.const 3848) "\1c\00\00\00\01\00\00\00\01\00\00\00\1c\00\00\00_\00w\00a\00s\00m\00e\00r\00/\00d\00e\00v\00/\00f\00b")
- (data (i32.const 3896) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00/\00v\00i\00r\00t\00u\00a\00l\00_\00s\00i\00z\00e")
- (data (i32.const 3944) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00+")
- (data (i32.const 3968) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00r")
- (data (i32.const 3992) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00r\00+")
- (data (i32.const 4016) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00w")
- (data (i32.const 4040) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00x")
- (data (i32.const 4064) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00x\00w\00+")
- (data (i32.const 4088) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00x")
- (data (i32.const 4112) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00/\00i\00n\00p\00u\00t")
- (data (i32.const 4148) "\01")
- (data (i32.const 4160) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00K\00e\00y\00 \00d\00o\00e\00s\00 \00n\00o\00t\00 \00e\00x\00i\00s\00t")
- (data (i32.const 4216) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00~\00l\00i\00b\00/\00m\00a\00p\00.\00t\00s")
- (data (i32.const 4256) "0\00\00\00\01\00\00\00\01\00\00\000\00\00\00N\00e\00w\00 \00M\00o\00u\00s\00e\00 \00P\00o\00s\00i\00t\00i\00o\00n\00 \00/\00 \00X\00:\00 ")
- (data (i32.const 4320) "\08\00\00\00\01\00\00\00\01\00\00\00\08\00\00\00 \00Y\00:\00 ")
- (data (i32.const 4344) "^\00\00\00\01\00\00\00\01\00\00\00^\00\00\00E\00l\00e\00m\00e\00n\00t\00 \00t\00y\00p\00e\00 \00m\00u\00s\00t\00 \00b\00e\00 \00n\00u\00l\00l\00a\00b\00l\00e\00 \00i\00f\00 \00a\00r\00r\00a\00y\00 \00i\00s\00 \00h\00o\00l\00e\00y")
- (data (i32.const 4456) ",\00\00\00\01\00\00\00\01\00\00\00,\00\00\00K\00e\00y\00 \00i\00s\00 \00b\00e\00i\00n\00g\00 \00p\00r\00e\00s\00s\00e\00d\00:\00 ")
- (data (i32.const 4520) "8\00\00\00\01\00\00\00\01\00\00\008\00\00\00L\00e\00f\00t\00 \00M\00o\00u\00s\00e\00 \00B\00u\00t\00t\00o\00n\00 \00i\00s\00 \00c\00l\00i\00c\00k\00e\00d")
- (data (i32.const 4592) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00~\00l\00i\00b\00/\00t\00y\00p\00e\00d\00a\00r\00r\00a\00y\00.\00t\00s")
- (data (i32.const 4648) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00/\00f\00b")
- (data (i32.const 4672) "\n\00\00\00\01\00\00\00\01\00\00\00\n\00\00\00/\00d\00r\00a\00w")
- (data (i32.const 4704) "\n\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\00\10\00\00\00\00\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\00\93 \00\00\02\00\00\003\00\00\00\02\00\00\001\00\00\00\02")
+ (data (i32.const 3848) "8\00\00\00\01\00\00\00\01\00\00\008\00\00\00_\00w\00a\00s\00m\00e\00r\00/\00d\00e\00v\00/\00f\00b\000\00/\00v\00i\00r\00t\00u\00a\00l\00_\00s\00i\00z\00e")
+ (data (i32.const 3920) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00+")
+ (data (i32.const 3944) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00r")
+ (data (i32.const 3968) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00r\00+")
+ (data (i32.const 3992) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00w")
+ (data (i32.const 4016) "\04\00\00\00\01\00\00\00\01\00\00\00\04\00\00\00w\00x")
+ (data (i32.const 4040) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00x\00w\00+")
+ (data (i32.const 4064) "(\00\00\00\01\00\00\00\01\00\00\00(\00\00\00_\00w\00a\00s\00m\00e\00r\00/\00d\00e\00v\00/\00f\00b\000\00/\00d\00r\00a\00w")
+ (data (i32.const 4120) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00_\00w\00a\00s\00m\00e\00r\00/\00d\00e\00v\00/\00f\00b\000\00/\00f\00b")
+ (data (i32.const 4176) "*\00\00\00\01\00\00\00\01\00\00\00*\00\00\00_\00w\00a\00s\00m\00e\00r\00/\00d\00e\00v\00/\00f\00b\000\00/\00i\00n\00p\00u\00t")
+ (data (i32.const 4240) "\b6\00\00\00\01\00\00\00\01\00\00\00\b6\00\00\00F\00a\00i\00l\00e\00d\00 \00t\00o\00 \00o\00p\00e\00n\00 \00I\00/\00O\00 \00D\00e\00v\00i\00c\00e\00s\00 \00f\00i\00l\00e\00s\00 \00(\00E\00.\00g\00 \00`\00_\00w\00a\00s\00m\00e\00r\00/\00d\00e\00v\00/\00f\00b\000\00/\00f\00b\00`\00)\00.\00 \00T\00h\00e\00s\00e\00 \00a\00r\00e\00 \00n\00o\00n\00-\00s\00t\00a\00n\00d\00a\00r\00d\00 \00f\00i\00l\00e\00s\00.\00 ")
+ (data (i32.const 4440) "\ba\00\00\00\01\00\00\00\01\00\00\00\ba\00\00\00I\00f\00 \00y\00o\00u\00\'\00r\00e\00 \00u\00s\00i\00n\00g\00 \00W\00a\00s\00m\00e\00r\00,\00 \00p\00l\00e\00a\00s\00e\00 \00e\00n\00s\00u\00r\00e\00 \00t\00h\00a\00t\00 \00y\00o\00u\00\'\00v\00e\00 \00u\00p\00d\00a\00t\00e\00d\00 \00t\00o\00 \00v\00e\00r\00s\00i\00o\00n\00 \000\00.\001\003\00.\001\00 \00a\00n\00d\00 \00a\00r\00e\00 \00u\00s\00i\00n\00g\00 \00t\00h\00e")
+ (data (i32.const 4648) "R\00\00\00\01\00\00\00\01\00\00\00R\00\00\00 \00`\00-\00-\00e\00n\00a\00b\00l\00e\00-\00e\00x\00p\00e\00r\00i\00m\00e\00n\00t\00a\00l\00-\00i\00o\00-\00d\00e\00v\00i\00c\00e\00s\00`\00 \00f\00l\00a\00g\00.")
+ (data (i32.const 4752) "\14\00\00\00\01\00\00\00\01\00\00\00\14\00\00\00l\00i\00b\00/\00l\00i\00b\00.\00t\00s")
+ (data (i32.const 4792) "\1c\00\00\00\01\00\00\00\01\00\00\00\1c\00\00\00_\00w\00a\00s\00m\00e\00r\00/\00d\00e\00v\00/\00f\00b")
+ (data (i32.const 4840) "\1a\00\00\00\01\00\00\00\01\00\00\00\1a\00\00\00/\00v\00i\00r\00t\00u\00a\00l\00_\00s\00i\00z\00e")
+ (data (i32.const 4888) "\02\00\00\00\01\00\00\00\01\00\00\00\02\00\00\00x")
+ (data (i32.const 4912) "\0c\00\00\00\01\00\00\00\01\00\00\00\0c\00\00\00/\00i\00n\00p\00u\00t")
+ (data (i32.const 4948) "\01")
+ (data (i32.const 4960) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00K\00e\00y\00 \00d\00o\00e\00s\00 \00n\00o\00t\00 \00e\00x\00i\00s\00t")
+ (data (i32.const 5016) "\16\00\00\00\01\00\00\00\01\00\00\00\16\00\00\00~\00l\00i\00b\00/\00m\00a\00p\00.\00t\00s")
+ (data (i32.const 5056) "0\00\00\00\01\00\00\00\01\00\00\000\00\00\00N\00e\00w\00 \00M\00o\00u\00s\00e\00 \00P\00o\00s\00i\00t\00i\00o\00n\00 \00/\00 \00X\00:\00 ")
+ (data (i32.const 5120) "\08\00\00\00\01\00\00\00\01\00\00\00\08\00\00\00 \00Y\00:\00 ")
+ (data (i32.const 5144) "^\00\00\00\01\00\00\00\01\00\00\00^\00\00\00E\00l\00e\00m\00e\00n\00t\00 \00t\00y\00p\00e\00 \00m\00u\00s\00t\00 \00b\00e\00 \00n\00u\00l\00l\00a\00b\00l\00e\00 \00i\00f\00 \00a\00r\00r\00a\00y\00 \00i\00s\00 \00h\00o\00l\00e\00y")
+ (data (i32.const 5256) ",\00\00\00\01\00\00\00\01\00\00\00,\00\00\00K\00e\00y\00 \00i\00s\00 \00b\00e\00i\00n\00g\00 \00p\00r\00e\00s\00s\00e\00d\00:\00 ")
+ (data (i32.const 5320) "8\00\00\00\01\00\00\00\01\00\00\008\00\00\00L\00e\00f\00t\00 \00M\00o\00u\00s\00e\00 \00B\00u\00t\00t\00o\00n\00 \00i\00s\00 \00c\00l\00i\00c\00k\00e\00d")
+ (data (i32.const 5392) "$\00\00\00\01\00\00\00\01\00\00\00$\00\00\00~\00l\00i\00b\00/\00t\00y\00p\00e\00d\00a\00r\00r\00a\00y\00.\00t\00s")
+ (data (i32.const 5448) "\06\00\00\00\01\00\00\00\01\00\00\00\06\00\00\00/\00f\00b")
+ (data (i32.const 5472) "\n\00\00\00\01\00\00\00\01\00\00\00\n\00\00\00/\00d\00r\00a\00w")
+ (data (i32.const 5504) "\n\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\10\00\00\00\00\00\00\00\93\04\00\00\02\00\00\00\10\00\00\00\00\00\00\008\00A\00\00\00\00\00\98 \t\00\00\00\00\00\93 \00\00\02\00\00\003\00\00\00\02\00\00\001\00\00\00\02")
  (global $~lib/rt/stub/startOffset (mut i32) (i32.const 0))
  (global $~lib/rt/stub/offset (mut i32) (i32.const 0))
  (global $~lib/as-wasi/as-wasi/Time.MILLISECOND (mut i32) (i32.const 0))
@@ -164,7 +172,7 @@
  (global $lib/input-map/mouseClickMap (mut i32) (i32.const 0))
  (global $lib/input-map/byteToInputKeyMap (mut i32) (i32.const 0))
  (global $lib/input-map/keyPressStateMap (mut i32) (i32.const 0))
- (global $~lib/rt/__rtti_base i32 (i32.const 4704))
+ (global $~lib/rt/__rtti_base i32 (i32.const 5504))
  (export "memory" (memory $0))
  (export "__alloc" (func $~lib/rt/stub/__alloc))
  (export "__retain" (func $~lib/rt/stub/__retain))
@@ -3073,66 +3081,25 @@
   global.set $lib/input-map/keyPressStateMap
   call $lib/input-map/resetKeyPressState
  )
- (func $~lib/util/number/itoa32 (; 48 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
-  (local $1 i32)
-  (local $2 i32)
-  (local $3 i32)
-  local.get $0
-  i32.eqz
-  if
-   i32.const 88
-   return
-  end
-  local.get $0
-  i32.const 0
-  i32.lt_s
-  local.tee $1
-  if
-   i32.const 0
-   local.get $0
-   i32.sub
-   local.set $0
-  end
-  local.get $0
-  call $~lib/util/number/decimalCount32
-  local.get $1
-  i32.add
-  local.tee $3
-  i32.const 1
-  i32.shl
-  i32.const 1
-  call $~lib/rt/stub/__alloc
-  local.tee $2
-  local.get $0
-  local.get $3
-  call $~lib/util/number/utoa_simple<u32>
-  local.get $1
-  if
-   local.get $2
-   i32.const 45
-   i32.store16
-  end
-  local.get $2
- )
- (func $~lib/as-wasi/as-wasi/FileSystem.open (; 49 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/as-wasi/as-wasi/FileSystem.open (; 48 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i64)
   (local $4 i32)
   (local $5 i32)
   local.get $1
-  i32.const 3984
+  i32.const 3960
   call $~lib/string/String.__eq
   if (result i64)
    i64.const 2113574
   else
    local.get $1
-   i32.const 4008
+   i32.const 3984
    call $~lib/string/String.__eq
    if (result i64)
     i64.const 2098278
    else
     local.get $1
-    i32.const 4032
+    i32.const 4008
     call $~lib/string/String.__eq
     if (result i64)
      i32.const 9
@@ -3140,7 +3107,7 @@
      i64.const 2098276
     else
      local.get $1
-     i32.const 4056
+     i32.const 4032
      call $~lib/string/String.__eq
      if (result i64)
       i32.const 13
@@ -3148,13 +3115,13 @@
       i64.const 2098276
      else
       local.get $1
-      i32.const 3960
+      i32.const 3936
       call $~lib/string/String.__eq
       if (result i32)
        i32.const 9
       else
        local.get $1
-       i32.const 4080
+       i32.const 4056
        call $~lib/string/String.__eq
        i32.eqz
        if
@@ -3198,7 +3165,109 @@
   i32.load
   call $~lib/as-wasi/as-wasi/Descriptor#constructor
  )
- (func $~lib/as-wasi/as-wasi/Descriptor#seek (; 50 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/as-wasi/as-wasi/Console.log (; 49 ;) (type $FUNCSIG$vi) (param $0 i32)
+  i32.const 1
+  call $~lib/as-wasi/as-wasi/Descriptor#constructor
+  local.get $0
+  i32.const 1
+  call $~lib/as-wasi/as-wasi/Descriptor#writeString
+ )
+ (func $lib/lib/isIoDevicesEnabled (; 50 ;) (type $FUNCSIG$v)
+  (local $0 i32)
+  (local $1 i32)
+  (local $2 i32)
+  i32.const 3864
+  i32.const 3936
+  call $~lib/as-wasi/as-wasi/FileSystem.open
+  local.set $0
+  i32.const 4080
+  i32.const 4008
+  call $~lib/as-wasi/as-wasi/FileSystem.open
+  local.set $1
+  i32.const 4136
+  i32.const 3936
+  call $~lib/as-wasi/as-wasi/FileSystem.open
+  local.set $2
+  i32.const 0
+  i32.const 1
+  i32.const 1
+  i32.const 4192
+  i32.const 3960
+  call $~lib/as-wasi/as-wasi/FileSystem.open
+  i32.eqz
+  i32.const 1
+  local.get $2
+  i32.eqz
+  local.get $1
+  i32.eqz
+  i32.const 1
+  local.get $0
+  select
+  select
+  select
+  select
+  if (result i32)
+   i32.const 0
+  else
+   i32.const 1
+  end
+  if
+   i32.const 4256
+   i32.const 4456
+   call $~lib/string/String.__concat
+   i32.const 4664
+   call $~lib/string/String.__concat
+   call $~lib/as-wasi/as-wasi/Console.log
+   i32.const 72
+   i32.const 4768
+   i32.const 31
+   i32.const 4
+   call $~lib/as-wasi/as-wasi/wasi_abort
+   unreachable
+  end
+ )
+ (func $~lib/util/number/itoa32 (; 51 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+  (local $1 i32)
+  (local $2 i32)
+  (local $3 i32)
+  local.get $0
+  i32.eqz
+  if
+   i32.const 88
+   return
+  end
+  local.get $0
+  i32.const 0
+  i32.lt_s
+  local.tee $1
+  if
+   i32.const 0
+   local.get $0
+   i32.sub
+   local.set $0
+  end
+  local.get $0
+  call $~lib/util/number/decimalCount32
+  local.get $1
+  i32.add
+  local.tee $3
+  i32.const 1
+  i32.shl
+  i32.const 1
+  call $~lib/rt/stub/__alloc
+  local.tee $2
+  local.get $0
+  local.get $3
+  call $~lib/util/number/utoa_simple<u32>
+  local.get $1
+  if
+   local.get $2
+   i32.const 45
+   i32.store16
+  end
+  local.get $2
+ )
+ (func $~lib/as-wasi/as-wasi/Descriptor#seek (; 52 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   i32.const 8
   call $~lib/arraybuffer/ArrayBuffer#constructor
@@ -3211,22 +3280,22 @@
   call $~lib/bindings/wasi_unstable/fd_seek
   drop
  )
- (func $lib/lib/openFrameBufferWindow (; 51 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $lib/lib/openFrameBufferWindow (; 53 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
-  i32.const 3864
+  i32.const 4808
   i32.const 0
   call $~lib/util/number/itoa32
   call $~lib/string/String.__concat
-  i32.const 3912
+  i32.const 4856
   call $~lib/string/String.__concat
-  i32.const 3960
+  i32.const 3936
   call $~lib/as-wasi/as-wasi/FileSystem.open
   local.tee $2
   call $~lib/as-wasi/as-wasi/Descriptor#seek
   local.get $2
   local.get $0
   call $~lib/util/number/itoa32
-  i32.const 4104
+  i32.const 4904
   call $~lib/string/String.__concat
   local.get $1
   call $~lib/util/number/itoa32
@@ -3234,7 +3303,7 @@
   i32.const 0
   call $~lib/as-wasi/as-wasi/Descriptor#writeString
  )
- (func $~lib/array/Array<i32>#__get (; 52 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/array/Array<i32>#__get (; 54 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $1
   local.get $0
   i32.load offset=12
@@ -3255,7 +3324,7 @@
   i32.add
   i32.load
  )
- (func $debug-example/index/getMousePositionCopy (; 53 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $debug-example/index/getMousePositionCopy (; 55 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   (local $1 i32)
   call $~lib/array/Array<i32>#constructor
   local.tee $1
@@ -3272,7 +3341,7 @@
   call $~lib/array/Array<i32>#__set
   local.get $1
  )
- (func $~lib/array/Array<~lib/string/String>#constructor (; 54 ;) (type $FUNCSIG$i) (result i32)
+ (func $~lib/array/Array<~lib/string/String>#constructor (; 56 ;) (type $FUNCSIG$i) (result i32)
   (local $0 i32)
   i32.const 16
   i32.const 7
@@ -3288,7 +3357,7 @@
   i32.store offset=12
   local.get $0
  )
- (func $~lib/array/Array<u8>#push (; 55 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/array/Array<u8>#push (; 57 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   local.get $0
@@ -3310,7 +3379,7 @@
   local.get $3
   i32.store offset=12
  )
- (func $~lib/as-wasi/as-wasi/Descriptor#read (; 56 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor#read (; 58 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -3376,7 +3445,7 @@
   end
   local.get $1
  )
- (func $~lib/rt/__allocArray (; 57 ;) (type $FUNCSIG$i) (result i32)
+ (func $~lib/rt/__allocArray (; 59 ;) (type $FUNCSIG$i) (result i32)
   (local $0 i32)
   (local $1 i32)
   i32.const 16
@@ -3398,19 +3467,19 @@
   i32.const 0
   i32.store offset=12
   local.get $1
-  i32.const 4160
+  i32.const 4960
   i32.const 0
   call $~lib/memory/memory.copy
   local.get $0
  )
- (func $~lib/array/Array<u8>#__unchecked_get (; 58 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/array/Array<u8>#__unchecked_get (; 60 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $1
   local.get $0
   i32.load offset=4
   i32.add
   i32.load8_u
  )
- (func $~lib/array/Array<u8>#__get (; 59 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/array/Array<u8>#__get (; 61 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $1
   local.get $0
   i32.load offset=12
@@ -3427,7 +3496,7 @@
   local.get $1
   call $~lib/array/Array<u8>#__unchecked_get
  )
- (func $~lib/map/Map<i32,~lib/string/String>#get (; 60 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/map/Map<i32,~lib/string/String>#get (; 62 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $0
   local.get $1
   local.get $1
@@ -3436,8 +3505,8 @@
   local.tee $0
   i32.eqz
   if
-   i32.const 4176
-   i32.const 4232
+   i32.const 4976
+   i32.const 5032
    i32.const 111
    i32.const 16
    call $~lib/as-wasi/as-wasi/wasi_abort
@@ -3446,7 +3515,7 @@
   local.get $0
   i32.load offset=4
  )
- (func $lib/input-map/getKeyFromByte (; 61 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $lib/input-map/getKeyFromByte (; 63 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   global.get $lib/input-map/byteToInputKeyMap
   local.get $0
   local.get $0
@@ -3460,37 +3529,37 @@
   end
   i32.const 0
  )
- (func $~lib/string/String.__ne (; 62 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/string/String.__ne (; 64 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   local.get $0
   i32.const 0
   call $~lib/string/String.__eq
   i32.eqz
  )
- (func $lib/input-map/setKeyOnKeyPressState (; 63 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $lib/input-map/setKeyOnKeyPressState (; 65 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   global.get $lib/input-map/keyPressStateMap
   local.get $0
   local.get $1
   call $~lib/map/Map<~lib/string/String,bool>#set
  )
- (func $lib/input-map/setClickOnMouseClickState (; 64 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $lib/input-map/setClickOnMouseClickState (; 66 ;) (type $FUNCSIG$vi) (param $0 i32)
   global.get $lib/input-map/mouseClickMap
   local.get $0
   i32.const 1
   call $~lib/map/Map<~lib/string/String,bool>#set
  )
- (func $lib/lib/updateInput (; 65 ;) (type $FUNCSIG$v)
+ (func $lib/lib/updateInput (; 67 ;) (type $FUNCSIG$v)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
-  i32.const 3864
+  i32.const 4808
   i32.const 0
   call $~lib/util/number/itoa32
   call $~lib/string/String.__concat
-  i32.const 4128
+  i32.const 4928
   call $~lib/string/String.__concat
-  i32.const 3984
+  i32.const 3960
   call $~lib/as-wasi/as-wasi/FileSystem.open
   call $lib/input-map/resetMouseClickState
   call $~lib/rt/__allocArray
@@ -3695,14 +3764,7 @@
    end
   end
  )
- (func $~lib/as-wasi/as-wasi/Console.log (; 66 ;) (type $FUNCSIG$vi) (param $0 i32)
-  i32.const 1
-  call $~lib/as-wasi/as-wasi/Descriptor#constructor
-  local.get $0
-  i32.const 1
-  call $~lib/as-wasi/as-wasi/Descriptor#writeString
- )
- (func $~lib/array/Array<~lib/string/String>#push (; 67 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/array/Array<~lib/string/String>#push (; 68 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   local.get $0
@@ -3726,7 +3788,7 @@
   local.get $3
   i32.store offset=12
  )
- (func $~lib/array/Array<~lib/string/String>#__get (; 68 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/array/Array<~lib/string/String>#__get (; 69 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $1
   local.get $0
   i32.load offset=12
@@ -3749,7 +3811,7 @@
   local.tee $0
   i32.eqz
   if
-   i32.const 4360
+   i32.const 5160
    i32.const 408
    i32.const 97
    i32.const 39
@@ -3758,7 +3820,7 @@
   end
   local.get $0
  )
- (func $~lib/map/Map<~lib/string/String,bool>#has (; 69 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/map/Map<~lib/string/String,bool>#has (; 70 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $0
   local.get $1
   local.get $1
@@ -3767,7 +3829,7 @@
   i32.const 0
   i32.ne
  )
- (func $~lib/map/Map<~lib/string/String,bool>#get (; 70 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
+ (func $~lib/map/Map<~lib/string/String,bool>#get (; 71 ;) (type $FUNCSIG$iii) (param $0 i32) (param $1 i32) (result i32)
   local.get $0
   local.get $1
   local.get $1
@@ -3776,8 +3838,8 @@
   local.tee $0
   i32.eqz
   if
-   i32.const 4176
-   i32.const 4232
+   i32.const 4976
+   i32.const 5032
    i32.const 111
    i32.const 16
    call $~lib/as-wasi/as-wasi/wasi_abort
@@ -3786,7 +3848,7 @@
   local.get $0
   i32.load8_u offset=4
  )
- (func $~lib/as-wasi/as-wasi/Random.randomFill (; 71 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/as-wasi/as-wasi/Random.randomFill (; 72 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   (local $2 i32)
   local.get $0
@@ -3829,14 +3891,14 @@
    end
   end
  )
- (func $~lib/typedarray/Uint8Array#__get (; 72 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/typedarray/Uint8Array#__get (; 73 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   i32.const 0
   local.get $0
   i32.load offset=8
   i32.ge_u
   if
    i32.const 352
-   i32.const 4608
+   i32.const 5408
    i32.const 148
    i32.const 44
    call $~lib/as-wasi/as-wasi/wasi_abort
@@ -3846,7 +3908,7 @@
   i32.load offset=4
   i32.load8_u
  )
- (func $~lib/array/Array<u8>#__set (; 73 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
+ (func $~lib/array/Array<u8>#__set (; 74 ;) (type $FUNCSIG$viii) (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   local.get $1
   local.get $0
@@ -3882,7 +3944,7 @@
   local.get $2
   i32.store8
  )
- (func $debug-example/index/getRandomFrame (; 74 ;) (type $FUNCSIG$i) (result i32)
+ (func $debug-example/index/getRandomFrame (; 75 ;) (type $FUNCSIG$i) (result i32)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
@@ -3978,7 +4040,7 @@
   end
   local.get $0
  )
- (func $~lib/as-wasi/as-wasi/Descriptor#write (; 75 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
+ (func $~lib/as-wasi/as-wasi/Descriptor#write (; 76 ;) (type $FUNCSIG$vii) (param $0 i32) (param $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
@@ -4027,28 +4089,28 @@
   call $~lib/bindings/wasi_unstable/fd_write
   drop
  )
- (func $lib/lib/drawRgbaArrayToFrameBuffer (; 76 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $lib/lib/drawRgbaArrayToFrameBuffer (; 77 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
-  i32.const 3864
+  i32.const 4808
   i32.const 0
   call $~lib/util/number/itoa32
   call $~lib/string/String.__concat
-  i32.const 4664
+  i32.const 5464
   call $~lib/string/String.__concat
-  i32.const 3960
+  i32.const 3936
   call $~lib/as-wasi/as-wasi/FileSystem.open
   local.tee $1
   call $~lib/as-wasi/as-wasi/Descriptor#seek
   local.get $1
   local.get $0
   call $~lib/as-wasi/as-wasi/Descriptor#write
-  i32.const 3864
+  i32.const 4808
   i32.const 0
   call $~lib/util/number/itoa32
   call $~lib/string/String.__concat
-  i32.const 4688
+  i32.const 5488
   call $~lib/string/String.__concat
-  i32.const 4032
+  i32.const 4008
   call $~lib/as-wasi/as-wasi/FileSystem.open
   local.tee $0
   call $~lib/as-wasi/as-wasi/Descriptor#seek
@@ -4058,7 +4120,7 @@
   i32.const 0
   call $~lib/as-wasi/as-wasi/Descriptor#writeString
  )
- (func $~lib/bindings/wasi_unstable/subscription#constructor (; 77 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
+ (func $~lib/bindings/wasi_unstable/subscription#constructor (; 78 ;) (type $FUNCSIG$ii) (param $0 i32) (result i32)
   local.get $0
   i32.eqz
   if
@@ -4078,7 +4140,7 @@
   i32.store offset=12
   local.get $0
  )
- (func $~lib/bindings/wasi_unstable/clocksubscription#constructor (; 78 ;) (type $FUNCSIG$i) (result i32)
+ (func $~lib/bindings/wasi_unstable/clocksubscription#constructor (; 79 ;) (type $FUNCSIG$i) (result i32)
   (local $0 i32)
   i32.const 56
   i32.const 0
@@ -4104,7 +4166,7 @@
   i32.store offset=52
   local.get $0
  )
- (func $~lib/bindings/wasi_unstable/event#constructor (; 79 ;) (type $FUNCSIG$i) (result i32)
+ (func $~lib/bindings/wasi_unstable/event#constructor (; 80 ;) (type $FUNCSIG$i) (result i32)
   (local $0 i32)
   i32.const 14
   i32.const 0
@@ -4123,7 +4185,7 @@
   i32.store16 offset=12
   local.get $0
  )
- (func $~lib/as-wasi/as-wasi/Time.sleep (; 80 ;) (type $FUNCSIG$vi) (param $0 i32)
+ (func $~lib/as-wasi/as-wasi/Time.sleep (; 81 ;) (type $FUNCSIG$vi) (param $0 i32)
   (local $1 i32)
   call $~lib/bindings/wasi_unstable/clocksubscription#constructor
   local.tee $1
@@ -4154,12 +4216,13 @@
   call $~lib/bindings/wasi_unstable/poll_oneoff
   drop
  )
- (func $debug-example/index/_start (; 81 ;) (type $FUNCSIG$v)
+ (func $debug-example/index/_start (; 82 ;) (type $FUNCSIG$v)
   (local $0 i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
+  call $lib/lib/isIoDevicesEnabled
   i32.const 160
   i32.const 144
   call $lib/lib/openFrameBufferWindow
@@ -4193,13 +4256,13 @@
     local.get $0
     call $debug-example/index/getMousePositionCopy
     local.set $2
-    i32.const 4272
+    i32.const 5072
     local.get $0
     i32.const 0
     call $~lib/array/Array<i32>#__get
     call $~lib/util/number/itoa32
     call $~lib/string/String.__concat
-    i32.const 4336
+    i32.const 5136
     call $~lib/string/String.__concat
     local.get $0
     i32.const 1
@@ -4273,7 +4336,7 @@
      i32.const 1
      i32.eq
      if
-      i32.const 4472
+      i32.const 5272
       local.get $3
       call $~lib/string/String.__concat
       call $~lib/as-wasi/as-wasi/Console.log
@@ -4296,7 +4359,7 @@
     i32.const 0
    end
    if
-    i32.const 4536
+    i32.const 5336
     call $~lib/as-wasi/as-wasi/Console.log
    end
    call $debug-example/index/getRandomFrame
@@ -4309,10 +4372,10 @@
   end
   unreachable
  )
- (func $start (; 82 ;) (type $FUNCSIG$v)
-  i32.const 4800
+ (func $start (; 83 ;) (type $FUNCSIG$v)
+  i32.const 5600
   global.set $~lib/rt/stub/startOffset
-  i32.const 4800
+  i32.const 5600
   global.set $~lib/rt/stub/offset
   i32.const 1000000
   global.set $~lib/as-wasi/as-wasi/Time.MILLISECOND

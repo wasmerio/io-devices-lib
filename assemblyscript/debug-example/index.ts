@@ -2,7 +2,7 @@
 
 import {CommandLine, Console, Random, Time} from "as-wasi";
 
-import {openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToFrameBuffer, updateInput, getKeyPressState, isKeyPressed, getMousePosition, isMouseButtonClicked} from "../lib/lib";
+import {isIoDevicesEnabled, openFrameBufferWindow, closeFrameBufferWindow, drawRgbaArrayToFrameBuffer, updateInput, getKeyPressState, isKeyPressed, getMousePosition, isMouseButtonClicked} from "../lib/lib";
 
 // Width and height for our framebuffer
 let width: i32 = 160;
@@ -43,6 +43,9 @@ function getMousePositionCopy(mousePosition: Array<i32>): Array<i32> {
 
 // Entry point into WASI Module
 export function _start(): void {
+
+  // Check if IO Devices is enabled, and throw an error if so.
+  isIoDevicesEnabled(true);
 
   // Open a framebuffer
   openFrameBufferWindow(width, height, 0);

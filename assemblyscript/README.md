@@ -20,9 +20,10 @@ Here is an annotated snipped on displaying a static frame with the library. We r
 ```typescript
 // Import some common functions from io-devices-lib-assemblyscript
 import {
+  isIoDevicesEnabled,
   openFrameBufferWindow, 
-    closeFrameBufferWindow, 
-    drawRgbaArrayToFrameBuffer, 
+  closeFrameBufferWindow, 
+  drawRgbaArrayToFrameBuffer, 
 } from "../lib/lib";
 
 // Import some useful utilities from as-wasi
@@ -30,6 +31,10 @@ import {Console, Time} from "as-wasi";
 
 // Entry point into WASI Module
 export function _start(): void {
+
+  // Check if IO Devices is enabled, and throw an error if so.
+  isIoDevicesEnabled(true);
+
   // Open a framebuffer that is 400 pixels wide, and 400 pixels tall, and use fb0
   openFrameBufferWindow(400, 400, 0);
 

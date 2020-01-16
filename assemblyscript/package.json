@@ -5,6 +5,7 @@
   "main": "lib/lib.ts",
   "scripts": {
     "start": "../../wasmer/target/release/wasmer run --enable-experimental-io-devices debug-example/build/optimized.wasm",
+    "start:no-flag": "../../wasmer/target/release/wasmer run debug-example/build/optimized.wasm",
     "start:quick-start": "../../wasmer/target/release/wasmer run --enable-experimental-io-devices quick-start/build/optimized.wasm",
     "build": "npm run asbuild",
     "deploy": "npm run build && np",

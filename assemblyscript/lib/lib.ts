@@ -7,6 +7,33 @@ export {getKeyPressState, getMousePosition, getMouseClickState, isKeyPressed, is
 
 // TODO: In current (December 3rd, 2019) verisons of as-wasi, the Current working directory (dirfd) defaults to: "/"
 
+// Check if the I/O Devices files exist
+export function isIoDevicesEnabled(shouldThrowIfNotEnabled: bool): bool {
+  let virtualSize: Descriptor = FileSystem.open('_wasmer/dev/fb0/virtual_size', "w+") as Descriptor;
+  let bufferIndexDisplay: Descriptor = FileSystem.open('_wasmer/dev/fb0/draw', "w") as Descriptor;
+  let frameBuffer: Descriptor = FileSystem.open('_wasmer/dev/fb0/fb', "w+") as Descriptor;
+  let devInput: Descriptor = FileSystem.open('_wasmer/dev/fb0/input', "r") as Descriptor;
+
+  let isEnabled: bool = true
+  if (
+    (virtualSize as i32) === 0 || 
+    (bufferIndexDisplay as i32) === 0 ||
+    (frameBuffer as i32) === 0 ||
+    (devInput as i32) === 0
+  ) {
+    isEnabled = false;
+  }
+
+  if (!isEnabled && shouldThrowIfNotEnabled) {
+    Console.log("Failed to open I/O Devices files (E.g `_wasmer/dev/fb0/fb`). These are non-standard files. " + 
+      "If you're using Wasmer, please ensure that you've updated to version 0.13.1 and are using the" + 
+      " `--enable-experimental-io-devices` flag.");
+    throw new Error("");
+  }
+
+  return isEnabled;
+}
+
 // Function to open a framebuffer
 export function openFrameBufferWindow(width: i32, height: i32, frameBufferIndex: i32): void {
   let virtualSize: Descriptor = FileSystem.open('_wasmer/dev/fb' + frameBufferIndex.toString() + '/virtual_size', "w+") as Descriptor;
