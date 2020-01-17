@@ -135,6 +135,7 @@ const MOUSE_PRESS_RIGHT: u8 = 5;
 const MOUSE_PRESS_MIDDLE: u8 = 7;
 const WINDOW_CLOSED: u8 = 8;
 
+/// Iterator over [`InputEvent`]s.
 pub struct InputIter {
     idx: usize,
     bytes: Vec<u8>,
@@ -202,6 +203,7 @@ impl Iterator for InputIter {
 
 // copied from Wasmer code which uses a match expression over minifb's `Key` type
 // Numbers from https://css-tricks.com/snippets/javascript/javascript-keycodes/
+/// A key on a keyboard.
 #[derive(Debug, FromPrimitive, ToPrimitive)]
 #[repr(u8)]
 pub enum Key {
@@ -317,6 +319,7 @@ pub enum Key {
     Unknown = 255,
 }
 
+/// The type of mouse event.
 #[derive(Debug, Copy, Clone, PartialEq, Eq)]
 pub enum MouseEventType {
     LeftClick,
@@ -325,6 +328,7 @@ pub enum MouseEventType {
     Move,
 }
 
+/// An event of an input from the user.
 #[derive(Debug)]
 pub enum InputEvent {
     KeyPress(Key),
