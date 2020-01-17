@@ -54,6 +54,10 @@ export function _start(): void {
   let oldMousePosition: Array<i32> = getMousePositionCopy(getMousePosition());
   let pressedKeys: Array<string> = new Array<string>();
 
+  // Get our current frame
+  let frame: Array<u8> = getRandomFrame();
+  let frameCounter: i32 = 0;
+
   // Create a loop to subscribe to call events
   while(true) {
 
@@ -95,7 +99,11 @@ export function _start(): void {
     }
     
     // Get / draw a frame
-    let frame: Array<u8> = getRandomFrame();
+    frameCounter++;
+    if (frameCounter >= 60) {
+      frame = getRandomFrame();
+      frameCounter = 0;
+    }
     drawRgbaArrayToFrameBuffer(frame, 0);
 
     Time.sleep(16 * Time.MILLISECOND);
