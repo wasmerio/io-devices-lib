@@ -89,6 +89,9 @@ impl FrameBufferCtx {
             .write(format!("{}x{}", x, y).as_bytes())
             .ok()?;
 
+        self.resolution.0 = x;
+        self.resolution.1 = y;
+
         Some(())
     }
 
