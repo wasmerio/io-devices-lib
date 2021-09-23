@@ -11,6 +11,10 @@ Libraries for interacting with the Wasmer Experimental IO Devices. 🔌
 * [AssemblyScript](./assemblyscript) 🚀
 * [Rust](./rust) 🦀
 
+## Running the examples
+
+Note that in order to run the examples in this repository you will need a wasmer build created after setting `--features experimental-io-devices` in the Makefile of wasmer project. 
+
 ## Contributing
 
 Contributions are definitely welcome! Small typos and things can be fixed in a small PR. Larger fixes and features, should have an issue opened for discussion first, then a PR should be made. 
